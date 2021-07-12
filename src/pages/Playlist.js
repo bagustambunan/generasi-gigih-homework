@@ -19,7 +19,7 @@ const useStyles = makeStyles({
           <CardMedia
             component="img"
             alt="Contemplative Reptile"
-            height="140"
+            height="250"
             image={data.album.images[0].url}
             title="Contemplative Reptile"
           />
@@ -28,17 +28,15 @@ const useStyles = makeStyles({
                 {data.album.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+                Artist: {data.album.artists[0].name}
+                <br/>
+                Album: {data.name}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
+            Select
           </Button>
         </CardActions>
       </Card>

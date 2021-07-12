@@ -24,7 +24,10 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Playlist/>
+    <div className="main">
+      <Playlist/>
+    </div>
+    
   );
 }
 
