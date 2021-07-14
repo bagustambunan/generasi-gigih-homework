@@ -1,44 +1,20 @@
 import React from 'react';
 import data from '../data/data_playlist';
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
-
-export default function Playlist() {
-  const classes = useStyles();
-
+const Playlist = () => {
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="250"
-          image={data.album.images[0].url}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-              {data.album.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-              Artist: {data.album.artists[0].name}
-              <br/>
-              Album: {data.name}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Select
-        </Button>
-      </CardActions>
-    </Card>
+    <div className="container p-10">
+      <div className="bg-gray-100 px-5 py-5 rounded-lg w-1/5">
+        <img src={data.album.images[0].url} title={data.name} className="rounded h-40 w-full"/>
+        <p className="text-base mt-2 mb-1 font-bold">{data.album.name}</p>
+        <div className="">
+          <p className="text-sm">Artist: {data.album.artists[0].name}</p>
+          <p className="text-sm">Album: {data.name}</p>
+        </div>
+        <button className="bg-blue-200 w-full py-1 rounded mt-2">Select</button>
+      </div>
+    </div>
   );
 }
+
+export default Playlist;
