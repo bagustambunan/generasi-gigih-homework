@@ -1,4 +1,4 @@
-import Playlist from './pages/Playlist';
+import Playlists from './pages/Playlists';
 
 function App() {
 
@@ -6,7 +6,10 @@ function App() {
   console.log(spotify_client_id);
 
   return (
-    <Playlist/>
+    <div className="bg-gray-800 min-h-screen font-sans">
+      <Playlists/>
+    </div>
+    
   );
 }
 
