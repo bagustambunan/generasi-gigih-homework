@@ -14,7 +14,7 @@ const Playlists = () => {
       <div className="my-3">
         <h1 className="text-4xl text-white font-bold">Playlists</h1>
       </div>
-      <div className="mt-10 mb-3">
+      <div className="mt-10 mb-4">
         <h1 className="text-xl text-white">Recently played</h1>
       </div>
       <div className="flex">
