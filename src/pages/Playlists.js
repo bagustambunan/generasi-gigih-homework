@@ -1,13 +1,10 @@
 import React from 'react';
-import data from '../data/data_playlist';
+import data from '../data/data_playlists_all';
 import Track from '../components/Track';
 
 const Playlists = () => {
 
-  let image_url = data.album.images[0].url;
-  let track_title = data.album.name;
-  let artist_name = data.album.artists[0].name;
-  let album_name = data.name;
+  // console.log(data);
 
   return (
     <div className="container p-10">
@@ -18,11 +15,26 @@ const Playlists = () => {
         <h1 className="text-xl text-white">Recently played</h1>
       </div>
       <div className="flex">
-        <Track image_url={image_url} track_title={track_title} artist_name={artist_name} album_name={album_name}/>
-        <Track image_url={image_url} track_title={track_title} artist_name={artist_name} album_name={album_name}/>
-        <Track image_url={image_url} track_title={track_title} artist_name={artist_name} album_name={album_name}/>
+        {
+        data.map((item, index) => {
+          return (
+            <div>
+              <Track
+                key={index}
+                id={index}
+                image_url={item.album.images[0].url}
+                track_title={item.album.name}
+                artist_name={item.album.artists[0].name}
+                album_name={item.name}
+              />
+              <p>{index+1}</p>
+            </div>
+          );
+        })}
+        
       </div>
     </div>
+    // "All"
   );
 }
 

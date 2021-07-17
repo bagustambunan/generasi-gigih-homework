@@ -15,7 +15,7 @@ const Track = props => {
                 <p className="text-sm text-gray-300">Album: {props.album_name}</p>
             </div>
             <button className="w-full py-1 rounded mt-2 bg-gray-700 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 text-gray-200"
-                onClick= {() => {handleClick(props.track_title)}}>
+                onClick= {() => {handleClick(props.title)}}>
                     Select
             </button>
         </div>
