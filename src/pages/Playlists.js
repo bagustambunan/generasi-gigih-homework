@@ -5,6 +5,16 @@ import Track from '../components/Track';
 const Playlists = () => {
 
   // console.log(data);
+  const Spasi = (props) => {
+    if(props.angka%4==3){
+      return(
+        <div></div>
+      );
+    }
+    else {
+      return true;
+    }
+  }
 
   return (
     <div className="container p-10">
@@ -14,11 +24,11 @@ const Playlists = () => {
       <div className="mt-10 mb-4">
         <h1 className="text-xl text-white">Recently played</h1>
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {
         data.map((item, index) => {
           return (
-            <div>
+            <>
               <Track
                 key={index}
                 id={index}
@@ -27,14 +37,13 @@ const Playlists = () => {
                 artist_name={item.album.artists[0].name}
                 album_name={item.name}
               />
-              <p>{index+1}</p>
-            </div>
+              {/* <Spasi angka={index}/> */}
+            </>
           );
         })}
         
       </div>
     </div>
-    // "All"
   );
 }
 
