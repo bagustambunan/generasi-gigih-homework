@@ -6,8 +6,8 @@ class Api extends React.Component {
 
         const queryString = require('query-string');
 
-        var client_id = 'a1ad3597653f4bd9ad5d055f6f386468';
-        var client_secret = '91ca44af8a2f48fcae1cc92bdca0ad44';
+        var client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+        var client_secret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
         var redirect_uri = 'http://localhost:3000/callback';
         var scope = 'user-read-private user-read-email';
         var spotify_url = 'https://accounts.spotify.com/authorize?' +
@@ -38,14 +38,23 @@ class Api extends React.Component {
 
                 <br/><br/>
                 <a className="text-white">URL: {spotify_url}</a>
-                <br/><br/>
-                <a className="text-white">Access token: {access_token}</a>
+                
                 </>
             
             )}
             {(access_token) && (
-                "Login berhasil"
+                <>
+                <a className="text-white">Access token:<br/>{access_token}</a>
 
+                <div className="bg-gray-600 px-5 py-5 rounded-lg w-full">
+                    <form>
+                    <input onChange={(event) => {this.handleChange(event)}} type="text" className="bg-gray-200 px-4 py-3 roundedlg w-full" placeholder="Title"></input>
+                    <input onChange={(event) => {this.handleChange(event)}} type="text" className="bg-gray-200 px-4 py-3 roundedlg w-full" placeholder="Description"></input>
+                    <input onChange={(event) => {this.handleChange(event)}} type="text" className="bg-gray-200 px-4 py-3 roundedlg w-full" placeholder="Artist"></input>
+                    </form>
+                </div>
+
+                </>
             )}
             </>
         );
