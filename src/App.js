@@ -1,5 +1,4 @@
-import Playlists from './pages/Playlists';
-import './App.css';
+import SpotifyPage from "./page/Spotify";
 
 function App() {
 
@@ -8,7 +7,7 @@ function App() {
 
   return (
     <div className="bg-gray-800 min-h-screen">
-      <Playlists/>
+      <SpotifyPage />
     </div>
     
   );
