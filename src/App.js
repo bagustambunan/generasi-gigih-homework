@@ -1,3 +1,4 @@
+import './App.css';
 import SpotifyPage from "./page/Spotify";
 
 function App() {
