@@ -6,7 +6,7 @@ class Api extends React.Component {
 
     state = {
         access_token : '',
-        q: 'surga',
+        q: 'Bryan Adams',
         data_diperoleh: [],
     }
 
@@ -67,7 +67,7 @@ class Api extends React.Component {
                     <div
                         className="bg-sptf hover:bg-gray-600 w-60 rounded-full text-white font-medium px-1 py-1 flex cursor-pointer justify-center align-middle"
                         onClick={() => {this.login()}}>
-                        <img src="spotify_mini.png" className="w-6 h-6 mr-2 my-1" alt="logo_mini"/>
+                        <i className="m-2 fab fa-spotify"></i>
                         <a className="my-1">LOG IN WITH SPOTIFY</a>
                     </div>
                 )}
@@ -76,8 +76,8 @@ class Api extends React.Component {
                 <>
 
                 <div className="w-full">
-                        <input onChange={(event) => {this.setState({q: event.target.value})}} value={this.state.q} type="text" className="bg-white px-2 py-1 rounded w-80 mb-3" placeholder="Type anything..."></input>
-                        <button onClick={() => {this.handleClick(access_token)}} className="bg-sptf hover:bg-gray-600 px-2 py-1 rounded w-80 mb-3 text-white">Search</button>
+                        <input onChange={(event) => {this.setState({q: event.target.value})}} value={this.state.q} type="text" className="bg-white px-2 py-1 rounded-bl rounded-tl w-80 mb-3" placeholder="Type anything..."></input>
+                        <button onClick={() => {this.handleClick(access_token)}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
                 </div>
 
                 <div className="mt-5 flex flex-wrap">
