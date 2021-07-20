@@ -1,29 +1,20 @@
 import React from 'react';
+import Track from '../../components/Track';
 const axios = require('axios');
 
 class Api extends React.Component {
 
     state = {
         access_token : '',
-        f_title: '',
+        f_title: 'surga',
         f_desc: '',
         f_artist: '',
         data_diperoleh: [],
     }
 
-    generateRandomString(length) {
-        var text = '';
-        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-        for (var i = 0; i < length; i++) {
-          text += possible.charAt(Math.floor(Math.random() * possible.length));
-        }
-        return text;
-    }
-
     getHashParams() {
-        var hashParams = {};
-        var e, r = /([^&;=]+)=?([^&;]*)/g,
+        let hashParams = {};
+        let e, r = /([^&;=]+)=?([^&;]*)/g,
             q = window.location.hash.substring(1);
         while ( e = r.exec(q)) {
            hashParams[e[1]] = decodeURIComponent(e[2]);
@@ -33,14 +24,15 @@ class Api extends React.Component {
 
     async handleClick(access_token) {
         try {
-            await axios.get(`https://api.spotify.com/v1/search?q=love&type=track`, {
+            let url = 'https://api.spotify.com/v1/search?q='+this.state.f_title+'&type=track';
+            await axios.get(url, {
                 headers: {
                     'Authorization': 'Bearer ' + access_token
                 },
             })
             .then(res => {
                 console.log(res.data.tracks.items);
-                this.setState({data_diperoleh: res.data.tracks});
+                this.setState({data_diperoleh: res.data.tracks.items});
             })
         } catch (err) {
             console.error(err);
@@ -51,50 +43,21 @@ class Api extends React.Component {
 
     render() {
 
-        var stateKey = 'spotify_auth_state';
+        let client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+        let scope = 'playlist-modify-private';
+        let redirect_uri = 'http://localhost:3000/callback';
 
-        var client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-        var scope = 'playlist-modify-private';
-        var redirect_uri = 'http://localhost:3000/callback';
-        var state = this.generateRandomString(16);
-
-        var spotify_url = 'https://accounts.spotify.com/authorize';
+        let spotify_url = 'https://accounts.spotify.com/authorize';
             spotify_url += '?response_type=token';
             spotify_url += '&client_id=' + encodeURIComponent(client_id);
             spotify_url += '&scope=' + encodeURIComponent(scope);
             spotify_url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
-            spotify_url += '&state=' + encodeURIComponent(state);
 
-        var params = this.getHashParams();
-
-        var access_token = params.access_token,
-            state = params.state,
-            storedState = localStorage.getItem(stateKey);
-
+        let params = this.getHashParams();
+        let access_token = params.access_token;
         if(access_token) {
             console.log("Token: " + access_token);
-            // this.handleClick(access_token);
         }
-        
-
-        // if (access_token && (state == null || state !== storedState)) {
-        //     alert('There was an error during the authentication');
-        // } else {
-        //     localStorage.removeItem(stateKey);
-        //     if (access_token) {
-        //     document.ajax({
-        //         url: 'https://api.spotify.com/v1/me',
-        //         headers: {
-        //             'Authorization': 'Bearer ' + access_token
-        //         },
-        //         success: function(response) {
-        //             console.log("Hasil response: " + response);
-        //         }
-        //     });
-        //     } else {
-        //         console.log("Gagal bro");
-        //     }
-        // }
 
         return (
             <>
@@ -114,15 +77,33 @@ class Api extends React.Component {
 
                 <div className="bg-gray-600 px-5 py-5 rounded-lg w-full">
                     <form>
-                        <input onChange={(event) => {this.setState({f_title: event.target.value})}} type="text" className="bg-white px-2 py-1 rounded w-80 mb-3" placeholder="Title"></input>
+                        <input onChange={(event) => {this.setState({f_title: event.target.value})}} value={this.state.f_title} type="text" className="bg-white px-2 py-1 rounded w-80 mb-3" placeholder="Title"></input>
                         <br/>
-                        <input onChange={(event) => {this.setState({f_desc: event.target.value})}} type="text" className="bg-white px-2 py-1 rounded w-80 mb-3" placeholder="Description"></input>
+                        {/* <input onChange={(event) => {this.setState({f_desc: event.target.value})}} type="text" className="bg-white px-2 py-1 rounded w-80 mb-3" placeholder="Description"></input>
                         <br/>
                         <input onChange={(event) => {this.setState({f_artist: event.target.value})}} type="text" className="bg-white px-2 py-1 rounded w-80 mb-3" placeholder="Artist"></input>
-                        <br/>
+                        <br/> */}
                         <button onClick={() => {this.handleClick(access_token)}} className="bg-purple-600 px-2 py-1 rounded w-80 mb-3 text-white">Search</button>
                     </form>
                 </div>
+
+                <div className="flex flex-wrap">
+                {
+                this.state.data_diperoleh.map((item) => {
+                return (
+                    <>
+                    <Track
+                        key={item.album.id}
+                        image_url={item.album.images[0].url}
+                        track_title={item.name}
+                        artist_name={item.album.artists[0].name}
+                        album_name={item.album.name}
+                    />
+                    </>
+                );
+                })}
+                
+            </div>
 
                 </>
             )}
