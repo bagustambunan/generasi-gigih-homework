@@ -5,7 +5,7 @@ const axios = require('axios');
 class Api extends React.Component {
 
     state = {
-        access_token : '',
+        access_token : null,
         q: 'Bryan Adams',
         data_diperoleh: [],
     }
@@ -34,12 +34,12 @@ class Api extends React.Component {
         window.location = spotify_url;
     }
 
-    async handleClick(access_token) {
+    async handleClick() {
         try {
             let url = 'https://api.spotify.com/v1/search?q='+this.state.q+'&type=track,artist';
             await axios.get(url, {
                 headers: {
-                    'Authorization': 'Bearer ' + access_token
+                    'Authorization': 'Bearer ' + this.state.access_token
                 },
             })
             .then(res => {
@@ -59,25 +59,29 @@ class Api extends React.Component {
         let access_token = params.access_token;
         if(access_token) {
             console.log("Token: " + access_token);
+            this.setState({access_token: access_token});
+            window.location = '#';
         }
 
         return (
             <>
-                {(!access_token) && (
-                    <div
-                        className="bg-sptf hover:bg-gray-600 w-60 rounded-full text-white font-medium px-1 py-1 flex cursor-pointer justify-center align-middle"
-                        onClick={() => {this.login()}}>
-                        <i className="m-2 fab fa-spotify"></i>
-                        <a className="my-1">LOG IN WITH SPOTIFY</a>
+                {(!this.state.access_token) && (
+                    <div className="w-full grid justify-center align-middle">
+                        <div
+                            className="bg-sptf hover:bg-gray-600 w-60 rounded-full text-white font-medium px-1 py-1 flex cursor-pointer justify-center align-middle"
+                            onClick={() => {this.login()}}>
+                            <i className="m-2 fab fa-spotify"></i>
+                            <a className="my-1">LOG IN WITH SPOTIFY</a>
+                        </div>
                     </div>
                 )}
             
-            {(access_token) && (
+            {(this.state.access_token) && (
                 <>
 
                 <div className="w-full">
                         <input onChange={(event) => {this.setState({q: event.target.value})}} value={this.state.q} type="text" className="bg-white px-2 py-1 rounded-bl rounded-tl w-80 mb-3" placeholder="Type anything..."></input>
-                        <button onClick={() => {this.handleClick(access_token)}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
+                        <button onClick={() => {this.handleClick()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
                 </div>
 
                 <div className="mt-5 flex flex-wrap">

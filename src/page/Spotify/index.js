@@ -5,7 +5,7 @@ import Api from './Api';
 
 const SpotifyPage = () => {
 
-  const [view, setView] = useState("api");
+  const [view, setView] = useState("search");
   const menu = [
     {
       name: "home",
@@ -20,7 +20,7 @@ const SpotifyPage = () => {
       page: <Recent/>
     },
     {
-      name: "api",
+      name: "search",
       text: "Search",
       icon: "fa-search",
       page: <Api/>
@@ -36,15 +36,16 @@ const SpotifyPage = () => {
     return (
       <div className="text-left">
 
-        <div className="mb-5">
-          <img src="spotify.png" className="w-40" alt="logo"/>
+        <div className="my-10">
+          <img src="spotify.png" className="w-32" alt="logo"/>
         </div>
 
         { menu.map((item) => {
           return (
             <div className="mb-2 ">
               <a className={`text-lg font-medium mb-5 ${view===item.name ? "text-gray-100" : "text-gray-600 hover:text-sptf"}`}
-                href={`#${item.name}`}  onClick={() => {setView(item.name)}} >
+                href={`#${item.name}`} 
+                onClick={() => {setView(item.name)}} >
                   <i className={`fa m-2 ${item.icon}`}></i>
                   {item.text}</a>
             </div>
