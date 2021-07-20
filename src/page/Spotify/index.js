@@ -5,7 +5,7 @@ import Api from './Api';
 
 const SpotifyPage = () => {
 
-  const [view, setView] = useState("search");
+  const [view, set_view] = useState("search");
   const menu = [
     {
       name: "home",
@@ -45,7 +45,7 @@ const SpotifyPage = () => {
             <div className="mb-2 ">
               <a className={`text-lg font-medium mb-5 ${view===item.name ? "text-gray-100" : "text-gray-600 hover:text-sptf"}`}
                 href={`#${item.name}`} 
-                onClick={() => {setView(item.name)}} >
+                onClick={() => {set_view(item.name)}} >
                   <i className={`fa m-2 ${item.icon}`}></i>
                   {item.text}</a>
             </div>
