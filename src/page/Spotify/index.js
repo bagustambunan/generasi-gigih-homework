@@ -39,7 +39,7 @@ const SpotifyPage = () => {
       <div className="w-full mt-8 mb-5 text-left">
         { menu.map((item) => {
           return (
-          <a className={`mr-5 text-2xl font-bold mb-5 ${view===item.name ? "text-gray-100" : "text-gray-600 hover:text-green-500"}`}
+          <a className={`mr-5 text-2xl font-bold mb-5 ${view===item.name ? "text-gray-100" : "text-gray-600 hover:text-danger"}`}
             href={`#${item.name}`}  onClick={() => {setView(item.name)}} >{item.text}</a>
           );
         })}

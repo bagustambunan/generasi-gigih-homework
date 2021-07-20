@@ -24,7 +24,7 @@ class Api extends React.Component {
 
     async handleClick(access_token) {
         try {
-            let url = 'https://api.spotify.com/v1/search?q='+this.state.f_title+'&type=track';
+            let url = 'https://api.spotify.com/v1/search?q='+this.state.f_title+'&type=track,artist';
             await axios.get(url, {
                 headers: {
                     'Authorization': 'Bearer ' + access_token
@@ -45,7 +45,7 @@ class Api extends React.Component {
 
         let client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
         let scope = 'playlist-modify-private';
-        let redirect_uri = 'http://localhost:3000/callback';
+        let redirect_uri = 'http://localhost:3000';
 
         let spotify_url = 'https://accounts.spotify.com/authorize';
             spotify_url += '?response_type=token';
