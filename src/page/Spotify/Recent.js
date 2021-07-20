@@ -15,6 +15,7 @@ class Recent extends React.Component {
                     track_title={data.name}
                     artist_name={data.album.artists[0].name}
                     album_name={data.album.name}
+                    data={data}
                 />
             </div>
 

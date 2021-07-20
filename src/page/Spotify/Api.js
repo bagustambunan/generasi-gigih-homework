@@ -80,7 +80,12 @@ class Api extends React.Component {
                 <>
 
                 <div className="w-full">
-                        <input onChange={(event) => {this.setState({q: event.target.value})}} value={this.state.q} type="text" className="bg-white px-2 py-1 rounded-bl rounded-tl w-80 mb-3" placeholder="Type anything..."></input>
+                        <input
+                            onChange={(event) => {this.setState({q: event.target.value})}}
+                            // onKeyDown={() => {this.handleClick()}}
+                            value={this.state.q} type="text"
+                            className="bg-white px-2 py-1 rounded-bl rounded-tl w-80 mb-3"
+                            placeholder="Type anything..."></input>
                         <button onClick={() => {this.handleClick()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
                 </div>
 
@@ -95,6 +100,7 @@ class Api extends React.Component {
                             track_title={item.name}
                             artist_name={item.album.artists[0].name}
                             album_name={item.album.name}
+                            data={item}
                         />
                         </>
                     );
