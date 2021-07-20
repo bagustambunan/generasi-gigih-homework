@@ -26,7 +26,6 @@ const SpotifyPage = () => {
 
   const Page = () => {
     const selected_page = menu.filter(item => item.name === view);
-    console.log(selected_page);
     return selected_page[0].page;
   }
 
