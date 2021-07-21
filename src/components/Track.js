@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux'
 import TrackDetail from '../page/Spotify/TrackDetail';
 
 const Track = props => {

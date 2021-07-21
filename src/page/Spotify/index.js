@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-import Home from './Home';
-import Recent from './Recent';
 import Favorite from './Favorite';
 import Api from './Api';
 
 function SpotifyPage() {
 
-  const [view, set_view] = useState("search");
+  const [view, set_view] = useState("favorite");
   const menu = [
-    {
-      name: "home",
-      text: "Home",
-      icon: "fa-home",
-      page: <Home/>
-    },
-    {
-      name: "recent",
-      text: "Recent",
-      icon: "fa-play-circle",
-      page: <Recent/>
-    },
+    // {
+    //   name: "home",
+    //   text: "Home",
+    //   icon: "fa-home",
+    //   page: <Home/>
+    // },
+    // {
+    //   name: "recent",
+    //   text: "Recent",
+    //   icon: "fa-play-circle",
+    //   page: <Recent/>
+    // },
     {
       name: "search",
       text: "Search",
@@ -69,7 +67,7 @@ function SpotifyPage() {
 
       <>
 
-      <div className="p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
+      <div className="hidden p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
         <Menu/>
       </div>
 
