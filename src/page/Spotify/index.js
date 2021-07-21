@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Home from './Home';
 import Recent from './Recent';
+import Favorite from './Favorite';
 import Api from './Api';
 
 function SpotifyPage() {
@@ -24,6 +25,12 @@ function SpotifyPage() {
       text: "Search",
       icon: "fa-search",
       page: <Api/>
+    },
+    {
+      name: "favorite",
+      text: "Favorite",
+      icon: "fa-heart",
+      page: <Favorite/>
     }
   ]
 
