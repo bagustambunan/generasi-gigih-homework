@@ -3,7 +3,7 @@ import Home from './Home';
 import Recent from './Recent';
 import Api from './Api';
 
-const SpotifyPage = () => {
+function SpotifyPage() {
 
   const [view, set_view] = useState("search");
   const menu = [
@@ -37,7 +37,9 @@ const SpotifyPage = () => {
       <div className="text-left">
 
         <div className="my-10">
-          <img src="spotify.png" className="w-32" alt="logo"/>
+          <a href="http://localhost:3000">
+            <img src="spotify.png" className="w-32" alt="logo"/>
+          </a>
         </div>
 
         { menu.map((item) => {

@@ -34,6 +34,7 @@ function Api() {
 
   async function handleClick() {
     try {
+      set_tracks([]);
       let url = 'https://api.spotify.com/v1/search?q='+query+'&type=track,artist';
       await axios.get(url, {
         headers: {
@@ -78,7 +79,7 @@ function Api() {
             <input
             onChange={(event) => {set_query(event.target.value)}}
             value={query} type="text"
-            className="bg-white px-2 py-1 rounded-bl rounded-tl w-80 mb-3"
+            className="bg-white px-2 py-1 rounded-bl rounded-tl w-64 mb-3"
             placeholder="Type anything..."></input>
             <button onClick={() => {handleClick()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TrackDetail = props => {
+function TrackDetail() {
 
     // console.log(props.data.name);
 
