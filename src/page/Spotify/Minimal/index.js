@@ -6,7 +6,7 @@ const axios = require('axios');
 function SpotifyMinimal() {
 
   const [access_token, set_access_token] = useState(null);
-  const [query, set_query] = useState('rock');
+  const [query, set_query] = useState('Bryan Adams');
   const [tracks, set_tracks] = useState([]);
   const [fav_list, set_fav_list] = useState([]);
 
@@ -20,28 +20,31 @@ function SpotifyMinimal() {
         (fav_list.filter( item => { return item.id === props.data.id}).length === 0) ? false : true
     );
 
-    function addFav(the_track){
-      set_fav_list([...fav_list, the_track]);
+    function addFav(){
+      set_fav_list([...fav_list, props.data]);
       set_isfav(!isfav);
     }
 
-    function removeFav(the_track){
-      let item = fav_list.filter( item => { return item.id === the_track.id})[0];
+    function removeFav(){
+      let item = fav_list.filter( item => { return item.id === props.data.id})[0];
       let index = fav_list.indexOf(item);
-      set_fav_list(fav_list.splice(index, 1));
+      console.log("Posisi hapus: "+index);
+      let copy = [...fav_list];
+      copy.splice(index, 1);
+      set_fav_list([...copy]);
     }
 
     function Heart() {
       if(isfav) {
         return (
-          <div className="cursor-pointer" onClick= {() => {removeFav(props.data)}}>
+          <div className="cursor-pointer" onClick= {() => {removeFav()}}>
             <i className="text-xl text-red-500 fas fa-heart"></i>
           </div>
         )
       }
       else {
         return (
-          <div className="cursor-pointer" onClick= {() => {addFav(props.data)}}>
+          <div className="cursor-pointer" onClick= {() => {addFav()}}>
             <i className="text-xl text-gray-500 far fa-heart hover:text-gray-100"></i>
           </div>
         )
@@ -49,7 +52,7 @@ function SpotifyMinimal() {
     }
 
     return (
-    <div className="flex flex-wrap rounded-xl hover:bg-sptf_card_hover">
+    <div className="flex flex-wrap rounded-lg hover:bg-sptf_card_hover">
 
         <div className="w-16 pb-2 pr-2 pl-2 pt-4 text-center">
           <Heart/>
@@ -80,9 +83,34 @@ function SpotifyMinimal() {
     );
   }
 
+  function TrackHeader() {
+
+    return (
+    <div className="flex flex-wrap border-b mb-3">
+
+        <div className="w-28 p-2 mr-2">
+          
+        </div>
+
+        <div className="w-80 p-2">
+          <a className="text-gray-300 text-sm">TITLE</a>
+        </div>
+
+        <div className="w-80 p-2">
+          <a className="text-gray-300 text-sm">ALBUM</a>
+        </div>
+
+        <div className="w-24 p-2">
+        <i className="text-gray-300 text-sm far fa-clock"></i>
+        </div>
+
+    </div>
+    );
+  }
+
   function doSearch() {
     try {
-      let url = 'https://api.spotify.com/v1/search?q='+query+'&type=track';
+      let url = 'https://api.spotify.com/v1/search?q='+query+'&type=track&limit=10';
       axios.get(url, {
         headers: {
           'Authorization': 'Bearer ' + access_token
@@ -133,7 +161,8 @@ function SpotifyMinimal() {
       )}
 
       {(tracks.length != 0) && (
-        <div className="mt-5 flex flex-wrap">
+        <div className="mt-5 w-8/12">
+          <TrackHeader/>
           {tracks.map((item, i) => {
             return (
               <Track
