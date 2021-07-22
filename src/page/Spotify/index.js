@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import Favorite from './Favorite';
 import Api from './Api';
+import Test from './Test';
+
+import { TrackProvider } from '../../contexts/TrackContext';
 
 function SpotifyPage() {
 
-  const [view, set_view] = useState("favorite");
+  const greetings = {
+    siang: {
+      teks: "Halo selamat siang pak",
+    },
+    malam: {
+      teks: "Sudah malam nih bos hehe",
+    }
+  };
+
+  const GreetContext = createContext(greetings.siang);
+
+  const [view, set_view] = useState("search");
   const menu = [
     // {
     //   name: "home",
@@ -29,6 +43,12 @@ function SpotifyPage() {
       text: "Favorite",
       icon: "fa-heart",
       page: <Favorite/>
+    },
+    {
+      name: "test",
+      text: "test",
+      icon: "fa-heart",
+      page: <Test/>
     }
   ]
 
@@ -64,23 +84,27 @@ function SpotifyPage() {
   }
 
   return (
+    <>
 
-      <>
-
-      <div className="hidden p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
+      <div className="p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
         <Menu/>
       </div>
 
       <div className="w-full flex flex-wrap">
+
         <div className="w-56 border border-blue-600 ">
           {/* <Menu/> */}
         </div>
+
         <div className="p-5 w-10/12 border-red-600">
-          <Page/>
+          <TrackProvider>
+            <Page/>
+          </TrackProvider>
         </div>
+
       </div>
 
-      </>
+    </>
   );
 }
 

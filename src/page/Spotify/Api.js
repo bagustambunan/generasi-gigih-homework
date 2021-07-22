@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Track from '../../components/Track';
+
 const axios = require('axios');
 
 function Api() {
 
   const [access_token, set_access_token] = useState(null);
-  const [query, set_query] = useState('');
+  const [query, set_query] = useState('Queen');
   const [tracks, set_tracks] = useState([]);
 
   const LoginButton = () => {
@@ -86,17 +87,17 @@ function Api() {
       )}
 
       <div className="mt-5 flex flex-wrap">
-        {tracks.map((item) => {
-          return (
+        {tracks.map((item) => (
             <Track
               key={item.album.id}
               image_url={item.album.images[0].url}
               track_title={item.name}
               artist_name={item.album.artists[0].name}
               album_name={item.album.name}
+              data={item}
             />
-          );
-        })}
+          )
+        )}
       </div>
 
     </div>
