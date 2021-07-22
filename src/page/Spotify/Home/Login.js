@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from 'react';
-
 import {
     useAuthContext,
     addAuth,
     clearAuth
-  } from '../../../contexts/AuthContext';
+} from '../../../contexts/AuthContext';
+
+import {
+    useUserContext,
+    addUser,
+    clearUser
+} from '../../../contexts/UserContext';
+
+const axios = require('axios');
 
 function Login() {
 
     const { auth_store, dispatch_auth } = useAuthContext();
+    const { user_store, dispatch_user } = useUserContext();
 
     function LoginButton() {
 
         let client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-        let scope = 'playlist-modify-private';
+        let scope = 'playlist-modify-private user-read-private';
         let redirect_uri = 'http://localhost:3000';
 
         let spotify_url = 'https://accounts.spotify.com/authorize';
@@ -46,6 +54,22 @@ function Login() {
         );
     }
 
+    async function getUserInfo() {
+        try {
+          let url = 'https://api.spotify.com/v1/me';
+          await axios.get(url, {
+            headers: {
+              'Authorization': 'Bearer ' + auth_store
+            },
+          })
+          .then(res => {
+            dispatch_user(addUser(res.data));
+          })
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
     function getHashParams() {
         let hashParams = {};
         let e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -62,14 +86,10 @@ function Login() {
           let token = params.access_token;
           dispatch_auth(addAuth(token));
         }
+        getUserInfo();
+        console.log("User: ");
+        console.log(user_store);
     });
-
-    
-    // if(getHashParams().access_token){
-    //     let params = getHashParams()
-    //     let token = params.access_token;
-    //     dispatch_auth(addAuth(token));
-    // }
 
     return (
         <>
@@ -78,8 +98,11 @@ function Login() {
                 <LoginButton/>
             )}
 
-            {(auth_store) && (
-                <LogoutButton/>
+            {(auth_store && user_store) && (
+                <>
+                    <a className="text-xl text-white">Halo, {user_store.display_name}</a>
+                    <LogoutButton/>
+                </>
             )}
 
         </>

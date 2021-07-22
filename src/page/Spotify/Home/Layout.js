@@ -19,19 +19,30 @@ function Layout() {
     icon: "fa-home",
     page: <Login/>
     },
-    {
-    name: "search",
-    text: "Search",
-    icon: "fa-search",
-    page: <Search/>
-    },
-    {
-    name: "favorite",
-    text: "Favorite",
-    icon: "fa-heart",
-    page: <Favorite/>
-    },
   ];
+
+  if(auth_store){
+    menu_list = [
+      {
+      name: "home",
+      text: "Home",
+      icon: "fa-home",
+      page: <Login/>
+      },
+      {
+      name: "search",
+      text: "Search",
+      icon: "fa-search",
+      page: <Search/>
+      },
+      {
+      name: "favorite",
+      text: "Favorite",
+      icon: "fa-heart",
+      page: <Favorite/>
+      },
+    ];
+  }
 
   function Menu() {
 
