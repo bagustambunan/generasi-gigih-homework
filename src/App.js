@@ -1,6 +1,6 @@
 import './App.css';
 import "tailwindcss/tailwind.css"
-import SpotifyPage from './page/Spotify';
+import SpotifyMinimal from './page/Spotify/Minimal';
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="bg-sptf_dark_main min-h-screen">
-      <SpotifyPage />
+      <SpotifyMinimal />
     </div>
     
   );
