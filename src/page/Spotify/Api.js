@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Track from '../../components/Track';
 
+import {
+  useAuthContext,
+  addAuth,
+  clearAuth
+} from '../../contexts/AuthContext';
+
 const axios = require('axios');
 
 function Api() {
 
-  const [access_token, set_access_token] = useState(null);
+  const { items, dispatch } = useAuthContext();
+  const [access_token, set_access_token] = useState(items);
   const [query, set_query] = useState('Queen');
   const [tracks, set_tracks] = useState([]);
 
@@ -63,9 +70,12 @@ function Api() {
   }
 
   useEffect(() => {
-    let params = getHashParams()
-    let token = params.access_token;
-    set_access_token(token);
+    if(!access_token){
+      let params = getHashParams()
+      let token = params.access_token;
+      set_access_token(token);
+      dispatch(addAuth(token));
+    }
   });
 
   return (

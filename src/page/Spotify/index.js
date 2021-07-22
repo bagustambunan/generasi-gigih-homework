@@ -4,19 +4,9 @@ import Api from './Api';
 import Test from './Test';
 
 import { TrackProvider } from '../../contexts/TrackContext';
+import { AuthProvider } from '../../contexts/AuthContext';
 
 function SpotifyPage() {
-
-  const greetings = {
-    siang: {
-      teks: "Halo selamat siang pak",
-    },
-    malam: {
-      teks: "Sudah malam nih bos hehe",
-    }
-  };
-
-  const GreetContext = createContext(greetings.siang);
 
   const [view, set_view] = useState("search");
   const menu = [
@@ -44,12 +34,6 @@ function SpotifyPage() {
       icon: "fa-heart",
       page: <Favorite/>
     },
-    {
-      name: "test",
-      text: "test",
-      icon: "fa-heart",
-      page: <Test/>
-    }
   ]
 
   const Page = () => {
@@ -84,7 +68,8 @@ function SpotifyPage() {
   }
 
   return (
-    <>
+    <AuthProvider>
+      <TrackProvider>
 
       <div className="p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
         <Menu/>
@@ -97,14 +82,13 @@ function SpotifyPage() {
         </div>
 
         <div className="p-5 w-10/12 border-red-600">
-          <TrackProvider>
-            <Page/>
-          </TrackProvider>
+          <Page/>
         </div>
 
       </div>
 
-    </>
+      </TrackProvider>
+    </AuthProvider>
   );
 }
 
