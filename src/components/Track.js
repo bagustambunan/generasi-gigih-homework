@@ -5,22 +5,22 @@ import {
     removeTrack
   } from '../contexts/TrackContext';
 
-const Track = props => {
+function Track(props) {
 
-    const { items, dispatch } = useTrackContext();
+    const { track_store, dispatch_track } = useTrackContext();
     const [isfav, set_isfav] = useState(
-        (items.filter( item => { return item.id === props.data.id}).length === 0) ? false : true
+        (track_store.filter( item => { return item.id === props.data.id}).length === 0) ? false : true
     );
 
     const handleClick = () => {
-        if (items.filter( item => { return item.id === props.data.id}).length === 0){
-            dispatch(addTrack(props.data));
+        if (track_store.filter( item => { return item.id === props.data.id}).length === 0){
+            dispatch_track(addTrack(props.data));
         }
         else {
-            let item = items.filter( item => { return item.id === props.data.id})[0];
-            let index = items.indexOf(item);
+            let item = track_store.filter( item => { return item.id === props.data.id})[0];
+            let index = track_store.indexOf(item);
             console.log("Hapus: "+index);
-            dispatch(removeTrack(index));
+            dispatch_track(removeTrack(index));
         }
         set_isfav(!isfav);
         console.log("Is Fav?: " + isfav);

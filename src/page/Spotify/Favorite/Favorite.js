@@ -1,22 +1,20 @@
 import React, { useContext } from 'react';
-import Track from '../../components/Track';
-import {
-    useTrackContext
-  } from '../../contexts/TrackContext';
+import Track from '../../../components/Track';
+import { useTrackContext } from '../../../contexts/TrackContext';
 
 function Favorite() {
     
-    const { items, dispatch } = useTrackContext();
+    const { track_store, dispatch_track } = useTrackContext();
 
     console.log("Data dari favorite: ");
-    console.log(items);
+    console.log(track_store);
         
     return (
 
         <>
 
         <div className="mt-5 flex flex-wrap">
-        {items.map((item) => (
+        {track_store.map((item) => (
             <Track
                 key={item.album.id}
                 image_url={item.album.images[0].url}

@@ -31,9 +31,9 @@ export function authReducer(state, action) {
 }
 
 function AuthProvider(props) {
-  const [items, dispatch] = useReducer(authReducer, initialItems);
+  const [auth_store, dispatch_auth] = useReducer(authReducer, initialItems);
 
-  const authData = { items, dispatch };
+  const authData = { auth_store, dispatch_auth };
 
   return <AuthContext.Provider value={authData} {...props} />;
 }

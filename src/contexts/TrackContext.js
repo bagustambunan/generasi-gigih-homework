@@ -42,9 +42,9 @@ export function trackReducer(state, action) {
 }
 
 function TrackProvider(props) {
-  const [items, dispatch] = useReducer(trackReducer, initialItems);
+  const [track_store, dispatch_track] = useReducer(trackReducer, initialItems);
 
-  const trackData = { items, dispatch };
+  const trackData = { track_store, dispatch_track };
 
   return <TrackContext.Provider value={trackData} {...props} />;
 }
