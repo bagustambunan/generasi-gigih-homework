@@ -1,31 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     useTrackContext,
     addTrack,
-    removeTrack,
-    clearAll
+    removeTrack
   } from '../contexts/TrackContext';
 
 const Track = props => {
 
     const { items, dispatch } = useTrackContext();
+    const [isfav, set_isfav] = useState(
+        (items.filter( item => { return item.id === props.data.id}).length === 0) ? false : true
+    );
 
     const handleClick = () => {
-        dispatch(addTrack(props.data));
-        console.log(items.includes( item => { return item.id === props.data.id}));
-        // console.log("Item ID: " + props.data.id);
-        // console.log("Props data ID: " + props.data.id);
+        if (items.filter( item => { return item.id === props.data.id}).length === 0){
+            dispatch(addTrack(props.data));
+        }
+        else {
+            let item = items.filter( item => { return item.id === props.data.id})[0];
+            let index = items.indexOf(item);
+            console.log("Hapus: "+index);
+            dispatch(removeTrack(index));
+        }
+        set_isfav(!isfav);
+        console.log("Is Fav?: " + isfav);
     }
 
     const Heart = () => {
-        if(items.includes( item => { return item.id === props.data.id})){
+        if(isfav) {
             return (
                 <div className="">
-                    <i className="fa fa-heart"></i>
+                    <i className="text-red-500 fas fa-heart"></i>
                 </div>
             )
         }
-        else return "Not fav";
+        else {
+            return (
+                <div className="">
+                    <i className="text-gray-500 far fa-heart"></i>
+                </div>
+            )
+        }
     }
 
     return (

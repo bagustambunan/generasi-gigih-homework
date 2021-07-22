@@ -1,10 +1,7 @@
 import React, { useContext } from 'react';
 import Track from '../../components/Track';
 import {
-    useTrackContext,
-    addTrack,
-    removeTrack,
-    clearAll
+    useTrackContext
   } from '../../contexts/TrackContext';
 
 function Favorite() {
@@ -15,12 +12,11 @@ function Favorite() {
     console.log(items);
         
     return (
-        <a className="text-white">
-        
-        "Favorite page"
-        <br/>
-        
-        {items.map((item, index) => (
+
+        <>
+
+        <div className="mt-5 flex flex-wrap">
+        {items.map((item) => (
             <Track
                 key={item.album.id}
                 image_url={item.album.images[0].url}
@@ -29,10 +25,11 @@ function Favorite() {
                 album_name={item.album.name}
                 data={item}
             />
-        ))}
+            )
+        )}
+        </div>
 
-
-        </a>
+        </>
     );
     
 }

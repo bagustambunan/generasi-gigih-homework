@@ -69,7 +69,7 @@ function Api() {
   });
 
   return (
-    <div className="bg-dark_main min-h-screen p-5">
+    <>
 
       {(!access_token) && (
         <LoginButton/>
@@ -100,7 +100,7 @@ function Api() {
         )}
       </div>
 
-    </div>
+    </>
   );
 }
 
