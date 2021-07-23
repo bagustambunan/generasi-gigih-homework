@@ -3,14 +3,14 @@ import TrackHeader from '../../../components/TrackHeader';
 
 const axios = require('axios');
 
-function Search(props) {
+function SearchForm(props) {
 
-  const [query, set_query] = useState('Queen');
+  const [query, set_query] = useState('Learn to rock');
   const [tracks, set_tracks] = useState([]);
 
   async function clickSearch() {
     try {
-      set_tracks([]);
+      // set_tracks([]);
       let url = 'https://api.spotify.com/v1/search?q='+query+'&type=track,artist';
       await axios.get(url, {
         headers: {
@@ -27,7 +27,7 @@ function Search(props) {
     } catch (err) {
       console.error(err);
     } finally {
-      console.log(tracks);
+      // console.log(tracks);
     }
   }
 
@@ -54,10 +54,13 @@ function Search(props) {
         tracks={tracks}
         fav_tracks={props.fav_tracks}
         set_fav_tracks={props.set_fav_tracks}
+        track_id={props.track_id}
+        set_track_id={props.set_track_id}
+        set_view={props.set_view}
       />
 
     </>
   );
 }
 
-export default Search;
+export default SearchForm;

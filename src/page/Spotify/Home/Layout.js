@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Menu from '../../../components/Menu';
 import Login from './Login';
-import Search from '../Search/Search';
 import Favorite from '../Favorite/Favorite';
 import PlaylistPage from '../Playlist';
+import SearchPage from '../Search';
 
 function Layout() {
 
@@ -12,6 +12,7 @@ function Layout() {
   const [token, set_token] = useState(null);
   const [user, set_user] = useState(null);
   const [fav_tracks, set_fav_tracks] = useState([]);
+  const [track_id, set_track_id] = useState(null);
 
   let menu_list = [
     {
@@ -44,21 +45,25 @@ function Layout() {
       name: "search",
       text: "Search",
       icon: "fa-search",
-      page: <Search
+      page: <SearchPage
               token={token}
               fav_tracks={fav_tracks}
               set_fav_tracks={set_fav_tracks}
+              track_id={track_id}
+              set_track_id={set_track_id}
             />
       },
-      {
-      name: "favorite",
-      text: "Favorite",
-      icon: "fa-heart",
-      page: <Favorite
-              fav_tracks={fav_tracks}
-              set_fav_tracks={set_fav_tracks}
-            />
-      },
+      // {
+      // name: "favorite",
+      // text: "Favorite",
+      // icon: "fa-heart",
+      // page: <Favorite
+      //         fav_tracks={fav_tracks}
+      //         set_fav_tracks={set_fav_tracks}
+      //         track_id={track_id}
+      //         set_track_id={set_track_id}
+      //       />
+      // },
       {
         name: "playlists",
         text: "Playlists",
@@ -70,6 +75,8 @@ function Layout() {
                 set_fav_tracks={set_fav_tracks}
                 fav_tracks={fav_tracks}
                 set_fav_tracks={set_fav_tracks}
+                track_id={track_id}
+                set_track_id={set_track_id}
               />
       },
     ];

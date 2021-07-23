@@ -63,6 +63,9 @@ function TrackHeader(props) {
                 set_fav_tracks={props.set_fav_tracks}
                 set_show_add_modal={set_show_add_modal}
                 set_selected_track={set_selected_track}
+                track_id={props.track_id}
+                set_track_id={props.set_track_id}
+                set_view={props.set_view}
               />
             );
         })}
