@@ -6,7 +6,7 @@ const axios = require('axios');
 function SpotifyMinimal() {
 
   const [access_token, set_access_token] = useState(null);
-  const [query, set_query] = useState('Bryan Adams');
+  const [query, set_query] = useState('Charlie Puth');
   const [tracks, set_tracks] = useState([]);
   const [fav_list, set_fav_list] = useState([]);
 

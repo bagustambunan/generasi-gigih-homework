@@ -1,13 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Track from '../../../components/Track';
 import { useTrackContext } from '../../../contexts/TrackContext';
 
 function Favorite() {
     
-    const { track_store, dispatch_track } = useTrackContext();
-
-    console.log("Data dari favorite: ");
-    console.log(track_store);
+    const { track_store } = useTrackContext();
         
     return (
 
