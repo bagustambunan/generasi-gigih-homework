@@ -11,8 +11,8 @@ function PlaylistAll(props) {
     function AddButton(){
 
       function handleAddButton(){
-        set_show_form(true);
-        // console.log(playlists);
+        props.set_view("newplaylist");
+        console.log(playlists);
       }
 
       return(
@@ -80,9 +80,12 @@ function PlaylistAll(props) {
                 return (
                     <Playlist
                         key={item.id}
+                        id={item.id}
                         image={image}
                         name={item.name}
                         desc={item.description}
+                        set_view={props.set_view}
+                        set_playlist_id={props.set_playlist_id}
                     />
                 );
             })}

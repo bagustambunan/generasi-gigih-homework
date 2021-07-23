@@ -3,7 +3,7 @@ import Menu from '../../../components/Menu';
 import Login from './Login';
 import Search from '../Search/Search';
 import Favorite from '../Favorite/Favorite';
-import PlaylistAll from '../Playlist/PlaylistAll';
+import PlaylistPage from '../Playlist';
 
 function Layout() {
 
@@ -60,12 +60,16 @@ function Layout() {
             />
       },
       {
-        name: "playlistall",
+        name: "playlists",
         text: "Playlists",
         icon: "fa-headphones-alt",
-        page: <PlaylistAll
+        page: <PlaylistPage
                 token={token}
                 user={user}
+                fav_tracks={fav_tracks}
+                set_fav_tracks={set_fav_tracks}
+                fav_tracks={fav_tracks}
+                set_fav_tracks={set_fav_tracks}
               />
       },
     ];
