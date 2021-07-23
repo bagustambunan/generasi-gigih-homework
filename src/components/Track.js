@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
     useTrackContext,
     addTrack,
@@ -6,6 +6,10 @@ import {
   } from '../contexts/TrackContext';
 
 function Track(props) {
+
+    let durasi_menit = Number((props.duration/60000).toFixed(0));
+    let durasi_detik = Number(((props.duration%60000)/1000).toFixed(0));
+    if (durasi_detik<10) durasi_detik = `0${durasi_detik}`;
 
     const { track_store, dispatch_track } = useTrackContext();
     const [isfav, set_isfav] = useState(
@@ -26,38 +30,52 @@ function Track(props) {
         console.log("Is Fav?: " + isfav);
     }
 
-    const Heart = () => {
-        if(isfav) {
-            return (
-                <div className="">
-                    <i className="text-red-500 fas fa-heart"></i>
-                </div>
-            )
-        }
-        else {
-            return (
-                <div className="">
-                    <i className="text-gray-500 far fa-heart"></i>
-                </div>
-            )
-        }
+    function Heart() {
+      if(isfav) {
+        return (
+          <div className="cursor-pointer" onClick= {() => {handleClick()}}>
+            <i className="text-xl text-red-500 fas fa-heart"></i>
+          </div>
+        )
+      }
+      else {
+        return (
+          <div className="cursor-pointer" onClick= {() => {handleClick()}}>
+            <i className="text-xl text-gray-500 far fa-heart hover:text-gray-100"></i>
+          </div>
+        )
+      }
     }
 
     return (
-        <>
+    <div className="flex flex-wrap rounded-lg hover:bg-sptf_card_hover">
 
-        <div onClick= {() => {handleClick()}}
-        className="bg-sptf_card px-5 py-5 rounded w-1/5 mr-4 mb-4 cursor-pointer hover:bg-sptf_card_hover">
-            <img src={props.image_url} title={props.album_name} alt="{props.album_name}" className="object-cover rounded h-40 w-full"/>
-            <p className="text-base mt-2 mb-1 font-bold text-gray-100">{props.track_title}</p>
-            <div className="">
-                <p className="text-sm text-gray-300">{props.artist_name}</p>
-            </div>
-            <Heart/>
-            
+        <div className="w-16 pb-2 pr-2 pl-2 pt-4 text-center">
+          <Heart/>
         </div>
 
-        </>
+        <div className="p-2">
+            <img src={props.image_url} title={props.album_name} alt="{props.album_name}" className="object-cover w-10 h-10"/>
+        </div>
+
+        <div className="w-80 p-2">
+            <div className="-mb-1">
+                <a className="text-white">{props.track_title}</a>
+            </div>
+            <div>
+                <a className="text-gray-400 text-sm">{props.artist_name}</a>
+            </div>
+        </div>
+
+        <div className="w-80 p-2">
+            <a className="text-gray-300">{props.album_name}</a>
+        </div>
+
+        <div className="w-24 p-2">
+            <a className="text-gray-300">{durasi_menit}:{durasi_detik}</a>
+        </div>
+
+    </div>
     );
 }
 

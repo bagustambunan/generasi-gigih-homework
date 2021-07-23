@@ -101,6 +101,9 @@ function Login() {
             {(auth_store && user_store) && (
                 <>
                     <a className="text-xl text-white">Halo, {user_store.display_name}</a>
+                    <br/><br/>
+                    <a className="text-sm text-white">{auth_store}</a>
+                    <br/><br/>
                     <LogoutButton/>
                 </>
             )}

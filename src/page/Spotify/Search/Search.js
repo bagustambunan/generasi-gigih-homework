@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Track from '../../../components/Track';
+import TrackHeader from '../../../components/TrackHeader';
 
 const axios = require('axios');
 
@@ -38,19 +38,7 @@ function Search(props) {
           <button onClick={() => {clickSearch()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
       </div>
 
-      <div className="mt-5 flex flex-wrap">
-        {tracks.map((item) => (
-            <Track
-              key={item.album.id}
-              image_url={item.album.images[0].url}
-              track_title={item.name}
-              artist_name={item.album.artists[0].name}
-              album_name={item.album.name}
-              data={item}
-            />
-          )
-        )}
-      </div>
+      <TrackHeader tracks={tracks}/>
 
     </>
   );

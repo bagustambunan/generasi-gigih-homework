@@ -3,6 +3,7 @@ import Menu from '../../../components/Menu';
 import Login from './Login';
 import Search from '../Search/Search';
 import Favorite from '../Favorite/Favorite';
+import PlaylistAll from '../Playlist/PlaylistAll';
 
 import {
   useAuthContext
@@ -43,6 +44,14 @@ function Layout() {
       text: "Favorite",
       icon: "fa-heart",
       page: <Favorite/>
+      },
+      {
+        name: "playlistall",
+        text: "Playlists",
+        icon: "fa-headphones-alt",
+        page: <PlaylistAll
+                auth_store={auth_store}
+              />
       },
     ];
   }

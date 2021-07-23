@@ -1,5 +1,5 @@
 import React from 'react';
-import Track from '../../../components/Track';
+import TrackHeader from '../../../components/TrackHeader';
 import { useTrackContext } from '../../../contexts/TrackContext';
 
 function Favorite() {
@@ -10,19 +10,7 @@ function Favorite() {
 
         <>
 
-        <div className="mt-5 flex flex-wrap">
-        {track_store.map((item) => (
-            <Track
-                key={item.album.id}
-                image_url={item.album.images[0].url}
-                track_title={item.name}
-                artist_name={item.album.artists[0].name}
-                album_name={item.album.name}
-                data={item}
-            />
-            )
-        )}
-        </div>
+        <TrackHeader tracks={track_store}/>
 
         </>
     );
