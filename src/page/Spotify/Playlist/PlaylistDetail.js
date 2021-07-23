@@ -28,7 +28,7 @@ function PlaylistDetail(props) {
 
     useEffect(() => {
         getTracks();
-    });
+    }, []);
 
     function TesTombol(){
         return(

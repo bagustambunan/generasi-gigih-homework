@@ -47,7 +47,7 @@ function PlaylistAll(props) {
     useEffect(() => {
         getPlaylists();
         // console.log(playlists);
-    });
+      }, []);
         
     return (
 

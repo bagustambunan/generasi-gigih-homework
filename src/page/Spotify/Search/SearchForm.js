@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TrackHeader from '../../../components/TrackHeader';
 
 const axios = require('axios');
@@ -30,6 +30,10 @@ function SearchForm(props) {
       // console.log(tracks);
     }
   }
+
+  useEffect(() => {
+    clickSearch();
+  }, []);
 
   return (
     <>

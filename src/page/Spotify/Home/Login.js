@@ -81,7 +81,7 @@ function Login(props) {
             getUserInfo();
         }
         // console.log(props.user);
-    });
+    }, []);
 
     return (
         <>

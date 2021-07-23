@@ -26,7 +26,7 @@ function TrackDetail(props) {
     useEffect(() => {
         getTrackInfo();
         // console.log(selected_track);
-    });
+    }, []);
 
     function TesTombol(){
         return(
