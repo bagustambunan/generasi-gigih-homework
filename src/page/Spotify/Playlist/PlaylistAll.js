@@ -12,6 +12,7 @@ function PlaylistAll(props) {
 
       function handleAddButton(){
         set_show_form(true);
+        // console.log(playlists);
       }
 
       return(
@@ -28,8 +29,7 @@ function PlaylistAll(props) {
     async function getPlaylists() {
         try {
         //   set_playlists([]);
-          let url = 'https://api.spotify.com/v1/me/playlists';
-          await axios.get(url, {
+          await axios.get("https://api.spotify.com/v1/me/playlists?limit=50", {
             headers: {
               'Authorization': 'Bearer ' + props.token
             },
@@ -46,6 +46,7 @@ function PlaylistAll(props) {
 
     useEffect(() => {
         getPlaylists();
+        // console.log(playlists);
     });
         
     return (
@@ -63,6 +64,8 @@ function PlaylistAll(props) {
 
         {(show_form) && (
           <NewForm
+            token={props.token}
+            user={props.user}
             set_show_form={set_show_form}
           />
         )}
@@ -70,10 +73,14 @@ function PlaylistAll(props) {
 
         <div className="flex flex-wrap">
             {playlists.map((item, i) => {
+                let image="https://i.kinja-img.com/gawker-media/image/upload/s--uBGFrs9r--/c_scale,f_auto,fl_progressive,q_80,w_800/msfgxy64htxbaki9up4e.png"
+                if(item.images[0]){
+                  image = item.images[0].url;
+                }
                 return (
                     <Playlist
                         key={item.id}
-                        image={item.images[0].url}
+                        image={image}
                         name={item.name}
                         desc={item.description}
                     />

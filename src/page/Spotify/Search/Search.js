@@ -16,6 +16,10 @@ function Search(props) {
         headers: {
           'Authorization': 'Bearer ' + props.token
         },
+        // params: {
+        //   q: query,
+        //   type: "tracks,artist"
+        // }
       })
       .then(res => {
         set_tracks(res.data.tracks.items);
