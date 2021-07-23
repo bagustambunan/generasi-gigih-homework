@@ -33,6 +33,13 @@ function Search(props) {
 
   return (
     <>
+
+        <div className="flex flex-wrap w-10/12 my-10">
+          <div className="w-6/12">
+            <a className="text-2xl text-white font-bold">Search tracks</a>
+          </div>
+        </div>
+
       <div className="w-full">
           <input
           onChange={(event) => {set_query(event.target.value)}}

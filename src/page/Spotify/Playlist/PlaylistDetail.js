@@ -52,8 +52,27 @@ function PlaylistDetail(props) {
             )
         }
         else{
+            let image="https://i.kinja-img.com/gawker-media/image/upload/s--uBGFrs9r--/c_scale,f_auto,fl_progressive,q_80,w_800/msfgxy64htxbaki9up4e.png"
+            if(selected_playlist.images[0]){
+                image = selected_playlist.images[0].url;
+            }
             return(
-                <>
+            <>
+
+                <div className="flex flex-wrap w-full my-10">
+                    <div className="mr-5">
+                        <img src={image} title={selected_playlist.name} alt="{props.album_name}" className="object-cover rounded h-40 w-40"/>
+                    </div>
+                    <div className="w-9/12">
+                        <div className="mb-3">
+                            <a className="text-2xl text-white font-bold">{selected_playlist.name}</a>
+                        </div>
+                        <div className="">
+                            <p className="text-sm text-gray-400">{selected_playlist.description}</p>
+                        </div>
+                    </div>
+                    
+                </div>
 
                 {(selected_playlist.tracks.total!=0) && (
                     <PlaylistHeader

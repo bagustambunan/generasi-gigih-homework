@@ -7,6 +7,12 @@ function Favorite(props) {
 
         <>
 
+        <div className="flex flex-wrap w-10/12 my-10">
+          <div className="w-6/12">
+            <a className="text-2xl text-white font-bold">Favorite tracks</a>
+          </div>
+        </div>
+
         <TrackHeader
             token={props.token}
             tracks={props.fav_tracks}
