@@ -43,6 +43,7 @@ function Search(props) {
       </div>
 
       <TrackHeader
+        token={props.token}
         tracks={tracks}
         fav_tracks={props.fav_tracks}
         set_fav_tracks={props.set_fav_tracks}

@@ -8,6 +8,7 @@ function Favorite(props) {
         <>
 
         <TrackHeader
+            token={props.token}
             tracks={props.fav_tracks}
             fav_tracks={props.fav_tracks}
             set_fav_tracks={props.set_fav_tracks}
