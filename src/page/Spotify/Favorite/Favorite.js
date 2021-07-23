@@ -1,16 +1,17 @@
 import React from 'react';
 import TrackHeader from '../../../components/TrackHeader';
-import { useTrackContext } from '../../../contexts/TrackContext';
 
-function Favorite() {
-    
-    const { track_store } = useTrackContext();
+function Favorite(props) {
         
     return (
 
         <>
 
-        <TrackHeader tracks={track_store}/>
+        <TrackHeader
+            tracks={props.fav_tracks}
+            fav_tracks={props.fav_tracks}
+            set_fav_tracks={props.set_fav_tracks}
+        />
 
         </>
     );

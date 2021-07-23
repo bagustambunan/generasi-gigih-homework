@@ -14,7 +14,7 @@ function Search(props) {
       let url = 'https://api.spotify.com/v1/search?q='+query+'&type=track,artist';
       await axios.get(url, {
         headers: {
-          'Authorization': 'Bearer ' + props.auth_store
+          'Authorization': 'Bearer ' + props.token
         },
       })
       .then(res => {
@@ -38,7 +38,11 @@ function Search(props) {
           <button onClick={() => {clickSearch()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
       </div>
 
-      <TrackHeader tracks={tracks}/>
+      <TrackHeader
+        tracks={tracks}
+        fav_tracks={props.fav_tracks}
+        set_fav_tracks={props.set_fav_tracks}
+      />
 
     </>
   );

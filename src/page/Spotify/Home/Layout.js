@@ -5,52 +5,67 @@ import Search from '../Search/Search';
 import Favorite from '../Favorite/Favorite';
 import PlaylistAll from '../Playlist/PlaylistAll';
 
-import {
-  useAuthContext
-} from '../../../contexts/AuthContext';
-
 function Layout() {
 
   const [view, set_view] = useState("home");
-  const { auth_store, dispatch_auth } = useAuthContext();
+  
+  const [token, set_token] = useState(null);
+  const [user, set_user] = useState(null);
+  const [fav_tracks, set_fav_tracks] = useState([]);
 
   let menu_list = [
     {
     name: "home",
     text: "Home",
     icon: "fa-home",
-    page: <Login/>
+    page: <Login
+            token={token}
+            set_token={set_token}
+            user={user}
+            set_user={set_user}
+          />
     },
   ];
 
-  if(auth_store){
+  if(token){
     menu_list = [
       {
       name: "home",
       text: "Home",
       icon: "fa-home",
-      page: <Login/>
+      page: <Login
+              token={token}
+              set_token={set_token}
+              user={user}
+              set_user={set_user}
+            />
       },
       {
       name: "search",
       text: "Search",
       icon: "fa-search",
       page: <Search
-              auth_store={auth_store}
+              token={token}
+              fav_tracks={fav_tracks}
+              set_fav_tracks={set_fav_tracks}
             />
       },
       {
       name: "favorite",
       text: "Favorite",
       icon: "fa-heart",
-      page: <Favorite/>
+      page: <Favorite
+              fav_tracks={fav_tracks}
+              set_fav_tracks={set_fav_tracks}
+            />
       },
       {
         name: "playlistall",
         text: "Playlists",
         icon: "fa-headphones-alt",
         page: <PlaylistAll
-                auth_store={auth_store}
+                token={token}
+                user={user}
               />
       },
     ];
@@ -66,7 +81,7 @@ function Layout() {
 
       <div className="p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
         <Menu
-          auth_store={auth_store}
+          token={token}
           view={view}
           set_view={set_view}
           menu_list={menu_list}

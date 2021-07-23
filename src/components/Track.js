@@ -1,33 +1,27 @@
 import React, {useState} from 'react';
-import {
-    useTrackContext,
-    addTrack,
-    removeTrack
-  } from '../contexts/TrackContext';
 
 function Track(props) {
 
     let durasi_menit = Number((props.duration/60000).toFixed(0));
     let durasi_detik = Number(((props.duration%60000)/1000).toFixed(0));
     if (durasi_detik<10) durasi_detik = `0${durasi_detik}`;
-
-    const { track_store, dispatch_track } = useTrackContext();
+    
     const [isfav, set_isfav] = useState(
-        (track_store.filter( item => { return item.id === props.data.id}).length === 0) ? false : true
+        (props.fav_tracks.filter( item => { return item.id === props.data.id}).length === 0) ? false : true
     );
 
     const handleClick = () => {
-        if (track_store.filter( item => { return item.id === props.data.id}).length === 0){
-            dispatch_track(addTrack(props.data));
+        if (props.fav_tracks.filter( item => { return item.id === props.data.id}).length === 0){
+            props.set_fav_tracks([...props.fav_tracks, props.data]);
         }
         else {
-            let item = track_store.filter( item => { return item.id === props.data.id})[0];
-            let index = track_store.indexOf(item);
-            console.log("Hapus: "+index);
-            dispatch_track(removeTrack(index));
+            let item = props.fav_tracks.filter( item => { return item.id === props.data.id})[0];
+            let index = props.fav_tracks.indexOf(item);
+            const copy = [...props.fav_tracks];
+            copy.splice(index, 1);
+            props.set_fav_tracks(copy);
         }
         set_isfav(!isfav);
-        console.log("Is Fav?: " + isfav);
     }
 
     function Heart() {

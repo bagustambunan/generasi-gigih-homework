@@ -12,7 +12,7 @@ function PlaylistAll(props) {
           let url = 'https://api.spotify.com/v1/me/playlists';
           await axios.get(url, {
             headers: {
-              'Authorization': 'Bearer ' + props.auth_store
+              'Authorization': 'Bearer ' + props.token
             },
           })
           .then(res => {

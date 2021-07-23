@@ -1,22 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {
-    useAuthContext,
-    addAuth,
-    clearAuth
-} from '../../../contexts/AuthContext';
-
-import {
-    useUserContext,
-    addUser,
-    clearUser
-} from '../../../contexts/UserContext';
-
 const axios = require('axios');
 
-function Login() {
-
-    const { auth_store, dispatch_auth } = useAuthContext();
-    const { user_store, dispatch_user } = useUserContext();
+function Login(props) {
 
     function LoginButton() {
 
@@ -47,7 +32,11 @@ function Login() {
             <div className="w-full grid justify-center align-middle">
                 <div
                     className="bg-red-600 hover:bg-gray-600 w-60 rounded-full text-white font-medium px-1 py-1 flex cursor-pointer justify-center align-middle"
-                    onClick={() => {dispatch_auth(clearAuth); window.location = 'http://localhost:3000'; }}>
+                    onClick={() => {
+                        props.set_token(null);
+                        props.set_user(null);
+                        window.location = 'http://localhost:3000';
+                }}>
                     <a className="my-1">LOGOUT</a>
                 </div>
             </div>
@@ -59,11 +48,11 @@ function Login() {
           let url = 'https://api.spotify.com/v1/me';
           await axios.get(url, {
             headers: {
-              'Authorization': 'Bearer ' + auth_store
+              'Authorization': 'Bearer ' + props.token
             },
           })
           .then(res => {
-            dispatch_user(addUser(res.data));
+            props.set_user(res.data);
           })
         } catch (err) {
           console.error(err);
@@ -81,26 +70,31 @@ function Login() {
     }
 
     useEffect(() => {
-        if(getHashParams().access_token){
-          let params = getHashParams()
-          let token = params.access_token;
-          dispatch_auth(addAuth(token));
+        if(!props.token){
+            if(getHashParams().access_token){
+            let params = getHashParams()
+            let access_token = params.access_token;
+            props.set_token(access_token);
+            }
         }
-        getUserInfo();
+        if(!props.user){
+            getUserInfo();
+        }
+        // console.log(props.user);
     });
 
     return (
         <>
 
-            {(!auth_store) && (
+            {(!props.token) && (
                 <LoginButton/>
             )}
 
-            {(auth_store && user_store) && (
+            {(props.token && props.user) && (
                 <>
-                    <a className="text-xl text-white">Halo, {user_store.display_name}</a>
+                    <a className="text-xl text-white">Halo, {props.user.display_name}</a>
                     <br/><br/>
-                    <a className="text-sm text-white">{auth_store}</a>
+                    <a className="text-sm text-white">{props.token}</a>
                     <br/><br/>
                     <LogoutButton/>
                 </>

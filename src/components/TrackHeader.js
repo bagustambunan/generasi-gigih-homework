@@ -28,7 +28,7 @@ function TrackHeader(props) {
     }
 
     return (
-    <>
+    <div className="w-10/12">
         {(props.tracks.length != 0) && (
             <Header/>
         )}
@@ -43,11 +43,13 @@ function TrackHeader(props) {
                 album_name={item.album.name}
                 duration={item.duration_ms}
                 data={item}
+                fav_tracks={props.fav_tracks}
+                set_fav_tracks={props.set_fav_tracks}
               />
             );
         })}
 
-    </>
+    </div>
     );
 }
 
