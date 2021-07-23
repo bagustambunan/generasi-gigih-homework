@@ -68,7 +68,7 @@ function Login() {
         } catch (err) {
           console.error(err);
         }
-      }
+    }
 
     function getHashParams() {
         let hashParams = {};

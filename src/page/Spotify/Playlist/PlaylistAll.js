@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Playlist from '../../../components/Playlist';
 const axios = require('axios');
 
 function PlaylistAll(props) {
@@ -34,13 +35,18 @@ function PlaylistAll(props) {
 
         <a className="text-lg text-white">All Playlists Here</a>
 
-        {playlists.map((item, i) => {
-            return (
-                <div>
-                    <a className="text-white">{item.name}</a>
-                </div>
-            );
-        })}
+        <div className="flex flex-wrap">
+            {playlists.map((item, i) => {
+                return (
+                    <Playlist
+                        key={item.id}
+                        image={item.images[0].url}
+                        name={item.name}
+                        desc={item.description}
+                    />
+                );
+            })}
+        </div>
 
         </>
     );
