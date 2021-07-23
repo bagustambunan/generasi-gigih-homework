@@ -21,7 +21,7 @@ function Login() {
     function LoginButton() {
 
         let client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-        let scope = 'playlist-modify-private user-read-private';
+        let scope = 'playlist-modify-private user-read-private playlist-read-private playlist-read-collaborative';
         let redirect_uri = 'http://localhost:3000';
 
         let spotify_url = 'https://accounts.spotify.com/authorize';
@@ -87,8 +87,6 @@ function Login() {
           dispatch_auth(addAuth(token));
         }
         getUserInfo();
-        console.log("User: ");
-        console.log(user_store);
     });
 
     return (
