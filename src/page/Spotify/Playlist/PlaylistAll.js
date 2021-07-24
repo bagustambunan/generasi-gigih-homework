@@ -73,7 +73,7 @@ function PlaylistAll(props) {
 
         <div className="flex flex-wrap">
             {playlists.map((item, i) => {
-                let image="https://i.kinja-img.com/gawker-media/image/upload/s--uBGFrs9r--/c_scale,f_auto,fl_progressive,q_80,w_800/msfgxy64htxbaki9up4e.png"
+                let image="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                 if(item.images[0]){
                   image = item.images[0].url;
                 }
