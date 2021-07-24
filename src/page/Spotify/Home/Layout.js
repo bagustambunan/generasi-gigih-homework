@@ -53,17 +53,17 @@ function Layout() {
               set_track_id={set_track_id}
             />
       },
-      // {
-      // name: "favorite",
-      // text: "Favorite",
-      // icon: "fa-heart",
-      // page: <Favorite
-      //         fav_tracks={fav_tracks}
-      //         set_fav_tracks={set_fav_tracks}
-      //         track_id={track_id}
-      //         set_track_id={set_track_id}
-      //       />
-      // },
+      {
+      name: "favorite",
+      text: "Favorite",
+      icon: "fa-heart",
+      page: <Favorite
+              fav_tracks={fav_tracks}
+              set_fav_tracks={set_fav_tracks}
+              track_id={track_id}
+              set_track_id={set_track_id}
+            />
+      },
       {
         name: "playlists",
         text: "Playlists",

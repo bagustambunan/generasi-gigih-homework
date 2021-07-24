@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import Track from './Track';
-import AddToPlaylist from '../page/Spotify/Playlist/AddToPlaylist';
 
 function PlaylistHeader(props) {
 
-    const [show_add_modal, set_show_add_modal] = useState(false);
     const [selected_track, set_selected_track] = useState(null);
 
     function TesTombol(){
@@ -38,10 +36,6 @@ function PlaylistHeader(props) {
                 <i className="text-gray-300 text-sm far fa-clock"></i>
             </div>
 
-            <div className="w-12 p-2">
-            <a className="text-gray-300 text-sm">PLAYLIST</a>
-            </div>
-
         </div>
         )
     }
@@ -50,14 +44,6 @@ function PlaylistHeader(props) {
     <div className="w-11/12">
         {(props.tracks.length != 0) && (
             <Header/>
-        )}
-
-        {(show_add_modal) && (
-          <AddToPlaylist
-            token={props.token}
-            selected_track={selected_track}
-            set_show_add_modal={set_show_add_modal}
-          />
         )}
 
         {props.tracks.map((item, i) => {
@@ -72,8 +58,9 @@ function PlaylistHeader(props) {
                 data={item.track}
                 fav_tracks={props.fav_tracks}
                 set_fav_tracks={props.set_fav_tracks}
-                set_show_add_modal={set_show_add_modal}
                 set_selected_track={set_selected_track}
+                track_id={props.track_id}
+                set_track_id={props.set_track_id}
               />
             );
         })}

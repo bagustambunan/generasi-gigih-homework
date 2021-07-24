@@ -6,7 +6,7 @@ function Playlist(props) {
         <>
 
         <div onClick={() => {
-            props.set_view("detail");
+            props.set_view("playlistdetail");
             props.set_playlist_id(props.id);
             // console.log(props.id);
         }}
