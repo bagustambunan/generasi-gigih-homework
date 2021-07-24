@@ -3,29 +3,38 @@ const axios = require('axios');
 
 function NewForm(props) {
 
-    const [form_title, set_form_title] = useState("Dari pagi");
-    const [form_desc, set_form_desc] = useState("Sampai malam");
+    const [form_title, set_form_title] = useState("");
+    const [form_desc, set_form_desc] = useState("");
 
-    async function doSearch() {
-        try {
-            let url = "https://api.spotify.com/v1/users/"+ props.user.id +"/playlists";
-            await axios.post(url, 
-                {
-                    name: form_title,
-                    description: form_desc,
-                    public: 'false',
-                    collaborative: 'false'
-                },
-                {
-                    headers: {
-                    'Authorization': 'Bearer ' + props.token
+    async function doCreate() {
+        if(form_title.length < 10){
+            alert("Title must be at least 10 characters");
+        }
+        else if(form_desc < 20) {
+            alert("Description must be at least 20 characters");
+        }
+        else{
+            try {
+                let url = "https://api.spotify.com/v1/users/"+ props.user.id +"/playlists";
+                await axios.post(url, 
+                    {
+                        name: form_title,
+                        description: form_desc,
+                        public: 'false',
+                        collaborative: 'false'
+                    },
+                    {
+                        headers: {
+                        'Authorization': 'Bearer ' + props.token
+                        }
                     }
-                }
-            )
-        } catch (err) {
-            console.error(err);
-        } finally{
-            alert("A new playlist created succesfully");
+                )
+            } catch (err) {
+                console.error(err);
+            } finally{
+                alert("A new playlist created succesfully");
+                props.set_view("playlistall");
+            }
         }
     }
         
@@ -43,7 +52,9 @@ function NewForm(props) {
                 <input
                     onChange={(event) => {set_form_title(event.target.value)}}
                     value={form_title}
-                    className="bg-gray-600 text-gray-100 py-1 px-3 rounded w-80"
+                    minlength="10"
+                    required
+                    className="bg-gray-600 text-gray-100 py-1 px-3 rounded w-5/12"
                     type="text" placeholder="Title...">
                 </input>
             </div>
@@ -51,12 +62,14 @@ function NewForm(props) {
                 <textarea
                     onChange={(event) => {set_form_desc(event.target.value)}}
                     value={form_desc}
-                    className="bg-gray-600 text-gray-100 py-1 px-3 rounded w-80"
+                    minlength="20"
+                    required
+                    className="bg-gray-600 text-gray-100 py-1 px-3 rounded w-5/12 h-24"
                     placeholder="Description..."
                 ></textarea>
             </div>
             <div>
-                <button onClick={() => {doSearch()}} type="button" className="justify-center rounded px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700">
+                <button onClick={() => {doCreate()}} type="button" className="justify-center rounded px-4 py-2 bg-sptf hover:bg-gray-600 text-base font-medium text-white">
                 Submit
                 </button>
             </div>

@@ -45,6 +45,7 @@ function AddToPlaylist(props){
                 console.error(err);
             } finally{
                 alert("Track added to playlist successfully");
+                props.set_show_add_modal(false);
             }
         }
     }
@@ -87,7 +88,7 @@ function AddToPlaylist(props){
                         </div>
                     </div>
                     <div className="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button onClick={() => {doAdd()}} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:ml-3 sm:w-auto sm:text-sm">
+                        <button onClick={() => {doAdd()}} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-sptf hover:bg-gray-600 text-base font-medium text-white sm:ml-3 sm:w-auto sm:text-sm">
                         Done
                         </button>
                         <button onClick={() => {props.set_show_add_modal(false)}} type="button" className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">

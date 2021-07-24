@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Playlist from '../../../components/Playlist';
-import NewForm from './NewForm';
 const axios = require('axios');
 
 function PlaylistAll(props) {
@@ -61,14 +60,6 @@ function PlaylistAll(props) {
             <AddButton/>
           </div>
         </div>
-
-        {(show_form) && (
-          <NewForm
-            token={props.token}
-            user={props.user}
-            set_show_form={set_show_form}
-          />
-        )}
         
 
         <div className="flex flex-wrap">
