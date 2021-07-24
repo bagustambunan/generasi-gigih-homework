@@ -30,7 +30,7 @@ function TrackHeader(props) {
     }
 
     return (
-    <div className="w-11/12">
+    <div className="w-10/12">
         {(props.tracks.length != 0) && (
             <Header/>
         )}

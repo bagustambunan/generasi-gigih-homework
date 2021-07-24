@@ -82,6 +82,7 @@ function PlaylistDetail(props) {
                         set_fav_tracks={props.set_fav_tracks}
                         track_id={props.track_id}
                         set_track_id={props.set_track_id}
+                        set_view={props.set_view}
                     />
                 )}
             

@@ -5,17 +5,6 @@ function PlaylistHeader(props) {
 
     const [selected_track, set_selected_track] = useState(null);
 
-    function TesTombol(){
-        return(
-            <a
-                onClick={() => {
-                    console.log(props.tracks[0].track);
-                }}
-                className="cursor-pointer text-white bg-blue-500 p-2 rounded-lg">
-            Tes tombol</a>
-        )
-    }
-
     function Header() {
         return(
         <div className="flex flex-wrap border-b mb-3">
@@ -41,7 +30,7 @@ function PlaylistHeader(props) {
     }
 
     return (
-    <div className="w-11/12">
+    <div className="w-10/12">
         {(props.tracks.length != 0) && (
             <Header/>
         )}
@@ -61,6 +50,7 @@ function PlaylistHeader(props) {
                 set_selected_track={set_selected_track}
                 track_id={props.track_id}
                 set_track_id={props.set_track_id}
+                set_view={props.set_view}
               />
             );
         })}

@@ -28,7 +28,7 @@ function PlaylistPage(props) {
                 />
             )}
 
-            {(view==="playlistdetaildetail") && (
+            {(view==="playlistdetail") && (
                 <PlaylistDetail
                     set_view={set_view}
                     token={props.token}
@@ -38,6 +38,7 @@ function PlaylistPage(props) {
                     set_fav_tracks={props.set_fav_tracks}
                     track_id={props.track_id}
                     set_track_id={props.set_track_id}
+                    set_view={set_view}
                 />
             )}
 
