@@ -24,8 +24,8 @@ function AddToPlaylist(props){
     }
 
     async function doAdd() {
-        console.log(selected_playlist_id);
-        console.log(props.selected_track.uri);
+        // console.log(selected_playlist_id);
+        // console.log(props.selected_track.uri);
         if(selected_playlist_id){
             try {
                 let url = "https://api.spotify.com/v1/playlists/"+selected_playlist_id+"/tracks?uris="+props.selected_track.uri;
@@ -44,7 +44,7 @@ function AddToPlaylist(props){
             } catch (err) {
                 console.error(err);
             } finally{
-                // alert("Track added to playlist successfully");
+                alert("Track added to playlist successfully");
             }
         }
     }

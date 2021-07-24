@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Menu from '../../../components/Menu';
-import Login from './Login';
+import Home from './Home';
 import Favorite from '../Favorite/Favorite';
 import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
@@ -19,7 +19,7 @@ function Layout() {
     name: "home",
     text: "Home",
     icon: "fa-home",
-    page: <Login
+    page: <Home
             token={token}
             set_token={set_token}
             user={user}
@@ -34,7 +34,7 @@ function Layout() {
       name: "home",
       text: "Home",
       icon: "fa-home",
-      page: <Login
+      page: <Home
               token={token}
               set_token={set_token}
               user={user}
@@ -53,17 +53,17 @@ function Layout() {
               set_track_id={set_track_id}
             />
       },
-      {
-      name: "favorite",
-      text: "Favorite",
-      icon: "fa-heart",
-      page: <Favorite
-              fav_tracks={fav_tracks}
-              set_fav_tracks={set_fav_tracks}
-              track_id={track_id}
-              set_track_id={set_track_id}
-            />
-      },
+      // {
+      // name: "favorite",
+      // text: "Favorite",
+      // icon: "fa-heart",
+      // page: <Favorite
+      //         fav_tracks={fav_tracks}
+      //         set_fav_tracks={set_fav_tracks}
+      //         track_id={track_id}
+      //         set_track_id={set_track_id}
+      //       />
+      // },
       {
         name: "playlists",
         text: "Playlists",

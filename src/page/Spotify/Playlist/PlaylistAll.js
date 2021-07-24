@@ -12,7 +12,7 @@ function PlaylistAll(props) {
 
       function handleAddButton(){
         props.set_view("newplaylist");
-        console.log(playlists);
+        // console.log(playlists);
       }
 
       return(

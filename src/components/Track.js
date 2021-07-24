@@ -55,7 +55,7 @@ function Track(props) {
       className="cursor-pointer flex flex-wrap rounded-lg hover:bg-sptf_card_hover">
 
         <div className="w-16 pb-2 pr-2 pl-2 pt-4 text-center">
-          <Heart/>
+          {/* <Heart/> */}
         </div>
 
         <div className="p-2">

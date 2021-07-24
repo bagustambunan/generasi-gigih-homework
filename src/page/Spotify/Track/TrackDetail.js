@@ -27,7 +27,7 @@ function TrackDetail(props) {
 
     useEffect(() => {
         getTrackInfo();
-        console.log(selected_track);
+        // console.log(selected_track);
     }, []);
 
     function TesTombol(){
@@ -88,22 +88,23 @@ function TrackDetail(props) {
                     />
                 )}
 
-                <div className="flex flex-wrap w-9/12 my-10">
-                    <div className="w-3/12 p-5">
-                        <img src={selected_track.album.images[0].url} title={selected_track.name} alt="{props.album_name}" className="object-cover rounded w-full"/>
+                <div className="flex flex-wrap mt-10">
+                    <div className="p-5">
+                        <img src={selected_track.album.images[0].url} title={selected_track.name} alt="{props.album_name}" className="object-cover rounded w-52 h-52"/>
                     </div>
-                    <div className="w-9/12 p-5">
-                        <div className="mb-2">
-                            <a className="text-lg text-white font-bold">{selected_track.name}</a>
-                        </div>
-                        <div className="mb-5">
-                            <a className="text-base text-gray-300">{selected_track.album.artists[0].name}</a>
-                        </div>
-                        <div className="flex flex-wrap">
-                            <PlayButton/><AddToPlaylistButton/>
-                        </div>
+                </div>
+
+                <div className="p-5">
+                    <div className="mb-5">
+                        <a className="text-7xl text-white font-bold">{selected_track.name}</a>
                     </div>
-                    
+                    <div className="">
+                        <a className="text-base text-gray-300">{selected_track.album.artists[0].name}</a>
+                    </div>
+                </div>
+
+                <div className="flex flex-wrap pl-5 mt-5">
+                    <PlayButton/><AddToPlaylistButton/>
                 </div>
             
             </>
