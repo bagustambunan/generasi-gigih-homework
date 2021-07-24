@@ -5,7 +5,7 @@ const axios = require('axios');
 
 function SearchForm(props) {
 
-  const [query, set_query] = useState('Learn to rock');
+  const [query, set_query] = useState('Night');
   const [tracks, set_tracks] = useState([]);
 
   async function clickSearch() {

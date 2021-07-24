@@ -27,14 +27,18 @@ function Track(props) {
     function Heart() {
       if(isfav) {
         return (
-          <div className="cursor-pointer" onClick= {() => {doFav()}}>
+          <div className="cursor-pointer"
+            // onClick= {() => {doFav()}}
+          >
             <i className="text-xl text-red-500 fas fa-heart"></i>
           </div>
         )
       }
       else {
         return (
-          <div className="cursor-pointer" onClick= {() => {doFav()}}>
+          <div className="cursor-pointer"
+            // onClick= {() => {doFav()}}
+          >
             <i className="text-xl text-gray-500 far fa-heart hover:text-gray-100"></i>
           </div>
         )
@@ -43,11 +47,12 @@ function Track(props) {
 
     return (
     <div
-    onClick= {() => {
-      props.set_view("trackdetail");
-      props.set_track_id(props.data.id);
-    }}
-    className="cursor-pointer flex flex-wrap rounded-lg hover:bg-sptf_card_hover">
+      href="#"
+      onClick= {() => {
+          props.set_view("trackdetail");
+          props.set_track_id(props.data.id);
+        }}
+      className="cursor-pointer flex flex-wrap rounded-lg hover:bg-sptf_card_hover">
 
         <div className="w-16 pb-2 pr-2 pl-2 pt-4 text-center">
           <Heart/>

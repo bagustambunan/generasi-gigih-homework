@@ -4,6 +4,7 @@ const axios = require('axios');
 function AddToPlaylist(props){
 
     const [playlists, set_playlists] = useState([]);
+    const [selected_playlist_id, set_selected_playlist_id] = useState(null);
 
     async function getPlaylists() {
         try {
@@ -17,6 +18,34 @@ function AddToPlaylist(props){
           })
         } catch (err) {
           console.error(err);
+        } finally{
+            // set_selected_playlist_id(playlists[0].id);
+        }
+    }
+
+    async function doAdd() {
+        console.log(selected_playlist_id);
+        console.log(props.selected_track.uri);
+        if(selected_playlist_id){
+            try {
+                let url = "https://api.spotify.com/v1/playlists/"+selected_playlist_id+"/tracks?uris="+props.selected_track.uri;
+                await axios.post(url, 
+                    {
+                        // uris: props.selected_track.uri,
+                    },
+                    {
+                        headers: {
+                            'Authorization': 'Bearer ' + props.token,
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                        }
+                    }
+                )
+            } catch (err) {
+                console.error(err);
+            } finally{
+                // alert("Track added to playlist successfully");
+            }
         }
     }
 
@@ -39,17 +68,15 @@ function AddToPlaylist(props){
                             Add track to playlist
                             </h3>
                             <div className="mt-2">
-                                
-                            <input
-                                value={props.selected_track.name}
-                                className="bg-gray-600 text-gray-100 py-1 px-3 rounded w-80 mb-2"
-                                type="text" disabled>
-                            </input>
 
-                            <select className="bg-gray-600 text-gray-100 py-1 px-3 rounded w-80">
+                            <select
+                                onChange={(event) => {set_selected_playlist_id(event.target.value)}}
+                                className="bg-gray-600 text-gray-100 py-3 px-3 rounded w-80"
+                                >
+                                <option value="" disabled selected>Select a playlist</option>
                                 {playlists.map((item, i) => {
                                     return (
-                                    <option>{item.name}</option>
+                                        <option value={item.id}>{item.name}</option>
                                     );
                                 })}
                             </select>
@@ -60,7 +87,7 @@ function AddToPlaylist(props){
                         </div>
                     </div>
                     <div className="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:ml-3 sm:w-auto sm:text-sm">
+                        <button onClick={() => {doAdd()}} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:ml-3 sm:w-auto sm:text-sm">
                         Done
                         </button>
                         <button onClick={() => {props.set_show_add_modal(false)}} type="button" className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">

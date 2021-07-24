@@ -24,6 +24,8 @@ function NewForm(props) {
             )
         } catch (err) {
             console.error(err);
+        } finally{
+            alert("A new playlist created succesfully");
         }
     }
         
