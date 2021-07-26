@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectToken } from '../../../redux/tokenSlice';
+import { selectSelectedTrack } from '../../../redux/selectedTrackSlice';
 
 const axios = require('axios');
 
 function AddToPlaylist(props){
 
-    const dispatch = useDispatch();
     const token = useSelector(selectToken);
+    const selecedTrack = useSelector(selectSelectedTrack);
 
     const [playlists, set_playlists] = useState([]);
     const [selected_playlist_id, set_selected_playlist_id] = useState(null);
@@ -26,19 +27,16 @@ function AddToPlaylist(props){
         } catch (err) {
           console.error(err);
         } finally{
-            // set_selected_playlist_id(playlists[0].id);
         }
     }
 
     async function doAdd() {
-        // console.log(selected_playlist_id);
-        // console.log(props.selected_track.uri);
         if(selected_playlist_id){
             try {
-                let url = "https://api.spotify.com/v1/playlists/"+selected_playlist_id+"/tracks?uris="+props.selected_track.uri;
+                let url = "https://api.spotify.com/v1/playlists/"+selected_playlist_id+"/tracks?uris="+selecedTrack.uri;
                 await axios.post(url, 
                     {
-                        // uris: props.selected_track.uri,
+                        
                     },
                     {
                         headers: {

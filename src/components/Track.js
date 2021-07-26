@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { updateSelectedTrack } from '../redux/selectedTrackSlice';
+
 function Track(props) {
+
+    const dispatch = useDispatch();
 
     let durasi_menit = Number((props.duration/60000).toFixed(0));
     let durasi_detik = Number(((props.duration%60000)/1000).toFixed(0));
@@ -11,7 +16,7 @@ function Track(props) {
       href="#"
       onClick= {() => {
           props.set_view("trackdetail");
-          props.set_track_id(props.data.id);
+          dispatch(updateSelectedTrack(props.data));
         }}
       className="cursor-pointer flex flex-wrap rounded-lg hover:bg-sptf_card_hover">
 

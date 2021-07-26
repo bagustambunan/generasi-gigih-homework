@@ -28,17 +28,12 @@ function PlaylistPage(props) {
                 <PlaylistDetail
                     set_view={set_view}
                     playlist_id={playlist_id}
-                    track_id={props.track_id}
-                    set_track_id={props.set_track_id}
                     set_view={set_view}
                 />
             )}
 
             {(view==="trackdetail") && (
-                <TrackDetail
-                    track_id={props.track_id}
-                    set_track_id={props.set_track_id}
-                />
+                <TrackDetail/>
             )}
         
 
