@@ -3,13 +3,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { updateSelectedTrack } from '../redux/selectedTrackSlice';
 
+import { getDuration } from '../utils';
+
 function Track(props) {
 
     const dispatch = useDispatch();
-
-    let durasi_menit = Number((props.duration/60000).toFixed(0));
-    let durasi_detik = Number(((props.duration%60000)/1000).toFixed(0));
-    if (durasi_detik<10) durasi_detik = `0${durasi_detik}`;
 
     return (
     <div
@@ -42,7 +40,7 @@ function Track(props) {
         </div>
 
         <div className="w-24 p-2">
-            <a className="text-gray-300">{durasi_menit}:{durasi_detik}</a>
+            <a className="text-gray-300">{getDuration(props.duration)}</a>
         </div>
 
     </div>

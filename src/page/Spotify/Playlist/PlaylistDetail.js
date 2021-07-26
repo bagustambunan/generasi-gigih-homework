@@ -8,7 +8,6 @@ const axios = require('axios');
 
 function PlaylistDetail(props) {
 
-    const dispatch = useDispatch();
     const token = useSelector(selectToken);
 
     const [selected_playlist, set_selected_playlist] = useState([]);

@@ -4,6 +4,7 @@ import Home from './Home';
 import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
 import LoginPage from './LoginPage';
+import { getHashParams } from '../../../utils';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { updateToken, selectToken } from '../../../redux/tokenSlice';
@@ -19,7 +20,7 @@ function SpotifyPage() {
 
   const [view, set_view] = useState("home");
 
-  let menu_list = [
+  const menu_list = [
     {
       name: "home",
       text: "Home",
@@ -43,16 +44,6 @@ function SpotifyPage() {
   function Page() {
     const selected_page = menu_list.filter(item => item.name === view);
     return selected_page[0].page;
-  }
-
-  function getHashParams() {
-    let hashParams = {};
-    let e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = window.location.hash.substring(1);
-    while ( e = r.exec(q)) {
-        hashParams[e[1]] = decodeURIComponent(e[2]);
-    }
-    return hashParams;
   }
 
   async function getUserInfo() {
@@ -79,10 +70,11 @@ function SpotifyPage() {
         dispatch(updateToken(access_token));
         }
     }
-    if(!user){
-      getUserInfo();
-    }
   }, []);
+
+  useEffect(() => {
+    getUserInfo();
+  }, [token]);
 
   return (
     <>
