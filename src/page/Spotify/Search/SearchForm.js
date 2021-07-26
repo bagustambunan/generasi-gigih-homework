@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TrackHeader from '../../../components/TrackHeader';
 
 import { useSelector, useDispatch } from 'react-redux';
-import {
-    updateToken,
-    selectToken,
-  } from '../../../redux/tokenSlice';
+import { selectToken } from '../../../redux/tokenSlice';
 
 const axios = require('axios');
 

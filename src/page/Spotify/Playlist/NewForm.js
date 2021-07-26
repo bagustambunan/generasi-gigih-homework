@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import {
-    updateToken,
-    selectToken,
-  } from '../../../redux/tokenSlice';
+import { selectToken } from '../../../redux/tokenSlice';
+import { selectUser } from '../../../redux/userSlice';
 
 const axios = require('axios');
 
@@ -12,6 +10,7 @@ function NewForm(props) {
 
     const dispatch = useDispatch();
     const token = useSelector(selectToken);
+    const user = useSelector(selectUser);
 
     const [form_title, set_form_title] = useState("");
     const [form_desc, set_form_desc] = useState("");
@@ -25,7 +24,7 @@ function NewForm(props) {
         }
         else{
             try {
-                let url = "https://api.spotify.com/v1/users/"+ props.user.id +"/playlists";
+                let url = "https://api.spotify.com/v1/users/"+ user.id +"/playlists";
                 await axios.post(url, 
                     {
                         name: form_title,

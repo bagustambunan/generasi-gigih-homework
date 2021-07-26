@@ -14,7 +14,6 @@ function PlaylistPage(props) {
             {(view==="playlistall") && (
                 <PlaylistAll
                     set_view={set_view}
-                    user={props.user}
                     set_playlist_id={set_playlist_id}
                 />
             )}
@@ -22,14 +21,12 @@ function PlaylistPage(props) {
             {(view==="newplaylist") && (
                 <NewForm
                     set_view={set_view}
-                    user={props.user}
                 />
             )}
 
             {(view==="playlistdetail") && (
                 <PlaylistDetail
                     set_view={set_view}
-                    user={props.user}
                     playlist_id={playlist_id}
                     fav_tracks={props.fav_tracks}
                     set_fav_tracks={props.set_fav_tracks}

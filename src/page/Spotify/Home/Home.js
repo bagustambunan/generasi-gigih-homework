@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Welcome from './Welcome';
 
 import { useSelector, useDispatch } from 'react-redux';
-import {
-    updateToken,
-    selectToken,
-  } from '../../../redux/tokenSlice';
+import { updateToken, selectToken } from '../../../redux/tokenSlice';
+import { updateUser, selectUser } from '../../../redux/userSlice';
 
 const axios = require('axios');
 
@@ -13,6 +11,7 @@ function Home(props) {
 
     const dispatch = useDispatch();
     const token = useSelector(selectToken);
+    const user = useSelector(selectUser);
 
     function LogoutButton() {
         return (
@@ -20,7 +19,7 @@ function Home(props) {
                 className="border-2 border-red-600 hover:bg-red-600 rounded-full text-red-600 hover:text-white text-sm font-medium px-3 py-1 cursor-pointer"
                 onClick={() => {
                     dispatch(updateToken(null));
-                    props.set_user(null);
+                    dispatch(updateUser(null));
                     window.location = 'http://localhost:3000';
             }}>
                 <a className="my-1">LOGOUT</a>
@@ -32,10 +31,10 @@ function Home(props) {
         return(
             <div className="flex flex-wrap p-5 bg-sptf_card_hover rounded">
                 <div className="mr-5">
-                    <img src={props.user.images[0].url} title={props.user.display_name} alt="{props.album_name}" className="object-cover rounded-full w-16 h-16"/>
+                    <img src={user.images[0].url} title={user.display_name} alt="{props.album_name}" className="object-cover rounded-full w-16 h-16"/>
                 </div>
                 <div className="mr-5">
-                    <a className="text-lg font-bold text-white">{props.user.display_name}</a>
+                    <a className="text-lg font-bold text-white">{user.display_name}</a>
                 </div>
                 <div className="text-right">
                     <LogoutButton/>
@@ -49,11 +48,11 @@ function Home(props) {
           let url = 'https://api.spotify.com/v1/me';
           await axios.get(url, {
             headers: {
-              'Authorization': 'Bearer ' + props.token
+              'Authorization': 'Bearer ' + token
             },
           })
           .then(res => {
-            props.set_user(res.data);
+            dispatch(updateUser(res.data));
           })
         } catch (err) {
           console.error(err);
@@ -70,6 +69,17 @@ function Home(props) {
         return hashParams;
     }
 
+    function TesTombol(){
+        return(
+            <a
+                onClick={() => {
+                    console.log(user);
+                }}
+                className="cursor-pointer text-white bg-blue-500 p-2 rounded-lg">
+            Tes tombol</a>
+        )
+    }
+
     useEffect(() => {
         if(!token){
             if(getHashParams().access_token){
@@ -78,7 +88,7 @@ function Home(props) {
             dispatch(updateToken(access_token));
             }
         }
-        if(!props.user){
+        if(!user){
             getUserInfo();
         }
     }, []);
@@ -90,8 +100,9 @@ function Home(props) {
                 <Welcome/>
             )}
 
-            {(token && props.user) && (
+            {(token && user) && (
                 <UserCard/>
+                // <TesTombol/>
             )}
 
         </>
