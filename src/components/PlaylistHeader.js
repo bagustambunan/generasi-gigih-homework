@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Track from './Track';
 
 function PlaylistHeader(props) {
-
-    const [selected_track, set_selected_track] = useState(null);
 
     function Header() {
         return(
@@ -45,7 +43,6 @@ function PlaylistHeader(props) {
                 album_name={item.track.album.name}
                 duration={item.track.duration_ms}
                 data={item.track}
-                set_selected_track={set_selected_track}
                 set_view={props.set_view}
               />
             );

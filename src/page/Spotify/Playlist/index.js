@@ -4,7 +4,7 @@ import NewForm from './NewForm';
 import PlaylistDetail from './PlaylistDetail';
 import TrackDetail from '../Track/TrackDetail';
 
-function PlaylistPage(props) {
+function PlaylistPage() {
 
     const [view, set_view] = useState("playlistall");
     const [playlist_id, set_playlist_id] = useState(null);

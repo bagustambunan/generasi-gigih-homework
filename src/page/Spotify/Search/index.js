@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import SearchForm from './SearchForm';
 import TrackDetail from '../Track/TrackDetail';
 
-function SearchPage(props) {
+function SearchPage() {
 
     const [view, set_view] = useState("searchform");
         

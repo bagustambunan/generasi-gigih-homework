@@ -8,7 +8,6 @@ const axios = require('axios');
 
 function NewForm(props) {
 
-    const dispatch = useDispatch();
     const token = useSelector(selectToken);
     const user = useSelector(selectUser);
 
