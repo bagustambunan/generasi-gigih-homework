@@ -45,8 +45,6 @@ function PlaylistHeader(props) {
                 album_name={item.track.album.name}
                 duration={item.track.duration_ms}
                 data={item.track}
-                fav_tracks={props.fav_tracks}
-                set_fav_tracks={props.set_fav_tracks}
                 set_selected_track={set_selected_track}
                 track_id={props.track_id}
                 set_track_id={props.set_track_id}

@@ -83,8 +83,6 @@ function PlaylistDetail(props) {
                 {(selected_playlist.tracks.total!=0) && (
                     <PlaylistHeader
                         tracks={selected_playlist.tracks.items}
-                        fav_tracks={props.fav_tracks}
-                        set_fav_tracks={props.set_fav_tracks}
                         track_id={props.track_id}
                         set_track_id={props.set_track_id}
                         set_view={props.set_view}

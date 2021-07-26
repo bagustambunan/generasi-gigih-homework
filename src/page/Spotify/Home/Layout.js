@@ -13,7 +13,6 @@ function Layout() {
   const token = useSelector(selectToken);
 
   const [view, set_view] = useState("home");
-  const [fav_tracks, set_fav_tracks] = useState([]);
   const [track_id, set_track_id] = useState(null);
 
   let menu_list = [
@@ -38,8 +37,6 @@ function Layout() {
       text: "Search",
       icon: "fa-search",
       page: <SearchPage
-              fav_tracks={fav_tracks}
-              set_fav_tracks={set_fav_tracks}
               track_id={track_id}
               set_track_id={set_track_id}
             />
@@ -49,10 +46,6 @@ function Layout() {
         text: "Playlists",
         icon: "fa-headphones-alt",
         page: <PlaylistPage
-                fav_tracks={fav_tracks}
-                set_fav_tracks={set_fav_tracks}
-                fav_tracks={fav_tracks}
-                set_fav_tracks={set_fav_tracks}
                 track_id={track_id}
                 set_track_id={set_track_id}
               />
