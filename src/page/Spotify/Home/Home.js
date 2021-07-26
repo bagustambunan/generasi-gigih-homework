@@ -31,7 +31,7 @@ function Home(props) {
         return(
             <div className="flex flex-wrap p-5 bg-sptf_card_hover rounded">
                 <div className="mr-5">
-                    <img src={user.images[0].url} title={user.display_name} alt="{props.album_name}" className="object-cover rounded-full w-16 h-16"/>
+                    <img src={user.images[0].url} title={user.display_name} alt={user.display_name} className="object-cover rounded-full w-16 h-16"/>
                 </div>
                 <div className="mr-5">
                     <a className="text-lg font-bold text-white">{user.display_name}</a>

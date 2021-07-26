@@ -3,6 +3,7 @@ import TrackHeader from '../../../components/TrackHeader';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectToken } from '../../../redux/tokenSlice';
+import { updateQuery, selectQuery } from '../../../redux/querySlice';
 
 const axios = require('axios');
 
@@ -10,36 +11,38 @@ function SearchForm(props) {
 
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
+  const query = useSelector(selectQuery);
 
-  const [query, set_query] = useState('Twice');
+  const [val_q, set_val_q] = useState(query);
   const [tracks, set_tracks] = useState([]);
 
-  async function clickSearch() {
+  function handleChange(event){
+    set_val_q(event.target.value);
+  }
+
+  function handleSubmit(){
+    dispatch(updateQuery(val_q));
+  }
+
+  async function doSearch() {
     try {
-      // set_tracks([]);
       let url = 'https://api.spotify.com/v1/search?q='+query+'&type=track,artist';
       await axios.get(url, {
         headers: {
           'Authorization': 'Bearer ' + token
-        },
-        // params: {
-        //   q: query,
-        //   type: "tracks,artist"
-        // }
+        }
       })
       .then(res => {
         set_tracks(res.data.tracks.items);
       })
     } catch (err) {
       console.error(err);
-    } finally {
-      // console.log(tracks);
     }
   }
 
   useEffect(() => {
-    // clickSearch();
-  }, []);
+    if(query) doSearch();
+  }, [query]);
 
   return (
     <>
@@ -52,11 +55,11 @@ function SearchForm(props) {
 
       <div className="w-full">
           <input
-          onChange={(event) => {set_query(event.target.value)}}
-          value={query} type="text"
+          onChange={(event) => {handleChange(event)}}
+          value={val_q} type="text"
           className="bg-white px-2 py-1 rounded-bl rounded-tl w-64 mb-3"
           placeholder="Type anything..."></input>
-          <button onClick={() => {clickSearch()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
+          <button onClick={() => {handleSubmit()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
       </div>
 
       <TrackHeader
