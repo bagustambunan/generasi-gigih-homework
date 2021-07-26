@@ -1,7 +1,17 @@
 import React, {useState} from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    updateToken,
+    selectToken,
+  } from '../../../redux/tokenSlice';
+
 const axios = require('axios');
 
 function NewForm(props) {
+
+    const dispatch = useDispatch();
+    const token = useSelector(selectToken);
 
     const [form_title, set_form_title] = useState("");
     const [form_desc, set_form_desc] = useState("");
@@ -25,7 +35,7 @@ function NewForm(props) {
                     },
                     {
                         headers: {
-                        'Authorization': 'Bearer ' + props.token
+                        'Authorization': 'Bearer ' + token
                         }
                     }
                 )

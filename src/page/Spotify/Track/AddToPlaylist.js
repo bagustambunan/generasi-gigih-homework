@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    updateToken,
+    selectToken,
+  } from '../../../redux/tokenSlice';
+
 const axios = require('axios');
 
 function AddToPlaylist(props){
+
+    const dispatch = useDispatch();
+    const token = useSelector(selectToken);
 
     const [playlists, set_playlists] = useState([]);
     const [selected_playlist_id, set_selected_playlist_id] = useState(null);
@@ -10,7 +20,7 @@ function AddToPlaylist(props){
         try {
           await axios.get("https://api.spotify.com/v1/me/playlists?limit=10", {
             headers: {
-              'Authorization': 'Bearer ' + props.token
+              'Authorization': 'Bearer ' + token
             },
           })
           .then(res => {
@@ -35,7 +45,7 @@ function AddToPlaylist(props){
                     },
                     {
                         headers: {
-                            'Authorization': 'Bearer ' + props.token,
+                            'Authorization': 'Bearer ' + token,
                             'Content-Type': 'application/json',
                             'Accept': 'application/json',
                         }

@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import Welcome from './Welcome';
+
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    updateToken,
+    selectToken,
+  } from '../../../redux/tokenSlice';
+
 const axios = require('axios');
 
 function Home(props) {
 
-    //
+    const dispatch = useDispatch();
+    const token = useSelector(selectToken);
 
     function LogoutButton() {
         return (
             <div
                 className="border-2 border-red-600 hover:bg-red-600 rounded-full text-red-600 hover:text-white text-sm font-medium px-3 py-1 cursor-pointer"
                 onClick={() => {
-                    props.set_token(null);
+                    dispatch(updateToken(null));
                     props.set_user(null);
                     window.location = 'http://localhost:3000';
             }}>
@@ -62,45 +70,28 @@ function Home(props) {
         return hashParams;
     }
 
-    function TesTombol(){
-        return(
-            <a
-                onClick={() => {
-                    console.log(props.user);
-                }}
-                className="cursor-pointer text-white bg-blue-500 p-2 rounded-lg">
-            Tes tombol</a>
-        )
-    }
-
     useEffect(() => {
-        if(!props.token){
+        if(!token){
             if(getHashParams().access_token){
             let params = getHashParams()
             let access_token = params.access_token;
-            props.set_token(access_token);
+            dispatch(updateToken(access_token));
             }
         }
         if(!props.user){
             getUserInfo();
         }
-        // console.log(props.user);
     }, []);
 
     return (
         <>
 
-            {(!props.token) && (
+            {(!token) && (
                 <Welcome/>
             )}
 
-            {(props.token && props.user) && (
-                <>
-                    <UserCard/>
-                    {/* <br/><br/>
-                    <TesTombol/> */}
-                    
-                </>
+            {(token && props.user) && (
+                <UserCard/>
             )}
 
         </>

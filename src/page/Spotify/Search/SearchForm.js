@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import TrackHeader from '../../../components/TrackHeader';
 
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    updateToken,
+    selectToken,
+  } from '../../../redux/tokenSlice';
+
 const axios = require('axios');
 
 function SearchForm(props) {
+
+  const dispatch = useDispatch();
+  const token = useSelector(selectToken);
 
   const [query, set_query] = useState('Twice');
   const [tracks, set_tracks] = useState([]);
@@ -14,7 +23,7 @@ function SearchForm(props) {
       let url = 'https://api.spotify.com/v1/search?q='+query+'&type=track,artist';
       await axios.get(url, {
         headers: {
-          'Authorization': 'Bearer ' + props.token
+          'Authorization': 'Bearer ' + token
         },
         // params: {
         //   q: query,
@@ -54,7 +63,6 @@ function SearchForm(props) {
       </div>
 
       <TrackHeader
-        token={props.token}
         tracks={tracks}
         fav_tracks={props.fav_tracks}
         set_fav_tracks={props.set_fav_tracks}

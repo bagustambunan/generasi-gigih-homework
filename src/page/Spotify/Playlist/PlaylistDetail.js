@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import PlaylistHeader from '../../../components/PlaylistHeader';
 
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    updateToken,
+    selectToken,
+  } from '../../../redux/tokenSlice';
+
 const axios = require('axios');
 
 function PlaylistDetail(props) {
+
+    const dispatch = useDispatch();
+    const token = useSelector(selectToken);
 
     const [selected_playlist, set_selected_playlist] = useState([]);
     const [is_loading, set_is_loading] = useState(true);
@@ -13,7 +22,7 @@ function PlaylistDetail(props) {
             // set_is_loading(true);
             await axios.get("https://api.spotify.com/v1/playlists/" + props.playlist_id, {
             headers: {
-                'Authorization': 'Bearer ' + props.token
+                'Authorization': 'Bearer ' + token
             },
             })
             .then(res => {
@@ -76,7 +85,6 @@ function PlaylistDetail(props) {
 
                 {(selected_playlist.tracks.total!=0) && (
                     <PlaylistHeader
-                        token={props.token}
                         tracks={selected_playlist.tracks.items}
                         fav_tracks={props.fav_tracks}
                         set_fav_tracks={props.set_fav_tracks}

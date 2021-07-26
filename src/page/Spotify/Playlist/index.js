@@ -14,7 +14,6 @@ function PlaylistPage(props) {
             {(view==="playlistall") && (
                 <PlaylistAll
                     set_view={set_view}
-                    token={props.token}
                     user={props.user}
                     set_playlist_id={set_playlist_id}
                 />
@@ -23,7 +22,6 @@ function PlaylistPage(props) {
             {(view==="newplaylist") && (
                 <NewForm
                     set_view={set_view}
-                    token={props.token}
                     user={props.user}
                 />
             )}
@@ -31,7 +29,6 @@ function PlaylistPage(props) {
             {(view==="playlistdetail") && (
                 <PlaylistDetail
                     set_view={set_view}
-                    token={props.token}
                     user={props.user}
                     playlist_id={playlist_id}
                     fav_tracks={props.fav_tracks}
@@ -44,7 +41,6 @@ function PlaylistPage(props) {
 
             {(view==="trackdetail") && (
                 <TrackDetail
-                    token={props.token}
                     track_id={props.track_id}
                     set_track_id={props.set_track_id}
                 />
