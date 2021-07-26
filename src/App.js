@@ -1,6 +1,6 @@
 import './App.css';
 import "tailwindcss/tailwind.css"
-import SpotifyPage from './page/Spotify';
+import SpotifyPage from './page/Spotify/Base';
 
 function App() {
 
