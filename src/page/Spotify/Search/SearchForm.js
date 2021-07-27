@@ -57,7 +57,7 @@ function SearchForm(props) {
           <input
           onChange={(event) => {handleChange(event)}}
           value={val_q} type="text"
-          className="bg-white px-2 py-1 rounded-bl rounded-tl w-64 mb-3"
+          className="bg-gray-600 text-gray-100 px-2 py-1 rounded-bl rounded-tl w-64 mb-3"
           placeholder="Type anything..."></input>
           <button onClick={() => {handleSubmit()}} className="bg-sptf hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
       </div>
