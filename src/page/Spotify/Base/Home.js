@@ -12,15 +12,12 @@ function Home() {
 
     function LogoutButton() {
         return (
-            <div
-                className="border-2 border-red-600 hover:bg-red-600 rounded-full text-red-600 hover:text-white text-sm font-medium px-3 py-1 cursor-pointer"
-                onClick={() => {
-                    dispatch(removeToken());
-                    dispatch(removeUser());
-                    window.location = root_url;
-            }}>
-                <a className="my-1">LOGOUT</a>
-            </div>
+            <a
+                href="/logout"
+                className="my-1 border-2 border-red-600 hover:bg-red-600 rounded-full text-red-600 hover:text-white text-sm font-medium px-3 py-1 cursor-pointer"
+                >LOGOUT
+            </a>
+           
         );
     }
 

@@ -6,6 +6,7 @@ import SearchPage from '../Search';
 import LoginPage from './LoginPage';
 import NewForm from '../Playlist/NewForm';
 import { getHashParams } from '../../../utils';
+import { root_url } from '../../../values';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setToken, removeToken, selectToken } from '../../../redux/tokenSlice';
@@ -64,16 +65,14 @@ function SpotifyPage(props) {
   useEffect(() => {
     if(!token){
         if(getHashParams().access_token){
-        let params = getHashParams()
-        let access_token = params.access_token;
-        dispatch(setToken(access_token));
+          let params = getHashParams()
+          let access_token = params.access_token;
+          dispatch(setToken(access_token));
+          window.location = root_url;
         }
     }
-  }, []);
-
-  useEffect(() => {
     getUserInfo();
-  }, [token]);
+  }, []);
 
   return (
     <div className="bg-sptf_dark_main min-h-screen">
