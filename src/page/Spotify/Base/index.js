@@ -8,7 +8,7 @@ import { getHashParams } from '../../../utils';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setToken, removeToken, selectToken } from '../../../redux/tokenSlice';
-import { updateUser, selectUser } from '../../../redux/userSlice';
+import { setUser, selectUser } from '../../../redux/userSlice';
 
 const axios = require('axios');
 
@@ -55,7 +55,7 @@ function SpotifyPage() {
         },
       })
       .then(res => {
-        dispatch(updateUser(res.data));
+        dispatch(setUser(res.data));
       })
     } catch (err) {
       console.error(err);

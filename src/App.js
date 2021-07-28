@@ -1,15 +1,9 @@
 import './App.css';
 import "tailwindcss/tailwind.css"
-import SpotifyPage from './page/Spotify/Base';
+import AppRouter from './routes';
 
 function App() {
-
-  return (
-    <div className="bg-sptf_dark_main min-h-screen">
-      <SpotifyPage/>
-    </div>
-    
-  );
+  return <AppRouter/>;
 }
 
 export default App;

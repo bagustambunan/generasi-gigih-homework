@@ -3,7 +3,7 @@ import { root_url } from '../../../values';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setToken, removeToken } from '../../../redux/tokenSlice';
-import { updateUser, selectUser } from '../../../redux/userSlice';
+import { setUser, removeUser, selectUser } from '../../../redux/userSlice';
 
 function Home() {
 
@@ -16,6 +16,7 @@ function Home() {
                 className="border-2 border-red-600 hover:bg-red-600 rounded-full text-red-600 hover:text-white text-sm font-medium px-3 py-1 cursor-pointer"
                 onClick={() => {
                     dispatch(removeToken());
+                    dispatch(removeUser());
                     window.location = root_url;
             }}>
                 <a className="my-1">LOGOUT</a>
