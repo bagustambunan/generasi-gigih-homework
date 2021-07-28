@@ -16,8 +16,9 @@ function Menu(props) {
           return (
             <div className="mb-2 ">
               <a className={`text-lg font-medium mb-5 ${props.view===item.name ? "text-gray-100" : "text-gray-600 hover:text-sptf"}`}
-                href={`#${item.name}`} 
-                onClick={() => { props.set_view(item.name) }} >
+                href={`/${item.name}`} 
+                // onClick={() => { props.set_view(item.name) }}
+                >
                   <i className={`fa m-2 ${item.icon}`}></i>
                   {item.text}</a>
             </div>

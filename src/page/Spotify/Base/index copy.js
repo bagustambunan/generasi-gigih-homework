@@ -4,7 +4,6 @@ import Home from './Home';
 import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
 import LoginPage from './LoginPage';
-import NewForm from '../Playlist/NewForm';
 import { getHashParams } from '../../../utils';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -43,14 +42,8 @@ function SpotifyPage(props) {
   ];
 
   function Page() {
-    if(view==="new_playlist"){
-      return <NewForm/>;
-    }
-    else {
-      const selected_page = menu_list.filter(item => item.name === view);
-      return selected_page[0].page;
-    }
-    
+    const selected_page = menu_list.filter(item => item.name === view);
+    return selected_page[0].page;
   }
 
   async function getUserInfo() {

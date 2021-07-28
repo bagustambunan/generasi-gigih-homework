@@ -21,6 +21,7 @@ function LoginPage(){
     }
 
     return(
+        <div className="bg-sptf_dark_main min-h-screen">
         <center>
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
@@ -33,6 +34,7 @@ function LoginPage(){
                 </div>
             </center>
         </center>
+        </div>
     )
 
 }
