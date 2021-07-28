@@ -3,6 +3,7 @@ import tokenReducer from './tokenSlice';
 import userReducer from './userSlice';
 import queryReducer from './querySlice';
 import selectedTrackReducer from './selectedTrackSlice';
+import activeMenuReducer from './activeMenuSlice';
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     user: userReducer,
     query: queryReducer,
     selectedTrack: selectedTrackReducer,
+    activeMenu: activeMenuReducer,
   },
 });

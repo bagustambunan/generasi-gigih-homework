@@ -6,11 +6,11 @@ function AppRouter(){
 
     const route_list = [
         {
-            url: "/home",
+            url: "/",
             page: <SpotifyPage page="home"/>
         },
         {
-            url: "/",
+            url: "/home",
             page: <SpotifyPage page="home"/>
         },
         {

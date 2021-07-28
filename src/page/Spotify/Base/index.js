@@ -21,36 +21,28 @@ function SpotifyPage(props) {
 
   const [view, set_view] = useState(props.page);
 
-  const menu_list = [
+  const route_list = [
     {
-      name: "home",
-      text: "Home",
-      icon: "fa-home",
+      url: "home",
       page: <Home/>
     },
     {
-      name: "search",
-      text: "Search",
-      icon: "fa-search",
+      url: "search",
       page: <SearchPage/>
     },
     {
-      name: "playlists",
-      text: "Playlists",
-      icon: "fa-headphones-alt",
+      url: "playlists",
       page: <PlaylistPage/>
+    },
+    {
+      url: "new_playlist",
+      page: <NewForm/>
     },
   ];
 
   function Page() {
-    if(view==="new_playlist"){
-      return <NewForm/>;
-    }
-    else {
-      const selected_page = menu_list.filter(item => item.name === view);
-      return selected_page[0].page;
-    }
-    
+    const selected_page = route_list.filter(item => item.url === view);
+    return selected_page[0].page;
   }
 
   async function getUserInfo() {
@@ -93,11 +85,7 @@ function SpotifyPage(props) {
       {(token && user) && (
         <>
           <div className="p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
-            <Menu
-              view={view}
-              set_view={set_view}
-              menu_list={menu_list}
-            />
+            <Menu/>
           </div>
 
           <div className="w-full flex flex-wrap">
