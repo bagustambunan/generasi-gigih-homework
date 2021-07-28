@@ -7,7 +7,7 @@ import LoginPage from './LoginPage';
 import { getHashParams } from '../../../utils';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { updateToken, selectToken } from '../../../redux/tokenSlice';
+import { setToken, removeToken, selectToken } from '../../../redux/tokenSlice';
 import { updateUser, selectUser } from '../../../redux/userSlice';
 
 const axios = require('axios');
@@ -67,7 +67,7 @@ function SpotifyPage() {
         if(getHashParams().access_token){
         let params = getHashParams()
         let access_token = params.access_token;
-        dispatch(updateToken(access_token));
+        dispatch(setToken(access_token));
         }
     }
   }, []);
