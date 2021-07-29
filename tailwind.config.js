@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        me_primary: '#72BEEF',
+        me_primary: '#FA6791',
         me_main: '#F0F0F0',
         me_card: '#FFFFFF',
         me_card_hover: '#F8F8F8',

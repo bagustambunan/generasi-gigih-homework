@@ -3,12 +3,7 @@ import SpotifyPage from "../page/Spotify/Base";
 import LoginPage from "../page/Spotify/Base/LoginPage";
 import Logout from "../page/Spotify/Base/Logout";
 
-import { useSelector, useDispatch } from 'react-redux';
-import { setToken, removeToken, selectToken } from '../redux/tokenSlice';
-
 function AppRouter(){
-
-    const token = useSelector(selectToken);
 
     const route_list = [
         {

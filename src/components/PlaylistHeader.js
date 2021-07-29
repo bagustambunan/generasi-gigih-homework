@@ -6,7 +6,7 @@ function PlaylistHeader(props) {
 
     function Header() {
         return(
-        <div className="flex flex-wrap border-b mb-3">
+        <div className="flex flex-wrap border-b mb-5">
 
             <div className="w-12 p-2 mr-2">
             
@@ -29,12 +29,12 @@ function PlaylistHeader(props) {
     }
 
     return (
-    <div className="w-10/12">
+    <div className="ml-5 w-10/12">
         {(props.tracks.length != 0) && (
             <Header/>
         )}
 
-        <div className="overflow-scroll h-80 track_flow">
+        <div className="">
             {props.tracks.map((item, i) => {
                 return (
                 <Track

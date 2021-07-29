@@ -23,16 +23,20 @@ function Home() {
 
     function UserCard(){
         return(
-            <div className="flex flex-wrap p-5 bg-me_card rounded w-4/12">
-                <div className="mr-5">
-                    <img src={user.images[0].url} title={user.display_name} alt={user.display_name} className="object-cover rounded-full w-16 h-16"/>
+            <div className="p-5 bg-me_card shadow rounded w-4/12">
+                
+                <div className="flex flex-wrap">
+                    <div className="mr-5">
+                        <img src={user.images[0].url} title={user.display_name} alt={user.display_name} className="object-cover rounded-full w-16 h-16"/>
+                    </div>
+                    <div className="mr-5">
+                        <a className="text-lg font-bold text-me_dark_half">{user.display_name}</a>
+                    </div>
+                    <div className="text-right">
+                        <LogoutButton/>
+                    </div>
                 </div>
-                <div className="mr-5">
-                    <a className="text-lg font-bold text-white">{user.display_name}</a>
-                </div>
-                <div className="text-right">
-                    <LogoutButton/>
-                </div>
+                
             </div>
         )
     }

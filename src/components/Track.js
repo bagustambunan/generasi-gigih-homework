@@ -16,7 +16,7 @@ function Track(props) {
           props.set_view("trackdetail");
           dispatch(updateSelectedTrack(props.data));
         }}
-      className="cursor-pointer flex flex-wrap rounded-lg hover:bg-me_card_hover">
+      className="cursor-pointer flex flex-wrap rounded-lg hover:bg-me_main">
 
         <div className="p-2">
             <img src={props.image_url} title={props.album_name} alt="{props.album_name}" className="object-cover w-10 h-10"/>

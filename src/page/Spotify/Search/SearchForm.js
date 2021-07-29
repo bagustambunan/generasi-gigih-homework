@@ -20,8 +20,10 @@ function SearchForm(props) {
     set_val_q(event.target.value);
   }
 
-  function handleSubmit(){
-    dispatch(updateQuery(val_q));
+  function handleKeyPress(event){
+    if(event.key === 'Enter'){
+      dispatch(updateQuery(val_q));
+    }
   }
 
   async function doSearch() {
@@ -45,21 +47,18 @@ function SearchForm(props) {
   }, [query]);
 
   return (
-    <>
+    <div className="bg-me_card p-5 shadow rounded-lg">
 
-      <div className="flex flex-wrap w-10/12 my-10">
-        <div className="w-6/12">
-          <a className="text-2xl text-me_dark_half font-bold">Search tracks</a>
-        </div>
-      </div>
-
-      <div className="w-full">
-          <input
-          onChange={(event) => {handleChange(event)}}
-          value={val_q} type="text"
-          className="bg-me_card_hover text-gray-100 px-2 py-1 rounded-bl rounded-tl w-64 mb-3"
-          placeholder="Type anything..."></input>
-          <button onClick={() => {handleSubmit()}} className="bg-me_primary hover:bg-gray-600 px-2 py-1 mb-3 text-white rounded-br rounded-tr"><i className="fa fa-search"></i></button>
+      <div className="w-full mb-5">
+          <div className="bg-me_main text-me_dark_half px-5 py-2 rounded-full w-80">
+            <i className="fa fa-search mr-3"></i>
+            <input
+            onChange={(event) => {handleChange(event)}}
+            onKeyPress={(event) => {handleKeyPress(event)}}
+            value={val_q} type="text"
+            className="bg-transparent"
+            placeholder="Type anything..."></input>
+          </div>
       </div>
 
       <TrackHeader
@@ -67,7 +66,7 @@ function SearchForm(props) {
         set_view={props.set_view}
       />
 
-    </>
+    </div>
   );
 }
 

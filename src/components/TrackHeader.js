@@ -5,7 +5,7 @@ function TrackHeader(props) {
 
     function Header() {
         return(
-        <div className="flex flex-wrap border-b mb-3">
+        <div className="flex flex-wrap border-b mb-5">
 
             <div className="w-12 p-2 mr-2">
             
@@ -28,13 +28,14 @@ function TrackHeader(props) {
     }
 
     return (
-    <div className="w-10/12">
+    <div className="ml-5 w-10/12">
         {(props.tracks.length != 0) && (
             <Header/>
         )}
 
-        {props.tracks.map((item, i) => {
-            return (
+        <div className="">
+            {props.tracks.map((item, i) => {
+                return (
               <Track
                 key={item.id}
                 image_url={item.album.images[2].url}
@@ -45,8 +46,9 @@ function TrackHeader(props) {
                 data={item}
                 set_view={props.set_view}
               />
-            );
-        })}
+              );
+            })}
+        </div>
 
     </div>
     );

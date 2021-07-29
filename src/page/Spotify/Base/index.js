@@ -96,7 +96,7 @@ function SpotifyPage(props) {
               {/* <Menu/> */}
             </div>
 
-            <div className="p-5 w-10/12 border-red-600 flex flex-wrap">
+            <div className="p-5 w-10/12 mb-16">
               <div className="ml-5 w-full"><Page/></div>
             </div>
 
