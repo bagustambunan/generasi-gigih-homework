@@ -65,18 +65,18 @@ function AddToPlaylist(props){
 
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-                <div className="inline-block align-bottom bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div className="inline-block align-bottom bg-me_card rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                     <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div className="sm:flex sm:items-start">
                         <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <h3 className="text-lg leading-6 font-medium text-white mb-5" id="modal-title">
+                            <h3 className="text-lg leading-6 font-medium text-me_dark_half mb-5" id="modal-title">
                             Add track to playlist
                             </h3>
                             <div className="mt-2">
 
                             <select
                                 onChange={(event) => {set_selected_playlist_id(event.target.value)}}
-                                className="bg-gray-600 text-gray-100 py-3 px-3 rounded w-80"
+                                className="bg-me_main text-me_dark_quarter py-3 px-3 rounded w-80"
                                 >
                                 <option value="" disabled selected>Select a playlist</option>
                                 {playlists.map((item, i) => {

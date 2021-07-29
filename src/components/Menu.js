@@ -30,9 +30,9 @@ function Menu() {
   return (
     <div className="bg-me_card rounded-xl h-5/6 text-left shadow">
 
-      <div className="px-5 py-12">
+      <div className="px-5 py-10">
         <a href={root_url}>
-          <img src={public_url + '/img/spotify.png'} className="w-32" alt="logo"/>
+          <img src={public_url + '/img/logo.png'} className="w-32" alt="logo"/>
         </a>
       </div>
 

@@ -56,7 +56,7 @@ function SearchForm(props) {
             onChange={(event) => {handleChange(event)}}
             onKeyPress={(event) => {handleKeyPress(event)}}
             value={val_q} type="text"
-            className="bg-transparent"
+            className="bg-transparent w-10/12"
             placeholder="Type anything..."></input>
           </div>
       </div>

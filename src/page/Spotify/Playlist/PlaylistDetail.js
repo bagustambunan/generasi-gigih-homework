@@ -52,7 +52,7 @@ function PlaylistDetail(props) {
             )
         }
         else{
-            let image="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+            let image="https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216"
             if(selected_playlist.images[0]){
                 image = selected_playlist.images[0].url;
             }

@@ -59,11 +59,11 @@ function NewForm(props) {
     }
         
     return (
-        <>
+        <div className="bg-me_card p-5 shadow rounded-lg">
 
         <div className="flex flex-wrap w-10/12 my-10">
           <div className="w-6/12">
-            <a className="text-2xl text-white font-bold">Create new playlist</a>
+            <a className="text-2xl text-me_dark_half font-bold">Create new playlist</a>
           </div>
         </div>
 
@@ -75,7 +75,7 @@ function NewForm(props) {
                     value={form.title}
                     minlength="10"
                     required
-                    className="bg-me_card_hover text-gray-100 py-1 px-3 rounded w-5/12"
+                    className="bg-me_main text-me_dark_half py-1 px-3 rounded w-5/12"
                     type="text" placeholder="Title..."/>
             </div>
             <div>
@@ -85,7 +85,7 @@ function NewForm(props) {
                     value={form.desc}
                     minlength="20"
                     required
-                    className="bg-me_card_hover text-gray-100 py-1 px-3 rounded w-5/12 h-24"
+                    className="bg-me_main text-me_dark_half py-1 px-3 rounded w-5/12 h-24"
                     placeholder="Description..."
                 ></textarea>
             </div>
@@ -98,7 +98,7 @@ function NewForm(props) {
             </div>
         </form>
 
-        </>
+        </div>
     );
     
 }
