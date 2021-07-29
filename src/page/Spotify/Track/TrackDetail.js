@@ -16,7 +16,7 @@ function TrackDetail() {
           <div className="mr-3">
             <a href={selecedTrack.external_urls.spotify} target="new"
               title="Play on Spotify"
-              className="cursor-pointer text-sm text-white py-2 px-4 rounded-full bg-sptf hover:bg-gray-600">
+              className="cursor-pointer text-sm text-white py-2 px-4 rounded-full bg-me_primary hover:bg-gray-600">
               <i className="text-sm fa fa-play mr-1"></i> Play on Spotify
             </a>
           </div>
@@ -31,7 +31,7 @@ function TrackDetail() {
                 set_show_add_modal(true);
                 }}
               title="Add to playlist"
-              className="cursor-pointer text-sm text-white py-2 px-4 rounded-full border-2 border-gray-400 hover:border-sptf hover:text-sptf ">
+              className="cursor-pointer text-sm text-white py-2 px-4 rounded-full border-2 border-gray-400 hover:border-me_primary hover:text-me_primary ">
               <i className="text-sm fa fa-headphones-alt mr-1"></i> Add to playlist
             </a>
           </div>

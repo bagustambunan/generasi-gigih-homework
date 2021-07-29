@@ -16,7 +16,7 @@ function Track(props) {
           props.set_view("trackdetail");
           dispatch(updateSelectedTrack(props.data));
         }}
-      className="cursor-pointer flex flex-wrap rounded-lg hover:bg-sptf_card_hover">
+      className="cursor-pointer flex flex-wrap rounded-lg hover:bg-me_card_hover">
 
         <div className="w-16 pb-2 pr-2 pl-2 pt-4 text-center">
           {/* <Heart/> */}

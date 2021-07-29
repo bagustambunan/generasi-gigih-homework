@@ -75,7 +75,7 @@ function NewForm(props) {
                     value={form.title}
                     minlength="10"
                     required
-                    className="bg-sptf_card_hover text-gray-100 py-1 px-3 rounded w-5/12"
+                    className="bg-me_card_hover text-gray-100 py-1 px-3 rounded w-5/12"
                     type="text" placeholder="Title..."/>
             </div>
             <div>
@@ -85,14 +85,14 @@ function NewForm(props) {
                     value={form.desc}
                     minlength="20"
                     required
-                    className="bg-sptf_card_hover text-gray-100 py-1 px-3 rounded w-5/12 h-24"
+                    className="bg-me_card_hover text-gray-100 py-1 px-3 rounded w-5/12 h-24"
                     placeholder="Description..."
                 ></textarea>
             </div>
             <div>
                 <button
                     type="submit"
-                    className="mt-4 justify-center rounded px-4 py-2 bg-sptf hover:bg-gray-600 text-base font-medium text-white">
+                    className="mt-4 justify-center rounded px-4 py-2 bg-me_primary hover:bg-gray-600 text-base font-medium text-white">
                         Submit
                 </button>
             </div>

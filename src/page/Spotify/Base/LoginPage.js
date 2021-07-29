@@ -14,7 +14,7 @@ function LoginPage(){
 
         return (
             <a
-                className="bg-sptf hover:bg-gray-600 w-52 rounded-full text-white font-medium px-1 py-2 flex cursor-pointer justify-center align-middle"
+                className="bg-me_primary hover:bg-gray-600 w-52 rounded-full text-white font-medium px-1 py-2 flex cursor-pointer justify-center align-middle"
                 href={spotify_url}>
                 LOG IN WITH SPOTIFY
             </a>
@@ -22,7 +22,7 @@ function LoginPage(){
     }
 
     return(
-        <div className="bg-sptf_dark_main min-h-screen">
+        <div className="bg-me_main min-h-screen">
         <center>
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 

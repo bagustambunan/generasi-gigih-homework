@@ -24,7 +24,7 @@ function PlaylistAll(props) {
             // onClick={() => {handleAddButton()}}
             href="/playlists/new"
             title="Create new playlist"
-            className="cursor-pointer text-white py-2 px-5 rounded-full border-2 border-sptf_dark_main hover:border-sptf hover:text-sptf ">
+            className="cursor-pointer text-white py-2 px-5 rounded-full border-2 border-me_main hover:border-me_primary hover:text-me_primary ">
             <i className="text-sm fa fa-plus mr-1"></i> Create new playlist
           </a>
         </div>

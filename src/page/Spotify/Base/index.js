@@ -78,7 +78,7 @@ function SpotifyPage(props) {
   }, []);
 
   return (
-    <div className="bg-sptf_dark_main min-h-screen body-main">
+    <div className="bg-me_main min-h-screen body-main">
 
       {(!token) && (
         <LoginPage/>
