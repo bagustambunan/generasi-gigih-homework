@@ -49,7 +49,7 @@ function SearchForm(props) {
 
       <div className="flex flex-wrap w-10/12 my-10">
         <div className="w-6/12">
-          <a className="text-2xl text-white font-bold">Search tracks</a>
+          <a className="text-2xl text-me_dark_half font-bold">Search tracks</a>
         </div>
       </div>
 

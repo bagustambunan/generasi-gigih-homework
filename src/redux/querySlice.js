@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const slice = createSlice({
   name: 'query',
   initialState: {
-    value: null,
+    value: "Adele",
   },
   reducers: {
     updateQuery: (state, action) => {

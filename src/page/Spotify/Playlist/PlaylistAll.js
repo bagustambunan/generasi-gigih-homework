@@ -19,12 +19,12 @@ function PlaylistAll(props) {
       }
 
       return(
-        <div className="p-2">
+        <div className="p-1">
           <a
             // onClick={() => {handleAddButton()}}
             href="/playlists/new"
             title="Create new playlist"
-            className="cursor-pointer text-white py-2 px-5 rounded-full border-2 border-me_main hover:border-me_primary hover:text-me_primary ">
+            className="cursor-pointer text-me_primary py-2 px-5 rounded-full border-2 border-me_main hover:border-me_primary hover:bg-me_primary hover:text-white">
             <i className="text-sm fa fa-plus mr-1"></i> Create new playlist
           </a>
         </div>
@@ -56,7 +56,7 @@ function PlaylistAll(props) {
 
         <div className="flex flex-wrap w-10/12 my-10">
           <div className="w-6/12">
-            <a className="text-2xl text-white font-bold">My playlists</a>
+            <a className="text-2xl text-me_dark_half font-bold">My playlists</a>
           </div>
           <div className="w-6/12 text-right">
             <AddButton/>

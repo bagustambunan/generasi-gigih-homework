@@ -48,7 +48,7 @@ function PlaylistDetail(props) {
     function Page(){
         if(is_loading){
             return(
-                <a className="text-white">Loading...</a>
+                <a className="text-me_dark_half">Loading...</a>
             )
         }
         else{
@@ -57,18 +57,18 @@ function PlaylistDetail(props) {
                 image = selected_playlist.images[0].url;
             }
             return(
-            <>
+            <div className="bg-me_card p-5 shadow rounded-lg">
 
-                <div className="flex flex-wrap w-full my-10">
+                <div className="flex flex-wrap w-full my-5">
                     <div className="mr-5">
                         <img src={image} title={selected_playlist.name} alt="{props.album_name}" className="object-cover rounded h-40 w-40"/>
                     </div>
                     <div className="w-9/12">
                         <div className="mb-3">
-                            <a className="text-2xl text-white font-bold">{selected_playlist.name}</a>
+                            <a className="text-2xl text-me_dark_half font-bold">{selected_playlist.name}</a>
                         </div>
                         <div className="">
-                            <p className="text-sm text-gray-400">{selected_playlist.description}</p>
+                            <p className="text-sm text-me_dark_quarter">{selected_playlist.description}</p>
                         </div>
                     </div>
                     
@@ -81,7 +81,7 @@ function PlaylistDetail(props) {
                     />
                 )}
             
-            </>
+            </div>
             )
         }
     }
