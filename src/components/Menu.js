@@ -32,7 +32,7 @@ function Menu() {
 
       <div className="my-10">
         <a href={root_url}>
-          <img src={public_url + '/spotify.png'} className="w-32" alt="logo"/>
+          <img src={public_url + '/img/spotify.png'} className="w-32" alt="logo"/>
         </a>
       </div>
 

@@ -6,9 +6,9 @@ module.exports = {
       colors: {
         sptf: '#1ED760',
         sptf_black: '#000000',
-        sptf_dark_main: '#0E0E0E',
-        sptf_card: '#2B2B2B',
-        sptf_card_hover: '#383838',
+        sptf_dark_main: '#18191A',
+        sptf_card: '#242526',
+        sptf_card_hover: '#3A3B3C',
       },
     },
   },

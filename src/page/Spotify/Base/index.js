@@ -8,6 +8,8 @@ import NewForm from '../Playlist/NewForm';
 import { getHashParams } from '../../../utils';
 import { root_url } from '../../../values';
 
+import './Styles.css'
+
 import { useSelector, useDispatch } from 'react-redux';
 import { setToken, removeToken, selectToken } from '../../../redux/tokenSlice';
 import { setUser, selectUser } from '../../../redux/userSlice';
@@ -75,7 +77,7 @@ function SpotifyPage(props) {
   }, []);
 
   return (
-    <div className="bg-sptf_dark_main min-h-screen">
+    <div className="bg-sptf_dark_main min-h-screen body-main">
 
       {(!token) && (
         <LoginPage/>
@@ -83,18 +85,18 @@ function SpotifyPage(props) {
 
       {(token && user) && (
         <>
-          <div className="p-5 w-56 fixed object-left object-top h-screen bg-sptf_black">
+          <div className="p-5 w-56 fixed h-5/6 bg-sptf_card m-5 rounded-xl">
             <Menu/>
           </div>
 
           <div className="w-full flex flex-wrap">
 
-            <div className="w-56 border border-blue-600 ">
+            <div className="w-56">
               {/* <Menu/> */}
             </div>
 
-            <div className="p-5 w-10/12 border-red-600">
-              <Page/>
+            <div className="p-5 w-10/12 border-red-600 flex flex-wrap">
+              <div className="ml-5 w-full"><Page/></div>
             </div>
 
           </div>

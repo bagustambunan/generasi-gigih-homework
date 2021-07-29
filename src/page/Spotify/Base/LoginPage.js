@@ -1,5 +1,6 @@
 import React from 'react';
 import { client_id, scope, redirect_uri } from '../../../values';
+import { public_url } from '../../../values';
 
 function LoginPage(){
     
@@ -27,7 +28,7 @@ function LoginPage(){
 
             <center className="inline-block align-bottom justify-center transform sm:my-8 sm:align-middle ">
                 <div className="mb-10 inline-block">
-                    <img src="spotify_mini.png" className="w-32"/>
+                    <img src={public_url + '/img/spotify_mini.png'} className="w-32"/>
                 </div>
                 <div className="">
                     <LoginButton/>
