@@ -5,6 +5,7 @@ import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
 import LoginPage from './LoginPage';
 import NewForm from '../Playlist/NewForm';
+import Player from '../../../components/Player';
 import { getHashParams } from '../../../utils';
 import { root_url } from '../../../values';
 
@@ -85,7 +86,7 @@ function SpotifyPage(props) {
 
       {(token && user) && (
         <>
-          <div className="p-5 w-56 fixed h-5/6 bg-sptf_card m-5 rounded-xl">
+          <div className="w-56 fixed m-5 h-full">
             <Menu/>
           </div>
 
@@ -99,6 +100,10 @@ function SpotifyPage(props) {
               <div className="ml-5 w-full"><Page/></div>
             </div>
 
+          </div>
+
+          <div className="fixed bottom-0 left-0 w-full">
+            <Player/>
           </div>
         </>
       )}

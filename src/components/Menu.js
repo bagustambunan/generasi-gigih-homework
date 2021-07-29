@@ -28,7 +28,7 @@ function Menu() {
   ];
 
   return (
-    <div className="text-left">
+    <div className="p-5 bg-sptf_card rounded-xl h-5/6 text-left shadow">
 
       <div className="my-10">
         <a href={root_url}>
