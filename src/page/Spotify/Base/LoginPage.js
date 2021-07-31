@@ -28,7 +28,7 @@ function LoginPage(){
 
             <center className="inline-block align-bottom justify-center transform sm:my-8 sm:align-middle ">
                 <div className="mb-10 inline-block">
-                    <img src={public_url + '/img/icon.png'} alt="Icon" className="w-28"/>
+                    <img src={public_url + '/img/logo.png'} alt="Icon" className="w-36"/>
                 </div>
                 <div className="">
                     <LoginButton/>

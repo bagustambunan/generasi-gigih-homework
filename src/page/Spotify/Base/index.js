@@ -3,16 +3,13 @@ import Menu from '../../../components/Menu';
 import Home from './Home';
 import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
-import LoginPage from './LoginPage';
 import NewForm from '../Playlist/NewForm';
 import Player from '../../../components/Player';
-import { getHashParams } from '../../../utils';
-import { root_url } from '../../../values';
 
 import './Styles.css'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setToken, selectToken } from '../../../redux/tokenSlice';
+import { selectToken } from '../../../redux/tokenSlice';
 import { setUser, selectUser } from '../../../redux/userSlice';
 
 const axios = require('axios');
@@ -64,23 +61,11 @@ function SpotifyPage(props) {
   }
 
   useEffect(() => {
-    if(!token){
-        if(getHashParams().access_token){
-          let params = getHashParams()
-          let access_token = params.access_token;
-          dispatch(setToken(access_token));
-          window.location = root_url;
-        }
-    }
     getUserInfo();
   }, []);
 
   return (
     <div className="bg-me_main min-h-screen body-main">
-
-      {(!token) && (
-        <LoginPage/>
-      )}
 
       {(token && user) && (
         <>

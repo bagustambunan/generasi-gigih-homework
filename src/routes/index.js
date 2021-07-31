@@ -1,9 +1,15 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import SpotifyPage from "../page/Spotify/Base";
 import LoginPage from "../page/Spotify/Base/LoginPage";
+import Callback from "../page/Spotify/Base/Callback";
 import Logout from "../page/Spotify/Base/Logout";
 
+import { useSelector } from 'react-redux';
+import { selectToken } from '../redux/tokenSlice';
+
 function AppRouter(){
+
+    const token = useSelector(selectToken);
 
     const route_list = [
         {
@@ -29,14 +35,15 @@ function AppRouter(){
             <Switch>
 
                 <Route path="/login" exact={true} component={LoginPage}/>
+                <Route path="/callback" exact={true} component={Callback}/>
                 <Route path="/logout" exact={true} component={Logout}/>
 
                 { route_list.map((item) => {
                     return (
                         <Route path={item.url} exact={true}>
-                            {/* { token ? item.page : <Redirect to="/login"/>} */}
+                            { token ? item.page : <Redirect to="/login"/>}
 
-                            {item.page}
+                            {/* {item.page} */}
                         </Route>
                     );
                 })}
