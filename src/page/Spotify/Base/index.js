@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Menu from '../../../components/Menu';
 import Home from './Home';
 import PlaylistPage from '../Playlist';
@@ -12,7 +12,7 @@ import { root_url } from '../../../values';
 import './Styles.css'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setToken, removeToken, selectToken } from '../../../redux/tokenSlice';
+import { setToken, selectToken } from '../../../redux/tokenSlice';
 import { setUser, selectUser } from '../../../redux/userSlice';
 
 const axios = require('axios');
@@ -22,8 +22,6 @@ function SpotifyPage(props) {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
-
-  const [view, set_view] = useState(props.page);
 
   const route_list = [
     {
@@ -45,7 +43,7 @@ function SpotifyPage(props) {
   ];
 
   function Page() {
-    const selected_page = route_list.filter(item => item.url === view);
+    const selected_page = route_list.filter(item => item.url === props.page);
     return selected_page[0].page;
   }
 

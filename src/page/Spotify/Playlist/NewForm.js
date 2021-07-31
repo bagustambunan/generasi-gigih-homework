@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectToken } from '../../../redux/tokenSlice';
 import { selectUser } from '../../../redux/userSlice';
 
@@ -63,7 +63,7 @@ function NewForm(props) {
 
         <div className="flex flex-wrap w-10/12 my-10">
           <div className="w-6/12">
-            <a className="text-2xl text-me_dark_half font-bold">Create new playlist</a>
+            <span className="text-2xl text-me_dark_half font-bold">Create new playlist</span>
           </div>
         </div>
 

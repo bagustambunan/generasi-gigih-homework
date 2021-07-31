@@ -1,13 +1,10 @@
 import React from 'react';
-import { root_url } from '../../../values';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setToken, removeToken } from '../../../redux/tokenSlice';
-import { setUser, removeUser, selectUser } from '../../../redux/userSlice';
+import { selectUser } from '../../../redux/userSlice';
 
 function Home() {
 
-    const dispatch = useDispatch();
     const user = useSelector(selectUser);
 
     function LogoutButton() {
@@ -30,7 +27,7 @@ function Home() {
                         <img src={user.images[0].url} title={user.display_name} alt={user.display_name} className="object-cover rounded-full w-16 h-16"/>
                     </div>
                     <div className="mr-5">
-                        <a className="text-lg font-bold text-me_dark_half">{user.display_name}</a>
+                        <span className="text-lg font-bold text-me_dark_half">{user.display_name}</span>
                     </div>
                     <div className="text-right">
                         <LogoutButton/>

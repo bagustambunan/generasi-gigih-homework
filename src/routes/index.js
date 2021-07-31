@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import SpotifyPage from "../page/Spotify/Base";
 import LoginPage from "../page/Spotify/Base/LoginPage";
 import Logout from "../page/Spotify/Base/Logout";

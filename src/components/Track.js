@@ -24,19 +24,19 @@ function Track(props) {
 
         <div className="w-80 p-2">
             <div className="-mb-1">
-                <a className="text-me_dark_half">{props.track_title}</a>
+                <span className="text-me_dark_half">{props.track_title}</span>
             </div>
             <div>
-                <a className="text-me_dark_quarter text-sm">{props.artist_name}</a>
+                <span className="text-me_dark_quarter text-sm">{props.artist_name}</span>
             </div>
         </div>
 
         <div className="w-80 p-2">
-            <a className="text-me_dark_quarter">{props.album_name}</a>
+            <span className="text-me_dark_quarter">{props.album_name}</span>
         </div>
 
         <div className="w-24 p-2">
-            <a className="text-me_dark_quarter">{getDuration(props.duration)}</a>
+            <span className="text-me_dark_quarter">{getDuration(props.duration)}</span>
         </div>
 
     </div>

@@ -28,7 +28,6 @@ function PlaylistPage() {
                 <PlaylistDetail
                     set_view={set_view}
                     playlist_id={playlist_id}
-                    set_view={set_view}
                 />
             )}
 

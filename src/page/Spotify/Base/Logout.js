@@ -1,4 +1,3 @@
-import React from 'react';
 import { root_url } from '../../../values';
 import { useDispatch } from 'react-redux';
 import { removeToken } from '../../../redux/tokenSlice';

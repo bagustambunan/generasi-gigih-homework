@@ -27,13 +27,13 @@ function TrackDetail() {
   
         return(
           <div className="">
-            <a onClick= {() => {
+            <span onClick= {() => {
                 set_show_add_modal(true);
                 }}
               title="Add to playlist"
               className="cursor-pointer text-sm text-me_dark_half py-2 px-4 rounded-full border-2 border-me_dark_half hover:border-me_primary hover:text-me_primary ">
               <i className="text-sm fa fa-headphones-alt mr-1"></i> Add to playlist
-            </a>
+            </span>
           </div>
         );
     }
@@ -54,10 +54,10 @@ function TrackDetail() {
 
             <div className="p-5">
                 <div className="mb-5">
-                    <a className="text-7xl text-me_dark_half font-bold">{selecedTrack.name}</a>
+                    <span className="text-7xl text-me_dark_half font-bold">{selecedTrack.name}</span>
                 </div>
                 <div className="">
-                    <a className="text-base text-me_dark_quarter">{selecedTrack.album.artists[0].name}</a>
+                    <span className="text-base text-me_dark_quarter">{selecedTrack.album.artists[0].name}</span>
                 </div>
             </div>
 

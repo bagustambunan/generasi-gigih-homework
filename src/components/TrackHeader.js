@@ -12,11 +12,11 @@ function TrackHeader(props) {
             </div>
 
             <div className="w-80 p-2">
-                <a className="text-me_dark_quarter text-sm">TITLE</a>
+                <span className="text-me_dark_quarter text-sm">TITLE</span>
             </div>
 
             <div className="w-80 p-2">
-                <a className="text-me_dark_quarter text-sm">ALBUM</a>
+                <span className="text-me_dark_quarter text-sm">ALBUM</span>
             </div>
 
             <div className="w-24 p-2">
@@ -29,7 +29,7 @@ function TrackHeader(props) {
 
     return (
     <div className="ml-5 w-10/12">
-        {(props.tracks.length != 0) && (
+        {(props.tracks.length !== 0) && (
             <Header/>
         )}
 

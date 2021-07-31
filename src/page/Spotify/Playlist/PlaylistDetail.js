@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PlaylistHeader from '../../../components/PlaylistHeader';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectToken } from '../../../redux/tokenSlice';
 
 const axios = require('axios');
@@ -34,21 +34,10 @@ function PlaylistDetail(props) {
         getTracks();
     }, []);
 
-    function TesTombol(){
-        return(
-            <a
-                onClick={() => {
-                    
-                }}
-                className="cursor-pointer text-white bg-blue-500 p-2 rounded-lg">
-            Tes tombol</a>
-        )
-    }
-
     function Page(){
         if(is_loading){
             return(
-                <a className="text-me_dark_half">Loading...</a>
+                <span className="text-me_dark_half">Loading...</span>
             )
         }
         else{
@@ -65,7 +54,7 @@ function PlaylistDetail(props) {
                     </div>
                     <div className="w-9/12">
                         <div className="mb-3">
-                            <a className="text-2xl text-me_dark_half font-bold">{selected_playlist.name}</a>
+                            <span className="text-2xl text-me_dark_half font-bold">{selected_playlist.name}</span>
                         </div>
                         <div className="">
                             <p className="text-sm text-me_dark_quarter">{selected_playlist.description}</p>
@@ -74,7 +63,7 @@ function PlaylistDetail(props) {
                     
                 </div>
 
-                {(selected_playlist.tracks.total!=0) && (
+                {(selected_playlist.tracks.total!==0) && (
                     <PlaylistHeader
                         tracks={selected_playlist.tracks.items}
                         set_view={props.set_view}
