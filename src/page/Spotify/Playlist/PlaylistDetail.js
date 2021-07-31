@@ -46,7 +46,7 @@ function PlaylistDetail(props) {
                 image = selected_playlist.images[0].url;
             }
             return(
-            <div className="bg-me_card p-5 shadow rounded-lg">
+            <div className="bg-me_card p-5 shadow rounded-xl">
 
                 <div className="flex flex-wrap w-full my-5">
                     <div className="mr-5">

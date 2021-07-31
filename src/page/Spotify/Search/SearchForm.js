@@ -47,7 +47,7 @@ function SearchForm(props) {
   }, [query]);
 
   return (
-    <div className="bg-me_card p-5 shadow rounded-lg">
+    <div className="bg-me_card p-5 shadow rounded-xl">
 
       <div className="w-full mb-5">
           <div className="bg-me_main text-me_dark_half px-5 py-2 rounded-full w-80">

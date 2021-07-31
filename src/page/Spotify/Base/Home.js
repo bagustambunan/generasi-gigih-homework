@@ -45,7 +45,7 @@ function Home() {
 
     function UserCard(){
         return(
-            <div className="p-5 bg-me_card shadow rounded w-4/12">
+            <div className="p-5 bg-me_card shadow rounded-xl w-4/12">
                 
                 <div className="flex flex-wrap">
                     <div className="mr-5">
