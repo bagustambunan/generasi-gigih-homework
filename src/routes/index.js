@@ -4,52 +4,50 @@ import LoginPage from "../page/Spotify/Base/LoginPage";
 import Callback from "../page/Spotify/Base/Callback";
 import Logout from "../page/Spotify/Base/Logout";
 
-import { useSelector } from 'react-redux';
-import { selectToken } from '../redux/tokenSlice';
+import { useSelector } from "react-redux";
+import { selectToken } from "../redux/tokenSlice";
 
-function AppRouter(){
+function AppRouter() {
+  const token = useSelector(selectToken);
 
-    const token = useSelector(selectToken);
+  const route_list = [
+    {
+      url: ["/", "/home"],
+      page: <SpotifyPage page="home" />,
+    },
+    {
+      url: "/search",
+      page: <SpotifyPage page="search" />,
+    },
+    {
+      url: "/playlists",
+      page: <SpotifyPage page="playlists" />,
+    },
+    {
+      url: "/playlists/new",
+      page: <SpotifyPage page="new_playlist" />,
+    },
+  ];
 
-    const route_list = [
-        {
-            url: ["/","/home"],
-            page: <SpotifyPage page="home"/>
-        },
-        {
-            url: "/search",
-            page: <SpotifyPage page="search"/>
-        },
-        {
-            url: "/playlists",
-            page: <SpotifyPage page="playlists"/>
-        },
-        {
-            url: "/playlists/new",
-            page: <SpotifyPage page="new_playlist"/>
-        },
-    ];
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/login" exact={true} component={LoginPage} />
+        <Route path="/callback" exact={true} component={Callback} />
+        <Route path="/logout" exact={true} component={Logout} />
 
-    return(
-        <BrowserRouter>
-            <Switch>
+        {route_list.map((item) => {
+          return (
+            <Route path={item.url} exact={true}>
+              {token ? item.page : <Redirect to="/login" />}
 
-                <Route path="/login" exact={true} component={LoginPage}/>
-                <Route path="/callback" exact={true} component={Callback}/>
-                <Route path="/logout" exact={true} component={Logout}/>
-
-                { route_list.map((item) => {
-                    return (
-                        <Route path={item.url} exact={true}>
-                            { token ? item.page : <Redirect to="/login"/>}
-
-                            {/* {item.page} */}
-                        </Route>
-                    );
-                })}
-            </Switch>
-        </BrowserRouter>
-    )
+              {/* {item.page} */}
+            </Route>
+          );
+        })}
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 export default AppRouter;

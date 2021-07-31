@@ -1,21 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const slice = createSlice({
-  name: 'activeMenu',
+  name: "activeMenu",
   initialState: {
-    value: localStorage.getItem('activeMenu') ? localStorage.getItem('activeMenu') : "/home",
+    value: localStorage.getItem("activeMenu")
+      ? localStorage.getItem("activeMenu")
+      : "/home",
   },
   reducers: {
     setActiveMenu: (state, action) => {
       state.value = action.payload;
-      localStorage.setItem('activeMenu', action.payload);
+      localStorage.setItem("activeMenu", action.payload);
     },
     removeActiveMenu: (state, action) => {
-      localStorage.removeItem('activeMenu');
+      localStorage.removeItem("activeMenu");
     },
   },
 });
 
 export const { setActiveMenu, removeActiveMenu } = slice.actions;
-export const selectActiveMenu = state => state.activeMenu.value;
+export const selectActiveMenu = (state) => state.activeMenu.value;
 export default slice.reducer;
