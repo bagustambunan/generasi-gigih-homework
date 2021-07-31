@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../../redux/userSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectToken } from '../../../redux/tokenSlice';
+import { setUser, selectUser } from '../../../redux/userSlice';
+
+const axios = require('axios');
 
 function Home() {
 
+    const dispatch = useDispatch();
+    const token = useSelector(selectToken);
     const user = useSelector(selectUser);
+
+    async function getUserInfo() {
+        try {
+          let url = 'https://api.spotify.com/v1/me';
+          await axios.get(url, {
+            headers: {
+              'Authorization': 'Bearer ' + token
+            },
+          })
+          .then(res => {
+            dispatch(setUser(res.data));
+          })
+        } catch (err) {
+          console.error(err);
+        }
+      }
+    
+    useEffect(() => {
+    getUserInfo();
+    }, []);
 
     function LogoutButton() {
         return (
@@ -40,9 +65,9 @@ function Home() {
 
     return (
         <>
-
-            <UserCard/>
-
+            {(user) && (
+                <UserCard/>
+            )}
         </>
     );
 }
