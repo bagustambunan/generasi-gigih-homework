@@ -5,7 +5,7 @@ export const slice = createSlice({
   initialState: {
     value: localStorage.getItem("activeMenu")
       ? localStorage.getItem("activeMenu")
-      : "/home",
+      : "home",
   },
   reducers: {
     setActiveMenu: (state, action) => {

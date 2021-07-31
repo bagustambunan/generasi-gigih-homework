@@ -4,23 +4,29 @@ import { public_url, root_url } from "../values";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveMenu, selectActiveMenu } from "../redux/activeMenuSlice";
 
-function Menu() {
+function Menu(props) {
   const dispatch = useDispatch();
   const activeMenu = useSelector(selectActiveMenu);
 
+  function goTo(menu, e){
+    e.preventDefault();
+    dispatch(setActiveMenu(menu));
+    props.set_view(menu);
+  }
+
   const menu_list = [
     {
-      name: "/home",
+      name: "home",
       text: "Home",
       icon: "fa-home",
     },
     {
-      name: "/search",
+      name: "search",
       text: "Search",
       icon: "fa-search",
     },
     {
-      name: "/playlists",
+      name: "playlists",
       text: "Playlists",
       icon: "fa-headphones-alt",
     },
@@ -43,8 +49,8 @@ function Menu() {
           >
             <a
               className={`text-lg font-medium mb-5 text-me_dark_half hover:text-me_primary`}
-              onClick={() => {
-                dispatch(setActiveMenu(item.name));
+              onClick={(e) => {
+                goTo(item.name, e);
               }}
               href={`${item.name}`}
             >

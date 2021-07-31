@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Menu from "../../../components/Menu";
 import Home from "./Home";
 import PlaylistPage from "../Playlist";
@@ -9,6 +9,9 @@ import Player from "../../../components/Player";
 import "./Styles.css";
 
 function SpotifyPage(props) {
+
+  const [view, set_view] = useState(props.page);
+
   const route_list = [
     {
       url: "home",
@@ -29,14 +32,17 @@ function SpotifyPage(props) {
   ];
 
   function Page() {
-    const selected_page = route_list.filter((item) => item.url === props.page);
+    const selected_page = route_list.filter((item) => item.url === view);
     return selected_page[0].page;
   }
 
   return (
     <div className="bg-me_main min-h-screen body-main">
       <div className="w-56 fixed m-5 h-full">
-        <Menu />
+        <Menu
+          view={view}
+          set_view={set_view}
+        />
       </div>
 
       <div className="w-full flex flex-wrap">

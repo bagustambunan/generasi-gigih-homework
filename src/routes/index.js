@@ -40,8 +40,6 @@ function AppRouter() {
           return (
             <Route path={item.url} exact={true}>
               {token ? item.page : <Redirect to="/login" />}
-
-              {/* {item.page} */}
             </Route>
           );
         })}
