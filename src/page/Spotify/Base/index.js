@@ -6,8 +6,6 @@ import SearchPage from "../Search";
 import NewForm from "../Playlist/NewForm";
 import Player from "../../../components/Player";
 
-import "./Styles.css";
-
 function SpotifyPage(props) {
 
   const [view, set_view] = useState(props.page);

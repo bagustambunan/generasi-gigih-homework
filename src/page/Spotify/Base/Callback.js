@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { getHashParams } from "../../../utils";
 import { root_url } from "../../../values";
 

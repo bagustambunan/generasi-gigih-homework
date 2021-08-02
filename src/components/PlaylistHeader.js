@@ -1,6 +1,5 @@
 import React from "react";
 import Track from "./Track";
-import "./Styles.css";
 
 function PlaylistHeader(props) {
   function Header() {
