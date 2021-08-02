@@ -32,6 +32,10 @@ function Menu(props) {
     },
   ];
 
+  menu_list.forEach((item) => {
+    if(item.name === props.view) dispatch(setActiveMenu(props.view));
+  });
+
   return (
     <div className="bg-me_card rounded-xl h-5/6 text-left shadow">
       <center className="px-5 py-10">
