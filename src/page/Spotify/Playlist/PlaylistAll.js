@@ -12,9 +12,18 @@ function PlaylistAll(props) {
   const [playlists, set_playlists] = useState([]);
 
   function AddButton() {
+
+    function goToForm(e){
+      e.preventDefault();
+      props.set_view("newplaylist");
+    }
+
     return (
       <div className="p-1">
         <a
+          onClick={(e) => {
+            goToForm(e);
+          }}
           href="/playlists/new"
           title="Create new playlist"
           className="cursor-pointer text-me_primary py-2 px-5 rounded-full border-2 border-me_main hover:border-me_primary hover:bg-me_primary hover:text-white"
