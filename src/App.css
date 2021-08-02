@@ -3,5 +3,58 @@
 @tailwind utilities; */
 
 body {
+  
+}
+
+.main {
   min-height: 100vh;
+  background-color: #F0F0F0;
+}
+
+.menu-wrapper {
+  width: 224px;
+  position: fixed;
+  margin: 5px;
+  height: 100%;
+}
+
+.menu {
+  background-color: #FFFFFF;
+  border-radius: 0.75rem;
+  height: 85%;
+  text-align: left;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.menu > .logo-wrapper {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.menu > .logo-wrapper > a > .logo {
+  width: 6rem;
+}
+
+.menu > .menu-list {
+  margin-bottom: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.menu > .menu-list-active {
+  border-left-width: 4px;
+  border-color: "#FA6791";
+}
+
+.menu > .menu-list > a{
+  text-lgfont-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  color: "#4C4C4D";
 }

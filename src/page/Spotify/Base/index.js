@@ -35,8 +35,8 @@ function SpotifyPage(props) {
   }
 
   return (
-    <div className="bg-me_main min-h-screen body-main">
-      <div className="w-56 fixed m-5 h-full">
+    <div className="main">
+      <div className="menu-wrapper">
         <Menu
           view={view}
           set_view={set_view}
