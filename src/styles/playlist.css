@@ -1,0 +1,95 @@
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    width: 83.333333%;
+}
+
+.page-header > .title{
+    width: 50%;
+}
+
+.page-header > .title > span{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #4C4C4D;
+}
+
+.page-header > .action{
+    width: 50%;
+    text-align: right;
+}
+
+.add-button {
+    padding: 0.25rem;
+}
+
+.add-button > a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #FA6791;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-radius: 9999px;
+    border: 2px solid #F0F0F0;
+}
+
+.add-button > a:hover {
+    border: 2px solid #FA6791;
+    background-color: #FA6791;
+    color: white;
+}
+
+.add-button > a > i {
+    margin-right: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.page-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.playlist-card {
+    background-color: #FFFFFF;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 0.75rem;
+    width: 18rem;
+    margin-right: 1.25rem;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+}
+
+.playlist-card:hover {
+    border-bottom: 4px solid #FA6791;
+}
+
+.playlist-card > div > img {
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    height: 13rem;
+    width: 100%;
+}
+
+.playlist-card > .detail {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.playlist-card > .detail > p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+    color: #4C4C4D;
+}

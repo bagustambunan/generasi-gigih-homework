@@ -52,13 +52,10 @@ function Menu(props) {
             } menu-list`}
           >
             <a
-              className="hover:text-me_primary"
-              onClick={(e) => {
-                goTo(item.name, e);
-              }}
+              onClick={(e) => { goTo(item.name, e); }}
               href={`${item.name}`}
             >
-              <i className={`fa m-2 ${item.icon}`}></i>
+              <i className={`fa ${item.icon}`}></i>
               {item.text}
             </a>
           </div>

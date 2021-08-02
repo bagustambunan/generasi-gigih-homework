@@ -16,6 +16,7 @@ body {
   position: fixed;
   margin: 5px;
   height: 100%;
+  z-index: 10;
 }
 
 .menu {
@@ -32,6 +33,7 @@ body {
   padding-right: 1.25rem;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+  text-align: center;
 }
 
 .menu > .logo-wrapper > a > .logo {
@@ -47,14 +49,43 @@ body {
 }
 
 .menu > .menu-list-active {
-  border-left-width: 4px;
-  border-color: "#FA6791";
+  border-left: 4px solid #FA6791;
 }
 
 .menu > .menu-list > a{
-  text-lgfont-size: 1.125rem;
+  font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 500;
   margin-bottom: 1.25rem;
-  color: "#4C4C4D";
+  color: #4C4C4D;
+  text-decoration: none;
+}
+
+.menu > .menu-list > a:hover{
+  color: #FA6791;
+}
+
+.menu > .menu-list > a > i{
+  margin: 0.5rem;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.menu-skip {
+  width: 224px;
+}
+
+.page-wrap-1 {
+  padding: 1.25rem;
+  width: 80%;
+  margin-bottom: 4rem;
+}
+
+.page-wrap-2 {
+  margin-left: 1.25rem;
+  width: 100%;
 }

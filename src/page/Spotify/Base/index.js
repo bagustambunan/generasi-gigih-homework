@@ -43,19 +43,19 @@ function SpotifyPage(props) {
         />
       </div>
 
-      <div className="w-full flex flex-wrap">
-        <div className="w-56">{/* <Menu/> */}</div>
+      <div className="page">
+        <div className="menu-skip">{/* <Menu/> */}</div>
 
-        <div className="p-5 w-10/12 mb-16">
-          <div className="ml-5 w-full">
+        <div className="page-wrap-1">
+          <div className="page-wrap-2">
             <Page />
           </div>
         </div>
       </div>
 
-      <div className="fixed bottom-0 left-0 w-full">
+      {/* <div className="fixed bottom-0 left-0 w-full">
         <Player />
-      </div>
+      </div> */}
     </div>
   );
 }

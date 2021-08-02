@@ -19,16 +19,15 @@ function PlaylistAll(props) {
     }
 
     return (
-      <div className="p-1">
+      <div className="add-button">
         <a
           onClick={(e) => {
             goToForm(e);
           }}
           href="/playlists/new"
           title="Create new playlist"
-          className="cursor-pointer text-me_primary py-2 px-5 rounded-full border-2 border-me_main hover:border-me_primary hover:bg-me_primary hover:text-white"
         >
-          <i className="text-sm fa fa-plus mr-1"></i> Create new playlist
+          <i className="fa fa-plus"></i> Create new playlist
         </a>
       </div>
     );
@@ -56,18 +55,18 @@ function PlaylistAll(props) {
 
   return (
     <>
-      <div className="flex flex-wrap w-10/12 my-10">
-        <div className="w-6/12">
+      <div className="page-header">
+        <div className="title">
           <span className="text-2xl text-me_dark_half font-bold">
             My playlists
           </span>
         </div>
-        <div className="w-6/12 text-right">
+        <div className="action">
           <AddButton />
         </div>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="page-main">
         {playlists.map((item, i) => {
           let image =
             "https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216";
