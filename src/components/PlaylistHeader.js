@@ -28,20 +28,20 @@ function PlaylistHeader(props) {
     <div className="header-body">
       {props.tracks.length !== 0 && <Header />}
 
-        {props.tracks.map((item, i) => {
-          return (
-            <Track
-              key={item.track.id}
-              image_url={item.track.album.images[2].url}
-              track_title={item.track.name}
-              artist_name={item.track.album.artists[0].name}
-              album_name={item.track.album.name}
-              duration={item.track.duration_ms}
-              data={item.track}
-              set_view={props.set_view}
-            />
-          );
-        })}
+      {props.tracks.map((item, i) => {
+        return (
+          <Track
+            key={item.track.id}
+            image_url={item.track.album.images[2].url}
+            track_title={item.track.name}
+            artist_name={item.track.album.artists[0].name}
+            album_name={item.track.album.name}
+            duration={item.track.duration_ms}
+            data={item.track}
+            set_view={props.set_view}
+          />
+        );
+      })}
     </div>
   );
 }

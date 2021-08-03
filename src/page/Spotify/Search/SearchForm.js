@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";
 import { updateQuery, selectQuery } from "../../../redux/querySlice";
 
+import "../../../styles/search-page.css";
+
 const axios = require("axios");
 
 function SearchForm(props) {
@@ -48,23 +50,20 @@ function SearchForm(props) {
   }, [query]);
 
   return (
-    <div className="bg-me_card p-5 shadow rounded-xl">
-      <div className="w-full mb-5">
-        <div className="bg-me_main text-me_dark_half px-5 py-2 rounded-full w-80">
-          <i className="fa fa-search mr-3"></i>
-          <input
-            onChange={(event) => {
-              handleChange(event);
-            }}
-            onKeyPress={(event) => {
-              handleKeyPress(event);
-            }}
-            value={val_q}
-            type="text"
-            className="bg-transparent w-10/12"
-            placeholder="Type anything..."
-          ></input>
-        </div>
+    <div className="search-page">
+      <div className="search-header">
+        <i className="fa fa-search"></i>
+        <input
+          onChange={(event) => {
+            handleChange(event);
+          }}
+          onKeyPress={(event) => {
+            handleKeyPress(event);
+          }}
+          value={val_q}
+          type="text"
+          placeholder="Type anything..."
+        ></input>
       </div>
 
       <TrackHeader tracks={tracks} set_view={props.set_view} />
