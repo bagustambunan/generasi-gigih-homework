@@ -50,7 +50,7 @@
   line-height: 1.75rem;
   font-weight: 500;
   margin-bottom: 1.25rem;
-  color: #4C4C4D;
+  color: var(--color-text-main);
   text-decoration: none;
 }
 
@@ -81,4 +81,22 @@
 .page-wrap-2 {
   margin-left: 1.25rem;
   width: 100%;
+}
+
+.player-wrapper {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+.player {
+  padding: 1.25rem;
+  background-color: var(--color-bg-card);
+  border-top: 2px solid var(--color-primary);
+}
+
+.btn-theme {
+  cursor: pointer;
 }

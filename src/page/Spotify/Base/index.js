@@ -53,9 +53,9 @@ function SpotifyPage(props) {
         </div>
       </div>
 
-      {/* <div className="fixed bottom-0 left-0 w-full">
+      <div className="player-wrapper">
         <Player />
-      </div> */}
+      </div>
     </div>
   );
 }

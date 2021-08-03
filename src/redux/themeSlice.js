@@ -3,15 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 export const slice = createSlice({
   name: "theme",
   initialState: {
-    value: "light",
+    value: true,
   },
   reducers: {
-    updateTheme: (state, action) => {
+    setTheme: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { updateTheme } = slice.actions;
+export const { setTheme } = slice.actions;
 export const selectTheme = (state) => state.theme.value;
 export default slice.reducer;
