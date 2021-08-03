@@ -93,3 +93,47 @@
     font-weight: 700;
     color: #4C4C4D;
 }
+
+.detail-page {
+    background-color: #FFFFFF;
+    padding: 1.25rem;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 0.75rem;
+}
+
+.detail-page > .playlist-header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.detail-page > .playlist-header > .image{
+    margin-right: 1.25rem;
+}
+
+.detail-page > .playlist-header > .image > img{
+    object-fit: cover;
+    border-radius: 0.25rem;
+    height: 10rem;
+    width: 10rem;
+}
+
+.detail-page > .playlist-header > .info {
+    width: 75%;
+}
+
+.detail-page > .playlist-header > .info > span {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #4C4C4D;
+    font-weight: 700;
+}
+
+.detail-page > .playlist-header > .info > p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #737373;
+}

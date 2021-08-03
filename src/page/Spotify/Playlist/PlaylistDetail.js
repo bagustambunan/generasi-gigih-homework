@@ -36,7 +36,7 @@ function PlaylistDetail(props) {
 
   function Page() {
     if (is_loading) {
-      return <span className="text-me_dark_half">Loading...</span>;
+      return <span>Loading...</span>;
     } else {
       let image =
         "https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216";
@@ -44,24 +44,23 @@ function PlaylistDetail(props) {
         image = selected_playlist.images[0].url;
       }
       return (
-        <div className="bg-me_card p-5 shadow rounded-xl">
-          <div className="flex flex-wrap w-full my-5">
-            <div className="mr-5">
+        <div className="detail-page">
+          <div className="playlist-header">
+            <div className="image">
               <img
                 src={image}
                 title={selected_playlist.name}
                 alt="{props.album_name}"
-                className="object-cover rounded h-40 w-40"
               />
             </div>
-            <div className="w-9/12">
-              <div className="mb-3">
-                <span className="text-2xl text-me_dark_half font-bold">
+            <div className="info">
+              <div>
+                <span>
                   {selected_playlist.name}
                 </span>
               </div>
-              <div className="">
-                <p className="text-sm text-me_dark_quarter">
+              <div>
+                <p>
                   {selected_playlist.description}
                 </p>
               </div>
