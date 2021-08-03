@@ -39,7 +39,7 @@
 }
 
 .track:hover{
-    background-color: #F0F0F0;
+    background-color: var(--color-bg-main);
 }
 
 .track > .image {
@@ -62,11 +62,11 @@
 }
 
 .track > .title > .track-title > span {
-    color: #4C4C4D;
+    color: var(--color-text-main);
 }
 
 .track > .title > .artist-name > span {
-    color: #737373;
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
     line-height: 1.25rem;
 }
@@ -82,5 +82,5 @@
 }
 
 .track > div > span {
-    color: #737373;
+    color: var(--color-text-secondary);
 }

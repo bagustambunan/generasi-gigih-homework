@@ -1,6 +1,6 @@
 .home-page {
     padding: 1.25rem;
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-card);
     --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);	
     border-radius: 0.75rem;
@@ -31,7 +31,7 @@
     font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 700;
-    color: #4C4C4D;
+    color: var(--color-text-main);
 }
 
 .home-page > .user-card > .btn-logout {
@@ -41,9 +41,9 @@
 .home-page > .user-card > .btn-logout > a {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
-    border: 2px solid red;
+    border: 2px solid var(--color-red);
     border-radius: 9999px;
-    color: red;
+    color: var(--color-red);
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 500;
@@ -52,15 +52,16 @@
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .home-page > .user-card > .btn-logout > a:hover {
-    background-color: red;
+    background-color: var(--color-red);
     color: white;
 }
 
 .login-page {
-    background-color: #F0F0F0;
+    background-color: var(--color-bg-main);
     min-height: 100vh;
 }
 
@@ -69,7 +70,7 @@
 }
 
 .btn-login > a {
-    background-color: #FA6791;
+    background-color: var(--color-primary);
     width: 13rem;
     border-radius: 9999px;
     color: white;
@@ -81,8 +82,9 @@
     display: flex;
     cursor: pointer;
     justify-content: center;
+    text-decoration: none;
 }
 
 .btn-login > a:hover {
-    background-color: #4C4C4D;
+    background-color: var(--color-text-main);
 }

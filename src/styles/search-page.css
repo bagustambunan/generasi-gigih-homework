@@ -1,5 +1,5 @@
 .search-page {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-card);
     padding: 1.25rem;
     --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);	
@@ -9,8 +9,8 @@
 .search-page > .search-header {
     width: 100%;
     margin-bottom: 1.25rem;
-    background-color: #F0F0F0;
-    color: #4C4C4D;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
     padding-left: 1.25rem;
     padding-right: 1.25rem;	
     padding-top: 0.5rem;

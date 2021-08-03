@@ -1,10 +1,8 @@
-body {
-  
-}
+@import "./styles/values/colors.css";
 
 .main {
   min-height: 100vh;
-  background-color: #F0F0F0;
+  background-color: var(--color-bg-main);
 }
 
 .menu-wrapper {
@@ -17,7 +15,7 @@ body {
 }
 
 .menu {
-  background-color: #FFFFFF;
+  background-color: var(--color-bg-card);
   border-radius: 0.75rem;
   height: 85%;
   text-align: left;
@@ -46,7 +44,7 @@ body {
 }
 
 .menu > .menu-list-active {
-  border-left: 4px solid #FA6791;
+  border-left: 4px solid var(--color-primary);
 }
 
 .menu > .menu-list > a{
@@ -59,7 +57,7 @@ body {
 }
 
 .menu > .menu-list > a:hover{
-  color: #FA6791;
+  color: var(--color-primary);
 }
 
 .menu > .menu-list > a > i{
