@@ -1,0 +1,99 @@
+.track-page > .image {
+    margin-top: 2.5rem;
+    padding: 1.25rem;
+}
+
+.track-page > .image > img {
+    object-fit: cover;
+    border-radius: 0.25rem;
+    width: 13rem;
+    height: 13rem;
+}
+
+.track-page > .info {
+    padding: 1.25rem;
+}
+
+.track-page > .info > .artist {
+    margin-bottom: 1.25rem;
+}
+
+.track-page > .info > .artist > span {
+    font-size: 4.5rem;
+    line-height: 1;
+    color: #4C4C4D;
+    font-weight: 700;
+}
+
+.track-page > .info > .album {
+    
+}
+
+.track-page > .info > .album > span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #737373;
+}
+
+.track-page > .action {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.btn-play {
+    margin-right: 0.75rem;
+}
+
+.btn-play > a {
+    cursor: pointer;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 9999px;
+    background-color: #FA6791;
+    text-decoration: none;
+}
+
+.btn-play > a:hover {
+    background-color: #4C4C4D;
+}
+
+.btn-play > a > i {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-right: 0.25rem;
+}
+
+.btn-add-to-playlist {
+    
+}
+
+.btn-add-to-playlist > span {
+    cursor: pointer;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #4C4C4D;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 9999px;
+    border: 2px solid #4C4C4D;
+}
+
+.btn-add-to-playlist > span:hover {
+    color: #FA6791;
+    border: 2px solid #FA6791;
+}
+
+.btn-add-to-playlist > span > i {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-right: 0.25rem;
+}

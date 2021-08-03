@@ -4,7 +4,7 @@ import NewForm from "./NewForm";
 import PlaylistDetail from "./PlaylistDetail";
 import TrackDetail from "../Track/TrackDetail";
 
-import '../../../styles/playlist.css';
+import '../../../styles/playlist-page.css';
 
 function PlaylistPage() {
   const [view, set_view] = useState("playlistall");
