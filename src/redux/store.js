@@ -4,6 +4,7 @@ import userReducer from "./userSlice";
 import queryReducer from "./querySlice";
 import selectedTrackReducer from "./selectedTrackSlice";
 import activeMenuReducer from "./activeMenuSlice";
+import themeReducer from "./themeSlice";
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     query: queryReducer,
     selectedTrack: selectedTrackReducer,
     activeMenu: activeMenuReducer,
+    theme: themeReducer,
   },
 });
