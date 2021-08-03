@@ -10,15 +10,15 @@ function TrackHeader(props) {
         <div className="image"></div>
 
         <div className="title">
-          <span className="text-me_dark_quarter text-sm">TITLE</span>
+          <span>TITLE</span>
         </div>
 
         <div className="album">
-          <span className="text-me_dark_quarter text-sm">ALBUM</span>
+          <span>ALBUM</span>
         </div>
 
         <div className="duration">
-          <i className="text-me_dark_quarter text-sm far fa-clock"></i>
+          <span><i className="far fa-clock"></i></span>
         </div>
       </div>
     );

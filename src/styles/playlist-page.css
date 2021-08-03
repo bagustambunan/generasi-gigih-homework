@@ -138,3 +138,74 @@
     line-height: 1.25rem;
     color: var(--color-text-secondary);
 }
+
+.form-page {
+    background-color: var(--color-bg-card);
+    padding: 1.25rem;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 0.5rem;
+}
+
+.form-page > .form-header {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.form-page > .form-header > span {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--color-text-main);
+    font-weight: 700;
+}
+
+.f-title {
+    margin-bottom: 0.5rem;	
+}
+
+.f-title > input {
+    background-color: var(--color-bg-main);
+    
+    color: var(--color-text-main);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.25rem;
+    width: 41.666667%;
+    border: 0;
+}
+
+.f-desc > textarea {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.25rem;
+    width: 41.666667%;
+    height: 6rem;
+    border: 0;
+}
+
+.f-submit > button {
+    margin-top: 1rem;
+    justify-content: center;
+    border-radius: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--color-primary);
+    font-size: 1rem;
+    line-height: 1.5rem;	
+    font-weight: 500;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.f-submit > button:hover {
+    background-color: var(--color-text-main);
+}
