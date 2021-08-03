@@ -1,26 +1,18 @@
-import React, { useEffect,useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setTheme, selectTheme } from "../../redux/themeSlice";
+import { root_url } from "../../values";
 
 function Player() {
 
   const dispatch = useDispatch();
   const theme = useSelector(selectTheme);
 
-  const [mode, set_mode] = useState(theme);
-
   function changeTheme(){
-    if(mode){
-      dispatch(setTheme(false));
-    }
-    else{
-      dispatch(setTheme(true));
-    }
+    dispatch(setTheme(!theme));
+    console.log(theme);
+    // window.location = root_url;
   }
-
-  useEffect(() => {
-    set_mode(theme);
-  }, [theme]);
 
   return (
     <div className="player">
