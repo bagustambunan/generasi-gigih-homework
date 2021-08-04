@@ -57,7 +57,7 @@ function PlaylistAll(props) {
     <>
       <div className="page-header">
         <div className="title">
-          <span className="text-2xl text-me_dark_half font-bold">
+          <span>
             My playlists
           </span>
         </div>
