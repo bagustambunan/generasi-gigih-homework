@@ -84,8 +84,8 @@ function NewForm(props) {
             placeholder="Description..."
           ></textarea>
         </div>
-        <div class="f-submit">
-          <button type="submit">Submit</button>
+        <div className="f-submit">
+          <button className="btn" type="submit">Submit</button>
         </div>
       </form>
     </div>
