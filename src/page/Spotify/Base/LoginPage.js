@@ -13,11 +13,11 @@ function LoginPage() {
     spotify_url += "&redirect_uri=" + encodeURIComponent(redirect_uri);
 
     return (
-      <a
-        href={spotify_url}
-      >
-        LOG IN WITH SPOTIFY
-      </a>
+      <div className="btn-login">
+        <a href={spotify_url}>
+          LOG IN WITH SPOTIFY
+        </a>
+      </div>
     );
   }
 
@@ -30,9 +30,9 @@ function LoginPage() {
             alt="Icon"
           />
         </div>
-        <div className="btn-login">
-          <LoginButton />
-        </div>
+        
+        <LoginButton />
+        
       </div>
     </div>
   );

@@ -62,7 +62,20 @@
 
 .login-page {
     background-color: var(--color-bg-main);
-    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page > .login-card {
+    
+}
+
+.login-page > .login-card > .image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
 }
 
 .login-page > .login-card > .image > img {
