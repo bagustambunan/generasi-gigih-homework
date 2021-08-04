@@ -38,11 +38,6 @@ function Menu(props) {
 
   return (
     <div className="menu">
-      <div className="logo-wrapper">
-        <a href={root_url}>
-          <img src={public_url + "/img/logo.png"} className="logo" alt="logo" />
-        </a>
-      </div>
 
       {menu_list.map((item) => {
         return (
@@ -56,7 +51,6 @@ function Menu(props) {
               href={`${item.name}`}
             >
               <i className={`fa ${item.icon}`}></i>
-              {item.text}
             </a>
           </div>
         );

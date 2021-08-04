@@ -36,26 +36,22 @@ function SpotifyPage(props) {
 
   return (
     <div className="main">
-      <div className="menu-wrapper">
-        <Menu
-          view={view}
-          set_view={set_view}
-        />
-      </div>
 
-      <div className="page">
-        <div className="menu-skip">{/* <Menu/> */}</div>
-
-        <div className="page-wrap-1">
-          <div className="page-wrap-2">
-            <Page />
-          </div>
+      <div className="menu-section">
+        <div className="menu-wrapper">
+          <Menu
+            view={view}
+            set_view={set_view}
+          />
         </div>
       </div>
 
-      {/* <div className="player-wrapper">
-        <Player />
-      </div> */}
+      <div className="page-section">
+        <div className="page-wrapper">
+          <Page />
+        </div>
+      </div>
+      
     </div>
   );
 }

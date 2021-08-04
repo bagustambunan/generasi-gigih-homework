@@ -1,21 +1,30 @@
 .main {
   min-height: 100vh;
   background-color: var(--color-bg-main);
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+.menu-section {
+  grid-column-start: 1;
 }
 
 .menu-wrapper {
-  width: 224px;
+  width: 10%;
   position: fixed;
   margin: 5px;
   height: 100%;
   z-index: 10;
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: var(--color-bg-card);
   border-radius: 0.75rem;
-  height: 85%;
   text-align: left;
   --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -41,8 +50,8 @@
   padding-right: 1rem;
 }
 
-.menu > .menu-list-active {
-  border-left: 4px solid var(--color-primary);
+.menu > .menu-list-active > a > i {
+  color: var(--color-primary);
 }
 
 .menu > .menu-list > a{
@@ -62,24 +71,15 @@
   margin: 0.5rem;
 }
 
-.page {
+.page-section {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  grid-column-start: 2;
 }
 
-.menu-skip {
-  width: 224px;
-}
-
-.page-wrap-1 {
+.page-wrapper {
   padding: 1.25rem;
-  width: 80%;
-  margin-bottom: 4rem;
-}
-
-.page-wrap-2 {
-  margin-left: 1.25rem;
   width: 100%;
 }
 
