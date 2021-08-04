@@ -12,7 +12,6 @@
 .menu-wrapper {
   width: 10%;
   position: fixed;
-  margin: 5px;
   height: 100%;
   z-index: 10;
   display: flex;
@@ -21,33 +20,18 @@
 }
 
 .menu {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
   background-color: var(--color-bg-card);
   border-radius: 0.75rem;
-  text-align: left;
   --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.menu > .logo-wrapper {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  text-align: center;
-}
-
-.menu > .logo-wrapper > a > .logo {
-  width: 6rem;
-}
-
 .menu > .menu-list {
-  margin-bottom: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0.75rem;
 }
 
 .menu > .menu-list-active > a > i {
@@ -58,7 +42,6 @@
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 500;
-  margin-bottom: 1.25rem;
   color: var(--color-text-main);
   text-decoration: none;
 }
@@ -79,7 +62,7 @@
 }
 
 .page-wrapper {
-  padding: 2.2rem 2.2rem 2.2rem 1rem;
+  padding: 2.1rem 2.1rem 2.1rem 0.7rem;
   width: 100%;
 }
 
@@ -133,4 +116,29 @@
 
 .btn-secondary:hover {
   background-color: var(--color-bg-card);
+}
+
+@media all and (max-width: 670px) {
+  .main {
+    grid-template-columns: 100%;
+  }
+
+  .page-section {
+    grid-column-start: 1;
+  }
+
+  .menu-section {
+    
+    /* bottom: 0px; */
+    /* left: 0; */
+  }
+  .menu-wrapper {
+    display: inline-block;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+  }
+  .menu {
+    flex-direction: row;
+  }
 }
