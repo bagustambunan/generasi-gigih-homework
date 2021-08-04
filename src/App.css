@@ -114,3 +114,23 @@
   cursor: pointer;
   border: 0;
 }
+
+.btn-primary {
+  margin-top: 1rem;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-text-main);
+}
+
+.btn-secondary {
+  margin-top: 1rem;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg-card);
+}

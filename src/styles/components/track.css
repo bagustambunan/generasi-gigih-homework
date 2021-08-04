@@ -90,3 +90,40 @@
 .track > div > span {
     color: var(--color-text-secondary);
 }
+
+.modal {
+    background-color: rgba(0,0,0,0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    padding: 30px;
+    background-color: var(--color-bg-card);
+    border-radius: 10px;
+}
+
+.modal-header {
+    padding-bottom: 10px;
+}
+
+.modal-body > select{
+    padding: 10px;
+}
+
+.modal-action {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.modal-action > button {
+    margin-left: 10px;
+}

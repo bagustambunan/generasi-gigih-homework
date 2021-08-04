@@ -181,13 +181,3 @@
     height: 6rem;
     border: 0;
 }
-
-.f-submit > button {
-    margin-top: 1rem;
-    background-color: var(--color-primary);
-    color: white;
-}
-
-.f-submit > button:hover {
-    background-color: var(--color-text-main);
-}

@@ -85,7 +85,7 @@ function NewForm(props) {
           ></textarea>
         </div>
         <div className="f-submit">
-          <button className="btn" type="submit">Submit</button>
+          <button className="btn btn-primary" type="submit">Submit</button>
         </div>
       </form>
     </div>
