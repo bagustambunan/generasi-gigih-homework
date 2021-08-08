@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Playlist from "../../../components/Playlist";
+import Playlist from "../../../components/PlaylistItem";
 
 import { useSelector } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";

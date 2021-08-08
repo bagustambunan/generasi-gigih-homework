@@ -4,44 +4,46 @@ import { useDispatch } from "react-redux";
 import { updateSelectedTrack } from "../redux/selectedTrackSlice";
 
 import { getDuration } from "../utils";
+import { trackItemType } from "../types";
 
-function Track(props) {
+function Track({
+  key, image_url, track_title, artist_name, album_name, duration, data, set_view}
+  : trackItemType) {
   const dispatch = useDispatch();
 
   return (
     <div
-      href="#"
       onClick={() => {
-        props.set_view("trackdetail");
-        dispatch(updateSelectedTrack(props.data));
+        set_view("trackdetail");
+        dispatch(updateSelectedTrack(data));
       }}
       className="track"
     >
       <div className="image">
         <img
-          src={props.image_url}
-          title={props.album_name}
-          alt="{props.album_name}"
+          src={image_url}
+          title={album_name}
+          alt="{album_name}"
         />
       </div>
 
       <div className="title">
         <div className="track-title">
-          <span>{props.track_title}</span>
+          <span>{track_title}</span>
         </div>
         <div className="artist-name">
           <span>
-            {props.artist_name}
+            {artist_name}
           </span>
         </div>
       </div>
 
       <div className="album">
-        <span>{props.album_name}</span>
+        <span>{album_name}</span>
       </div>
 
       <div className="duration">
-        <span>{getDuration(props.duration)}</span>
+        <span>{getDuration(duration)}</span>
       </div>
     </div>
   );

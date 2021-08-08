@@ -1,5 +1,5 @@
 import React from "react";
-import Track from "./Track";
+import Track from "./TrackItem";
 
 import "../styles/components/track.css";
 
