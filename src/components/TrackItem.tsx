@@ -1,8 +1,5 @@
-import React from "react";
-
 import { useDispatch } from "react-redux";
 import { updateSelectedTrack } from "../redux/selectedTrackSlice";
-
 import { getDuration } from "../utils";
 import { trackItemType } from "../types";
 

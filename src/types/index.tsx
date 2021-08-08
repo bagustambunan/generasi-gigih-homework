@@ -8,3 +8,13 @@ export type trackItemType = {
     data: any,
     set_view: any,
 }
+
+export type playlistItemType = {
+    key: string,
+    id: string,
+    image: string,
+    name: string,
+    desc: string,
+    set_view: any,
+    set_playlist_id: any,
+}
