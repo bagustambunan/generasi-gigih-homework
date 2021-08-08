@@ -1,9 +1,8 @@
-import React from "react";
 import Track from "./TrackItem";
-
 import "../styles/components/track.css";
+import { trackListType } from "../types";
 
-function TrackHeader(props) {
+function TrackHeader({tracks,set_view}:trackListType) {
   function Header() {
     return (
       <div className="header">
@@ -26,9 +25,9 @@ function TrackHeader(props) {
 
   return (
     <div className="header-body">
-      {props.tracks.length !== 0 && <Header />}
+      {tracks.length !== 0 && <Header />}
 
-      {props.tracks.map((item, i) => {
+      {tracks.map((item:any) => {
         return (
           <Track
             key={item.id}
@@ -38,7 +37,7 @@ function TrackHeader(props) {
             album_name={item.album.name}
             duration={item.duration_ms}
             data={item}
-            set_view={props.set_view}
+            set_view={set_view}
           />
         );
       })}

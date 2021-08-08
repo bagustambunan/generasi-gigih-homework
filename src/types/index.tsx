@@ -6,7 +6,7 @@ export type trackItemType = {
     album_name: string,
     duration: string,
     data: any,
-    set_view: any,
+    set_view: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export type playlistItemType = {
@@ -15,16 +15,16 @@ export type playlistItemType = {
     image: string,
     name: string,
     desc: string,
-    set_view: any,
-    set_playlist_id: any,
+    set_view: React.Dispatch<React.SetStateAction<string>>,
+    set_playlist_id: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export type menuType = {
     view: any,
-    set_view: any,
+    set_view: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export type trackListType = {
     tracks: any,
-    set_view: any,
+    set_view: React.Dispatch<React.SetStateAction<string>>,
 }
