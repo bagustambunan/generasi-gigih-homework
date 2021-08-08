@@ -23,3 +23,8 @@ export type menuType = {
     view: any,
     set_view: any,
 }
+
+export type trackListType = {
+    tracks: any,
+    set_view: any,
+}
