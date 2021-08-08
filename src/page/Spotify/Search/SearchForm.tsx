@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TrackHeader from "../../../components/TrackHeader";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -6,10 +6,11 @@ import { selectToken } from "../../../redux/tokenSlice";
 import { updateQuery, selectQuery } from "../../../redux/querySlice";
 
 import "../../../styles/search-page.css";
+import { searchFormType } from "../../../types";
 
 const axios = require("axios");
 
-function SearchForm(props) {
+function SearchForm({set_view}:searchFormType) {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const query = useSelector(selectQuery);
@@ -17,12 +18,12 @@ function SearchForm(props) {
   const [val_q, set_val_q] = useState(query);
   const [tracks, set_tracks] = useState([]);
 
-  function handleChange(event) {
-    set_val_q(event.target.value);
+  function handleChange(e: React.FormEvent<HTMLInputElement>) {
+    set_val_q(e.currentTarget.value);
   }
 
-  function handleKeyPress(event) {
-    if (event.key === "Enter") {
+  function handleKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
       dispatch(updateQuery(val_q));
     }
   }
@@ -37,7 +38,7 @@ function SearchForm(props) {
             Authorization: "Bearer " + token,
           },
         })
-        .then((res) => {
+        .then((res:any) => {
           set_tracks(res.data.tracks.items);
         });
     } catch (err) {
@@ -54,11 +55,11 @@ function SearchForm(props) {
       <div className="search-header">
         <i className="fa fa-search"></i>
         <input
-          onChange={(event) => {
-            handleChange(event);
+          onChange={(e) => {
+            handleChange(e);
           }}
-          onKeyPress={(event) => {
-            handleKeyPress(event);
+          onKeyPress={(e) => {
+            handleKeyPress(e);
           }}
           value={val_q}
           type="text"
@@ -66,7 +67,7 @@ function SearchForm(props) {
         ></input>
       </div>
 
-      <TrackHeader tracks={tracks} set_view={props.set_view} />
+      <TrackHeader tracks={tracks} set_view={set_view} />
     </div>
   );
 }

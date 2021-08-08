@@ -28,3 +28,7 @@ export type trackListType = {
     tracks: any,
     set_view: React.Dispatch<React.SetStateAction<string>>,
 }
+
+export type searchFormType = {
+    set_view: React.Dispatch<React.SetStateAction<string>>,
+}
