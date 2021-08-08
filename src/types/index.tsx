@@ -18,3 +18,8 @@ export type playlistItemType = {
     set_view: any,
     set_playlist_id: any,
 }
+
+export type menuType = {
+    view: any,
+    set_view: any,
+}

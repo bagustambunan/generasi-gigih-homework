@@ -1,17 +1,15 @@
-import React from "react";
-import { public_url, root_url } from "../values";
-
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveMenu, selectActiveMenu } from "../redux/activeMenuSlice";
+import { menuType } from "../types";
 
-function Menu(props) {
+function Menu({view, set_view}:menuType) {
   const dispatch = useDispatch();
   const activeMenu = useSelector(selectActiveMenu);
 
-  function goTo(menu, e){
+  function goTo(menu: string, e: React.MouseEvent<HTMLElement>){
     e.preventDefault();
     dispatch(setActiveMenu(menu));
-    props.set_view(menu);
+    set_view(menu);
   }
 
   const menu_list = [
@@ -33,7 +31,7 @@ function Menu(props) {
   ];
 
   menu_list.forEach((item) => {
-    if(item.name === props.view) dispatch(setActiveMenu(props.view));
+    if(item.name === view) dispatch(setActiveMenu(view));
   });
 
   return (
