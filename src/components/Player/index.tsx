@@ -1,7 +1,5 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setTheme, selectTheme } from "../../redux/themeSlice";
-import { root_url } from "../../values";
 
 function Player() {
 
@@ -11,7 +9,6 @@ function Player() {
   function changeTheme(){
     dispatch(setTheme(!theme));
     console.log(theme);
-    // window.location = root_url;
   }
 
   return (
