@@ -1,8 +1,8 @@
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import SpotifyPage from "../page/Spotify/Base";
-import LoginPage from "../page/Spotify/Base/LoginPage";
-import Callback from "../page/Spotify/Base/Callback";
-import Logout from "../page/Spotify/Base/Logout";
+import SpotifyPage from "../pages/Spotify/Base";
+import LoginPage from "../pages/Spotify/Base/LoginPage";
+import Callback from "../pages/Spotify/Base/Callback";
+import Logout from "../pages/Spotify/Base/Logout";
 
 import { useSelector } from "react-redux";
 import { selectToken } from "../redux/tokenSlice";
