@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Track from './components/TrackItem';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('render track component', () => {
+  render(<Track/>);
+  screen.debug();
 });
+
+// test('inspect track component', () => {
+//   render(<Track/>);
+//   const gif_title = screen.getByTestId('gif_title');
+//   expect(gif_title).toBeInTheDocument();
+// });
