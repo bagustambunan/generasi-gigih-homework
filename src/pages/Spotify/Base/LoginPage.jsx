@@ -1,6 +1,4 @@
-import React from "react";
-import { client_id, scope, redirect_uri } from "../../../values";
-import { public_url } from "../../../values";
+import { client_id, scope, redirect_uri, public_url } from "../../../values";
 
 import "../../../styles/base-page.css";
 
