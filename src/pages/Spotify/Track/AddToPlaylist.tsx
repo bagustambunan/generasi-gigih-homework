@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { useSelector } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";
 import { selectSelectedTrack } from "../../../redux/selectedTrackSlice";
 
+import { addToPlaylistType } from "../../../types";
+
 const axios = require("axios");
 
-function AddToPlaylist(props) {
+function AddToPlaylist({set_show_add_modal}:addToPlaylistType) {
   const token = useSelector(selectToken);
   const selecedTrack = useSelector(selectSelectedTrack);
 
   const [playlists, set_playlists] = useState([]);
-  const [selected_playlist_id, set_selected_playlist_id] = useState(null);
+  const [selected_playlist_id, set_selected_playlist_id] = useState('');
 
   async function getPlaylists() {
     try {
@@ -21,7 +23,7 @@ function AddToPlaylist(props) {
             Authorization: "Bearer " + token,
           },
         })
-        .then((res) => {
+        .then((res:any) => {
           set_playlists(res.data.items);
         });
     } catch (err) {
@@ -52,7 +54,7 @@ function AddToPlaylist(props) {
         console.error(err);
       } finally {
         alert("Track added to playlist successfully");
-        props.set_show_add_modal(false);
+        set_show_add_modal(false);
       }
     }
   }
@@ -69,22 +71,22 @@ function AddToPlaylist(props) {
         </div>
         <div className="modal-body">
           <select
-            onChange={(event) => {
-              set_selected_playlist_id(event.target.value);
+            onChange={(e:React.FormEvent<HTMLSelectElement>) => {
+              set_selected_playlist_id(e.currentTarget.value);
             }}
             className="bg-me_main text-me_dark_quarter py-3 px-3 rounded w-80"
           >
             <option value="" disabled selected>
               Select a playlist
             </option>
-            {playlists.map((item, i) => {
+            {playlists.map((item: any) => {
               return <option value={item.id}>{item.name}</option>;
             })}
           </select>
         </div>
         <div className="modal-action">
           <button onClick={() => {doAdd()}} type="button" className="btn btn-primary">Done</button>
-          <button onClick={() => {props.set_show_add_modal(false)}} type="button" className="btn btn-secondary">Cancel</button>
+          <button onClick={() => {set_show_add_modal(false)}} type="button" className="btn btn-secondary">Cancel</button>
         </div>
       </div>
       

@@ -32,3 +32,7 @@ export type trackListType = {
 export type searchFormType = {
     set_view: React.Dispatch<React.SetStateAction<string>>,
 }
+
+export type addToPlaylistType = {
+    set_show_add_modal: React.Dispatch<React.SetStateAction<boolean>>,
+}
