@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import AddToPlaylist from "./AddToPlaylist";
 
 import { useSelector } from "react-redux";
