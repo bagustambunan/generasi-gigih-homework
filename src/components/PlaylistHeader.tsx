@@ -6,7 +6,9 @@ function PlaylistHeader({tracks,set_view}:trackListType) {
   function Header() {
     return (
       <div className="header">
-        <div className="image"></div>
+        <div className="image">
+          
+        </div>
 
         <div className="title">
           <span>TITLE</span>
