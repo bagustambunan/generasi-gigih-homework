@@ -1,18 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const slice = createSlice({
-  name: "user",
+  name: "selectedTrack",
   initialState: {
     value: null,
   },
   reducers: {
-    setUser: (state, action) => {
+    updateSelectedTrack: (state, action) => {
       state.value = action.payload;
     },
-    removeUser: (state, action) => {},
   },
 });
 
-export const { setUser, removeUser } = slice.actions;
-export const selectUser = (state) => state.user.value;
+export const { updateSelectedTrack } = slice.actions;
+export const selectSelectedTrack = (state:any) => state.selectedTrack.value;
 export default slice.reducer;

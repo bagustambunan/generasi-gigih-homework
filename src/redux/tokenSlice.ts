@@ -17,5 +17,5 @@ export const slice = createSlice({
 });
 
 export const { setToken, removeToken } = slice.actions;
-export const selectToken = (state) => state.token.value;
+export const selectToken = (state:any) => state.token.value;
 export default slice.reducer;

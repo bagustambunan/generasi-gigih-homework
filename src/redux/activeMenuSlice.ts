@@ -19,5 +19,5 @@ export const slice = createSlice({
 });
 
 export const { setActiveMenu, removeActiveMenu } = slice.actions;
-export const selectActiveMenu = (state) => state.activeMenu.value;
+export const selectActiveMenu = (state:any) => state.activeMenu.value;
 export default slice.reducer;

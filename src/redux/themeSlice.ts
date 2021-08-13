@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const slice = createSlice({
-  name: "query",
+  name: "theme",
   initialState: {
-    value: "Adele",
+    value: true,
   },
   reducers: {
-    updateQuery: (state, action) => {
+    setTheme: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { updateQuery } = slice.actions;
-export const selectQuery = (state) => state.query.value;
+export const { setTheme } = slice.actions;
+export const selectTheme = (state:any) => state.theme.value;
 export default slice.reducer;
