@@ -135,3 +135,17 @@
 .modal-action > button {
     margin-left: 10px;
 }
+
+@media all and (max-width: 720px) {
+    .header {
+        display: none;
+    }
+
+    .album {
+        display: none;
+    }
+
+    .duration {
+        display: none;
+    }
+} 

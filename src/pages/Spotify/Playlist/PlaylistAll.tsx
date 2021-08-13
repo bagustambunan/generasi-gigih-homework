@@ -56,7 +56,7 @@ function PlaylistAll({set_view, set_playlist_id}:playlistAllType) {
   }, []);
 
   return (
-    <>
+    <div className="playlist-main">
       <div className="page-header">
         <div className="title">
           <span>
@@ -88,7 +88,7 @@ function PlaylistAll({set_view, set_playlist_id}:playlistAllType) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 

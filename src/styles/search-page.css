@@ -28,3 +28,9 @@
     width: 83.333333%;
     border: 0;
 }
+
+@media all and (max-width: 720px) {
+    .search-page {	
+        border-radius: 0;
+    }
+} 

@@ -22,8 +22,8 @@
   background-color: var(--color-bg-card);
   border-radius: 0.75rem;
   box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
--webkit-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
--moz-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
+  -webkit-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
+  -moz-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
 }
 
 .menu > .menu-list {
@@ -98,3 +98,33 @@
 .btn-secondary:hover {
   background-color: var(--color-bg-card);
 }
+
+@media all and (max-width: 720px) {
+  .menu-section {
+    z-index: 100;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    background-color: var(--color-bg-card);
+    box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
+    -webkit-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
+    -moz-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+
+  .menu > .menu-list {
+    padding: 0.65rem;
+  }
+
+  .page-wrapper {
+    padding: 0rem;
+  }
+} 

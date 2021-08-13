@@ -178,3 +178,9 @@
     height: 6rem;
     border: 0;
 }
+
+@media all and (max-width: 720px) {
+    .playlist-main {	
+        padding: 1rem;
+    }
+} 

@@ -100,3 +100,9 @@
 .btn-login > a:hover {
     background-color: var(--color-text-main);
 }
+
+@media all and (max-width: 720px) {
+    .home-page {	
+        border-radius: 0;
+    }
+} 
