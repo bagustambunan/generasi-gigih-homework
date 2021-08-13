@@ -20,7 +20,7 @@ function Track({
         <img
           src={image_url}
           title={album_name}
-          alt="Album image"
+          alt="Album"
         />
       </div>
 

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Menu from "../../../components/Menu";
 import Home from "./Home";
 import PlaylistPage from "../Playlist";
 import SearchPage from "../Search";
 import NewForm from "../Playlist/NewForm";
-import Player from "../../../components/Player";
 
 function SpotifyPage(props) {
 
