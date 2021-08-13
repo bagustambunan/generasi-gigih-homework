@@ -11,7 +11,6 @@ WaveMusic App is a Spotify clone application that uses the Spotify Developers AP
   - Playlist detail
   - List all tracks in a playlist
   - Track detail
-  - Favorite a track (coming soon)
 
 ### Build with
   - Create-react-app
@@ -26,10 +25,9 @@ WaveMusic App is a Spotify clone application that uses the Spotify Developers AP
 
 ### How to use
 Clone the repo:
->git clone https://github.com/skl98/Covidonation.git
+>git clone https://github.com/bagustambunan/generasi-gigih-homework.git
 
 Fetch dependencies:
->cd generasi-gigih-homework
 >yarn
 
 Set up Spotify Developers API:
