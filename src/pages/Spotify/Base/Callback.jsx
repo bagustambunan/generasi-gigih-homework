@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { getHashParams } from "../../../utils";
+import { getHashParams } from "../../../utils/helpers";
 import { root_url } from "../../../values";
 
 import { useSelector, useDispatch } from "react-redux";

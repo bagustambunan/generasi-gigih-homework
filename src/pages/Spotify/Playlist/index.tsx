@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PlaylistAll from "./PlaylistAll";
 import NewForm from "./NewForm";
 import PlaylistDetail from "./PlaylistDetail";
@@ -8,7 +8,7 @@ import '../../../styles/playlist-page.css';
 
 function PlaylistPage() {
   const [view, set_view] = useState("playlistall");
-  const [playlist_id, set_playlist_id] = useState(null);
+  const [playlist_id, set_playlist_id] = useState('');
 
   return (
     <>

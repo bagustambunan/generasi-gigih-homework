@@ -4,9 +4,11 @@ import { useSelector } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";
 import { selectUser } from "../../../redux/userSlice";
 
+import { newFormType } from "../../../types";
+
 const axios = require("axios");
 
-function NewForm(props) {
+function NewForm({set_view}:newFormType) {
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
 
@@ -36,13 +38,13 @@ function NewForm(props) {
       console.error(err);
     } finally {
       alert("A new playlist created succesfully");
-      props.set_view("playlistall");
+      set_view("playlistall");
     }
   }
 
-  function handleOnchange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
+  function handleChange(e: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLTextAreaElement>) {
+    const name = e.currentTarget.name;
+    const value = e.currentTarget.value;
     set_form({ ...form, [name]: value });
   }
 
@@ -65,10 +67,9 @@ function NewForm(props) {
       <form onSubmit={() => { handleSubmit() }}>
         <div className="f-title">
           <input
-            onChange={(e) => { handleOnchange(e) }}
+            onChange={(e) => { handleChange(e) }}
             name="title"
             value={form.title}
-            minlength="10"
             required
             type="text"
             placeholder="Title..."
@@ -76,10 +77,9 @@ function NewForm(props) {
         </div>
         <div className="f-desc">
           <textarea
-            onChange={(e) => { handleOnchange(e) }}
+            onChange={(e) => { handleChange(e) }}
             name="desc"
             value={form.desc}
-            minlength="20"
             required
             placeholder="Description..."
           ></textarea>

@@ -4,18 +4,20 @@ import Playlist from "../../../components/PlaylistItem";
 import { useSelector } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";
 
+import { playlistAllType } from "../../../types";
+
 const axios = require("axios");
 
-function PlaylistAll(props) {
+function PlaylistAll({set_view, set_playlist_id}:playlistAllType) {
   const token = useSelector(selectToken);
 
   const [playlists, set_playlists] = useState([]);
 
   function AddButton() {
 
-    function goToForm(e){
+    function goToForm(e:React.MouseEvent){
       e.preventDefault();
-      props.set_view("newplaylist");
+      set_view("newplaylist");
     }
 
     return (
@@ -41,7 +43,7 @@ function PlaylistAll(props) {
             Authorization: "Bearer " + token,
           },
         })
-        .then((res) => {
+        .then((res:any) => {
           set_playlists(res.data.items);
         });
     } catch (err) {
@@ -67,7 +69,7 @@ function PlaylistAll(props) {
       </div>
 
       <div className="page-main">
-        {playlists.map((item, i) => {
+        {playlists.map((item:any) => {
           let image =
             "https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216";
           if (item.images[0]) {
@@ -80,8 +82,8 @@ function PlaylistAll(props) {
               image={image}
               name={item.name}
               desc={item.description}
-              set_view={props.set_view}
-              set_playlist_id={props.set_playlist_id}
+              set_view={set_view}
+              set_playlist_id={set_playlist_id}
             />
           );
         })}

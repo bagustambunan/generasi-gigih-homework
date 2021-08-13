@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { updateSelectedTrack } from "../redux/selectedTrackSlice";
-import { getDuration } from "../utils";
+import { getDuration } from "../utils/helpers";
 import { trackItemType } from "../types";
 
 function Track({

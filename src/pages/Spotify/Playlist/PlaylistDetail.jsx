@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PlaylistHeader from "../../../components/PlaylistHeader";
 
 import { useSelector } from "react-redux";
@@ -50,7 +50,7 @@ function PlaylistDetail(props) {
               <img
                 src={image}
                 title={selected_playlist.name}
-                alt="{props.album_name}"
+                alt="Album"
               />
             </div>
             <div className="info">

@@ -36,3 +36,17 @@ export type searchFormType = {
 export type addToPlaylistType = {
     set_show_add_modal: React.Dispatch<React.SetStateAction<boolean>>,
 }
+
+export type newFormType = {
+    set_view: React.Dispatch<React.SetStateAction<string>>,
+}
+
+export type playlistAllType = {
+    set_view: React.Dispatch<React.SetStateAction<string>>,
+    set_playlist_id: React.Dispatch<React.SetStateAction<string>>,
+}
+
+export type playlistDetailType = {
+    set_view: React.Dispatch<React.SetStateAction<string>>,
+    playlist_id: string,
+}
