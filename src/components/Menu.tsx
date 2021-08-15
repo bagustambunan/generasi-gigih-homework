@@ -40,6 +40,7 @@ function Menu({view, set_view}:menuType) {
       {menu_list.map((item) => {
         return (
           <div
+            key={item.name}
             className={`${
               activeMenu === item.name ? "menu-list-active " : ""
             } menu-list`}
