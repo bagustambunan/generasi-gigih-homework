@@ -48,8 +48,8 @@
 }
 
 .page-main {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
 }
 
 .playlist-card {
@@ -179,8 +179,18 @@
     border: 0;
 }
 
-@media all and (max-width: 720px) {
-    .playlist-main {	
+@media all and (max-width: 1000px) {
+    .page-main {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
         padding: 1rem;
     }
-} 
+}
+
+@media all and (max-width: 670px) {
+    .page-main {
+        display: grid;
+        grid-template-columns: 100%;
+        padding: 1rem;
+    }
+}
