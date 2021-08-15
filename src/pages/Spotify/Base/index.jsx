@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { selectToken } from "../../../redux/tokenSlice";
 import Menu from "../../../components/Menu";
 import Home from "./Home";
 import PlaylistPage from "../Playlist";
 import SearchPage from "../Search";
 import NewForm from "../Playlist/NewForm";
+import { root_url } from "../../../values";
+
+const axios = require("axios");
 
 function SpotifyPage(props) {
 
+  const token = useSelector(selectToken);
   const [view, set_view] = useState(props.page);
+
 
   const route_list = [
     {
@@ -32,6 +39,24 @@ function SpotifyPage(props) {
     const selected_page = route_list.filter((item) => item.url === view);
     return selected_page[0].page;
   }
+
+  async function checkToken(){
+    try {
+      let url = "https://api.spotify.com/v1/me";
+      await axios
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        });
+    } catch (err) {
+      window.location = root_url+"/logout";
+    }
+  }
+
+  useEffect(() => {
+    checkToken();
+  }, []);
 
   return (
     <div className="main">
