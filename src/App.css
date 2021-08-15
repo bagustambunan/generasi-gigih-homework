@@ -108,9 +108,9 @@
     position: fixed;
     bottom: 0px;
     background-color: var(--color-bg-card);
-    box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
-    -webkit-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
-    -moz-box-shadow: 2px 2px 28px -3px rgba(0,0,0,0.76);
+    box-shadow: 2px 2px 12px -3px rgba(0,0,0,0.76);
+    -webkit-box-shadow: 2px 2px 12px -3px rgba(0,0,0,0.76);
+    -moz-box-shadow: 2px 2px 12px -3px rgba(0,0,0,0.76);
   }
 
   .menu {
@@ -126,5 +126,6 @@
 
   .page-wrapper {
     padding: 0rem;
+    margin-bottom: 50px;
   }
 } 

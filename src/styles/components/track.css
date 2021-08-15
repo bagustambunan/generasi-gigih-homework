@@ -65,7 +65,6 @@
 
 .track > .title {
     grid-column-start: 2;
-    width: 20rem;
     padding: 0.5rem;
 }
 
@@ -85,13 +84,11 @@
 
 .track > .album {
     grid-column-start: 3;
-    width: 20rem;
     padding: 0.5rem;
 }
 
 .track > .duration {
     grid-column-start: 4;
-    width: 6rem;
     padding: 0.5rem;
 }
 
@@ -139,6 +136,13 @@
 @media all and (max-width: 720px) {
     .header {
         display: none;
+    }
+
+    .track {
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: 10% 90%;
+        border-radius: 0.75rem;
     }
 
     .album {
