@@ -192,9 +192,13 @@
 }
 
 @media all and (max-width: 720px) {
+    .page-header{
+        padding: 1rem;
+        margin-bottom: 0rem;
+    }
     .add-button {
         position: fixed;
-        bottom: 80px;
+        bottom: 75px;
         right: 10px;
     }
 } 
