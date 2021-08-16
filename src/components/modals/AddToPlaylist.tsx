@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
-
 import { useSelector } from "react-redux";
-import { selectToken } from "../../../redux/tokenSlice";
-import { selectSelectedTrack } from "../../../redux/selectedTrackSlice";
-
-import { addToPlaylistType } from "../../../types";
+import { selectToken } from "../../redux/tokenSlice";
+import { addToPlaylistType } from "../../types";
 
 const axios = require("axios");
 
 function AddToPlaylist({set_show_add_modal, selected_uris}:addToPlaylistType) {
   const token = useSelector(selectToken);
-  const selecedTrack = useSelector(selectSelectedTrack);
-
   const [playlists, set_playlists] = useState([]);
   const [selected_playlist_id, set_selected_playlist_id] = useState('');
 

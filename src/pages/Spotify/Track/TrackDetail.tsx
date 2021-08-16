@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddToPlaylist from "./AddToPlaylist";
+import AddToPlaylist from "../../../components/modals/AddToPlaylist";
 
 import { useSelector } from "react-redux";
 import { selectSelectedTrack } from "../../../redux/selectedTrackSlice";

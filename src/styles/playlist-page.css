@@ -201,6 +201,10 @@
         bottom: 75px;
         right: 10px;
     }
+    .add-button > a {
+        padding: 13px 17px;
+    }
+    
 } 
 
 @media all and (max-width: 670px) {
