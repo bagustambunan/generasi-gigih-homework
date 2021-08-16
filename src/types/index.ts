@@ -7,6 +7,9 @@ export type trackItemType = {
     duration: string,
     data: any,
     set_view: React.Dispatch<React.SetStateAction<string>>,
+    select_mode: boolean,
+    highlight_tracks: Array<string>,
+    set_highlight_tracks: any,
 }
 
 export type playlistItemType = {

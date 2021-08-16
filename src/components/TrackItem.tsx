@@ -4,15 +4,20 @@ import { getDuration } from "../utils/helpers";
 import { trackItemType } from "../types";
 
 function Track({
-  key, image_url, track_title, artist_name, album_name, duration, data, set_view}
+  key, image_url, track_title, artist_name, album_name, duration, data, set_view, select_mode, highlight_tracks, set_highlight_tracks}
   : trackItemType) {
   const dispatch = useDispatch();
 
   return (
     <div
       onClick={() => {
-        set_view("trackdetail");
-        dispatch(updateSelectedTrack(data));
+        if(select_mode){
+          set_highlight_tracks([...highlight_tracks, data.uri]);
+        }
+        else {
+          set_view("trackdetail");
+          dispatch(updateSelectedTrack(data));
+        }
       }}
       className="track"
     >
