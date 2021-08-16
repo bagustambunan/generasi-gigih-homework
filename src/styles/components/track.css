@@ -137,6 +137,15 @@
     margin-left: 10px;
 } 
 
+.highlight-header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.highlight-header > .btn-add-to-playlist{
+    margin-top: 5px;
+}
+
 .track-select-off {
     border: 2px solid var(--color-bg-main);
     padding: 5px 12px;

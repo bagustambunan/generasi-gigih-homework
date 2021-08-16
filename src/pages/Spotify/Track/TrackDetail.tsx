@@ -71,8 +71,8 @@ function TrackDetail() {
       </div>
 
       <div className="action">
-        <PlayButton />
         <AddToPlaylistButton/>
+        <PlayButton />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ function TrackHeader({tracks,set_view}:trackListType) {
   function TrackSelector(){
     if(select_mode){
       return(
-        <>
+        <div className="highlight-header">
           {(highlight_tracks.length !== 0) && (
             <div className="btn-add-to-playlist">
               <span
@@ -37,20 +37,22 @@ function TrackHeader({tracks,set_view}:trackListType) {
               Cancel
             </span>
           </div>
-        </>
+        </div>
       )
     }
     else{
       return(
-        <div
-          className="track-select-off"
-          onClick={() => {
-            set_select_mode(true);
-          }}
-        >
-          <span>
-            Select tracks
-          </span>
+        <div className="highlight-header">
+          <div
+            className="track-select-off"
+            onClick={() => {
+              set_select_mode(true);
+            }}
+          >
+            <span>
+              Select tracks
+            </span>
+          </div>
         </div>
       )
     }

@@ -42,11 +42,11 @@
     margin-top: 1.25rem;
 }
 
-.btn-play {
+.btn-add-to-playlist {
     margin-right: 0.75rem;
 }
 
-.btn-play > a {
+.btn-add-to-playlist > span {
     cursor: pointer;
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -60,21 +60,21 @@
     text-decoration: none;
 }
 
-.btn-play > a:hover {
+.btn-add-to-playlist > span:hover {
     background-color: var(--color-text-main);
 }
 
-.btn-play > a > i {
+.btn-add-to-playlist > span > i {
     font-size: 0.875rem;
     line-height: 1.25rem;
     margin-right: 0.25rem;
 }
 
-.btn-add-to-playlist {
+.btn-play {
     
 }
 
-.btn-add-to-playlist > span {
+.btn-play > a {
     cursor: pointer;
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -85,14 +85,15 @@
     padding-right: 1rem;
     border-radius: 9999px;
     border: 2px solid var(--color-text-main);
+    text-decoration: none;
 }
 
-.btn-add-to-playlist > span:hover {
+.btn-play > a:hover {
     color: #FA6791;
     border: 2px solid #FA6791;
 }
 
-.btn-add-to-playlist > span > i {
+.btn-play > a > i {
     font-size: 0.875rem;
     line-height: 1.25rem;
     margin-right: 0.25rem;
