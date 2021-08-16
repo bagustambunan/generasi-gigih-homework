@@ -34,6 +34,7 @@ function TrackDetail() {
         <span
           onClick={() => {
             set_show_add_modal(true);
+            console.log(selecedTrack);
           }}
           title="Add to playlist"
         >
@@ -49,25 +50,29 @@ function TrackDetail() {
         <AddToPlaylist set_show_add_modal={set_show_add_modal} selected_uris={selected_uris} />
       )}
 
-      <div className="image">
-        <img
-          src={selecedTrack.album.images[0].url}
-          title={selecedTrack.name}
-          alt="{props.album_name}"
-        />
-      </div>
+      <div className="track-over">
 
-      <div className="info">
-        <div className="artist">
-          <span>
-            {selecedTrack.name}
-          </span>
+        <div className="image">
+          <img
+            src={selecedTrack.album.images[0].url}
+            title={selecedTrack.name}
+            alt="{props.album_name}"
+          />
         </div>
-        <div className="album">
-          <span>
-            {selecedTrack.album.artists[0].name}
-          </span>
+
+        <div className="info">
+          <div className="title">
+            <span>
+              {selecedTrack.name}
+            </span>
+          </div>
+          <div className="artist">
+            <span>
+              {selecedTrack.album.artists[0].name}
+            </span>
+          </div>
         </div>
+
       </div>
 
       <div className="action">

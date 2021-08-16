@@ -121,14 +121,14 @@
     width: 75%;
 }
 
-.detail-page > .playlist-header > .info > span {
+.detail-page > .playlist-header > .info > div > span {
     font-size: 1.5rem;
     line-height: 2rem;
     color: var(--color-text-main);
     font-weight: 700;
 }
 
-.detail-page > .playlist-header > .info > p {
+.detail-page > .playlist-header > .info > div > p {
     font-size: 0.875rem;
     line-height: 1.25rem;
     color: var(--color-text-secondary);
@@ -207,9 +207,13 @@
     .f-title > input {
         width: 94%;
     }
-    
     .f-desc > textarea {
         width: 94%;
+    }
+    .detail-page {
+        padding: 1.25rem;
+        box-shadow: none;
+        border-radius: 0px;
     }
     
 } 
@@ -221,6 +225,12 @@
         padding: 1rem;
     }
     .playlist-card {
+        margin-right: 0px;
+    }
+    .playlist-card:nth-child(5n) {
+        margin-right: 0px;
+    }
+    .playlist-card:nth-child(3n) {
         margin-right: 0px;
     }
 }
