@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import TrackHeader from "../../../components/SearchHeader";
+import SearchHeader from "../../../components/SearchHeader";
 
 import { useSelector, useDispatch } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";
@@ -67,7 +67,7 @@ function SearchForm({set_view}:searchFormType) {
         ></input>
       </div>
 
-      <TrackHeader tracks={tracks} set_view={set_view} />
+      <SearchHeader tracks={tracks} set_view={set_view} />
     </div>
   );
 }

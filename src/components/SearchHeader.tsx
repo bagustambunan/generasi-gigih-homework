@@ -4,7 +4,7 @@ import AddToPlaylist from "./modals/AddToPlaylist";
 import "../styles/components/track.css";
 import { trackListType } from "../types";
 
-function TrackHeader({tracks,set_view}:trackListType) {
+function SearchHeader({tracks,set_view}:trackListType) {
 
   const [select_mode, set_select_mode] = useState(false);
   const [highlight_tracks, set_highlight_tracks] = useState([]);
@@ -110,4 +110,4 @@ function TrackHeader({tracks,set_view}:trackListType) {
   );
 }
 
-export default TrackHeader;
+export default SearchHeader;

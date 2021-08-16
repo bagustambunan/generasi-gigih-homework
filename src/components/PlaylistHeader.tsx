@@ -98,7 +98,7 @@ function PlaylistHeader({tracks,set_view}:trackListType) {
             artist_name={item.track.album.artists[0].name}
             album_name={item.track.album.name}
             duration={item.track.duration_ms}
-            data={item}
+            data={item.track}
             set_view={set_view}
             select_mode={select_mode}
             highlight_tracks={highlight_tracks}

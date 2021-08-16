@@ -9,24 +9,27 @@
 .search-page > .search-header {
     position:relative;
     width:100%;
+    margin-bottom: 1.25rem;
+    box-sizing: border-box;
 }
 
 .search-page > .search-header > i{
     position:absolute;
-    top:10;
-    left:110;
+    margin-top: 11px;
+    margin-left: 18px;
 }
 
 .search-page > .search-header > input {
     border: 0;
-    margin-bottom: 1.25rem;
     background-color: var(--color-bg-main);
     color: var(--color-text-main);
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;	
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-left: 3.0rem;
+    padding-right: 1.45rem;	
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     border-radius: 9999px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 @media all and (max-width: 720px) {

@@ -140,6 +140,7 @@
 .highlight-header{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 16px;
 }
 
 .highlight-header > .btn-add-to-playlist{
