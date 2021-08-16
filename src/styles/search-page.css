@@ -7,7 +7,18 @@
 }
 
 .search-page > .search-header {
-    width: 100%;
+    position:relative;
+    width:100%;
+}
+
+.search-page > .search-header > i{
+    position:absolute;
+    top:10;
+    left:110;
+}
+
+.search-page > .search-header > input {
+    border: 0;
     margin-bottom: 1.25rem;
     background-color: var(--color-bg-main);
     color: var(--color-text-main);
@@ -16,17 +27,6 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border-radius: 9999px;
-    width: 20rem;
-}
-
-.search-page > .search-header > i{
-    margin-right: 0.75rem;
-}
-
-.search-page > .search-header > input {
-    background-color: transparent;
-    width: 83.333333%;
-    border: 0;
 }
 
 @media all and (max-width: 720px) {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import TrackHeader from "../../../components/TrackHeader";
+import TrackHeader from "../../../components/SearchHeader";
 
 import { useSelector, useDispatch } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";

@@ -135,26 +135,6 @@
 
 .modal-action > button {
     margin-left: 10px;
-}
-
-@media all and (max-width: 720px) {
-    .header {
-        display: none;
-    }
-
-    .track {
-        cursor: pointer;
-        display: flex;
-        border-radius: 0.75rem;
-    }
-
-    .album {
-        display: none;
-    }
-
-    .duration {
-        display: none;
-    }
 } 
 
 .track-select-off {
@@ -177,4 +157,24 @@
 
 .track-select-on:hover {
     border: 2px solid var(--color-primary);
+}
+
+@media all and (max-width: 720px) {
+    .header {
+        display: none;
+    }
+
+    .track {
+        cursor: pointer;
+        display: flex;
+        border-radius: 0.75rem;
+    }
+
+    .album {
+        display: none;
+    }
+
+    .duration {
+        display: none;
+    }
 }
