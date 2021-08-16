@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Track from "./TrackItem";
+import AddToPlaylist from "../pages/Spotify/Track/AddToPlaylist";
 import "../styles/components/track.css";
 import { trackListType } from "../types";
 
@@ -7,15 +8,52 @@ function TrackHeader({tracks,set_view}:trackListType) {
 
   const [select_mode, set_select_mode] = useState(false);
   const [highlight_tracks, set_highlight_tracks] = useState([]);
+  const [show_add_modal, set_show_add_modal] = useState(false);
 
   function TrackSelector(){
-    return(
-      <div className="track-selector">
-        <span>
-          Select tracks
-        </span>
-      </div>
-    )
+    if(select_mode){
+      return(
+        <>
+          {(highlight_tracks.length !== 0) && (
+            <div className="btn-add-to-playlist">
+              <span
+                onClick={() => {
+                  set_show_add_modal(true);
+                }}
+                title="Add to playlist"
+              >
+                <i className="fa fa-headphones-alt"></i> Add to playlist
+              </span>
+            </div>
+          )}
+          <div
+            className="track-select-on"
+            onClick={() => {
+              set_select_mode(false);
+              set_highlight_tracks([]);
+            }}
+          >
+            <span>
+              Cancel
+            </span>
+          </div>
+        </>
+      )
+    }
+    else{
+      return(
+        <div
+          className="track-select-off"
+          onClick={() => {
+            set_select_mode(true);
+          }}
+        >
+          <span>
+            Select tracks
+          </span>
+        </div>
+      )
+    }
   }
 
   function Header() {
@@ -40,6 +78,10 @@ function TrackHeader({tracks,set_view}:trackListType) {
 
   return (
     <div className="header-body">
+
+      {show_add_modal && (
+        <AddToPlaylist set_show_add_modal={set_show_add_modal} selected_uris={highlight_tracks} />
+      )}
 
       <TrackSelector/>
 

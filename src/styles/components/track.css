@@ -96,6 +96,10 @@
     color: var(--color-text-secondary);
 }
 
+.track-highlight{
+    border: 2px solid red;
+}
+
 .modal {
     background-color: rgba(0,0,0,0.5);
     width: 100vw;
@@ -153,12 +157,24 @@
     }
 } 
 
-.track-selector {
+.track-select-off {
     border: 2px solid var(--color-bg-main);
     padding: 5px 12px;
     border-radius: 9999px;
+    cursor: pointer;
 }
 
-.track-selector:hover {
+.track-select-off:hover {
+    border: 2px solid var(--color-primary);
+}
+
+.track-select-on {
+    border: 2px solid var(--color-bg-main);
+    padding: 5px 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.track-select-on:hover {
     border: 2px solid var(--color-primary);
 }

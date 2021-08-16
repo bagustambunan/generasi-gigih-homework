@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateSelectedTrack } from "../redux/selectedTrackSlice";
 import { getDuration } from "../utils/helpers";
@@ -6,20 +7,35 @@ import { trackItemType } from "../types";
 function Track({
   key, image_url, track_title, artist_name, album_name, duration, data, set_view, select_mode, highlight_tracks, set_highlight_tracks}
   : trackItemType) {
+
   const dispatch = useDispatch();
+  const [isHighlight, set_isHighlight] = useState(highlight_tracks.some(item => item === data.uri));
+
+  useEffect(() => {
+    set_isHighlight(highlight_tracks.some(item => item === data.uri));
+  }, [highlight_tracks]);
 
   return (
     <div
       onClick={() => {
         if(select_mode){
-          set_highlight_tracks([...highlight_tracks, data.uri]);
+          if(isHighlight){
+            let index = highlight_tracks.indexOf(data.uri);
+            if (index !== -1) highlight_tracks.splice(index, 1);
+            set_isHighlight(false);
+          }
+          else{
+            set_highlight_tracks([...highlight_tracks, data.uri]);
+            set_isHighlight(true);
+          }
         }
         else {
           set_view("trackdetail");
           dispatch(updateSelectedTrack(data));
         }
+        console.log(isHighlight);
       }}
-      className="track"
+      className={"track" + (isHighlight? " track-highlight" : "")}
     >
       <div className="image">
         <img
