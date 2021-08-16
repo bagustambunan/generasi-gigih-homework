@@ -80,7 +80,7 @@ function AddToPlaylist({set_show_add_modal, selected_uris}:addToPlaylistType) {
           </select>
         </div>
         <div className="modal-action">
-          <button onClick={() => {doAdd()}} type="button" className="btn btn-primary">Done</button>
+          <button onClick={() => {doAdd()}} type="button" className="btn btn-primary">Add</button>
           <button onClick={() => {set_show_add_modal(false)}} type="button" className="btn btn-secondary">Cancel</button>
         </div>
       </div>
