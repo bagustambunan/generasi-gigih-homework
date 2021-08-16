@@ -6,9 +6,13 @@
     border-radius: 0.75rem;
 }
 
-.home-page > .user-card {
+.user-card {
     display: flex;
-    flex-wrap: wrap;
+}
+
+.home-action {
+    display: flex;
+    margin: 20px 0px 10px 0px;
 }
 
 .home-page > .user-card > .image {
@@ -33,11 +37,10 @@
     color: var(--color-text-main);
 }
 
-.home-page > .user-card > .btn-logout {
-    text-align: right;
+.home-page > .btn-logout {
 }
 
-.home-page > .user-card > .btn-logout > a {
+.btn-logout > a {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
     border: 2px solid var(--color-red);
@@ -52,9 +55,10 @@
     padding-bottom: 0.25rem;
     cursor: pointer;
     text-decoration: none;
+    margin-left: 10px;
 }
 
-.home-page > .user-card > .btn-logout > a:hover {
+.btn-logout > a:hover {
     background-color: var(--color-red);
     color: white;
 }
@@ -101,7 +105,7 @@
     background-color: var(--color-text-main);
 }
 
-.btn-mode {
+.btn-mode > span {
     border: 2px solid var(--color-text-secondary);
     color: var(--color-text-secondary);
     font-size: 0.875rem;
@@ -113,6 +117,11 @@
     padding-bottom: 0.25rem;
     border-radius: 9999px;
     cursor: pointer;
+}
+
+.btn-mode > span:hover{
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
 }
 
 @media all and (max-width: 720px) {

@@ -34,11 +34,9 @@ function Home() {
 
   function LogoutButton() {
     return (
-      <a
-        href="/logout"
-      >
-        LOGOUT
-      </a>
+      <div className="btn-logout">
+        <a href="/logout">LOGOUT</a>
+      </div>
     );
   }
 
@@ -58,12 +56,10 @@ function Home() {
               {user.display_name}
             </span>
           </div>
-          <div className="btn-logout">
-            <LogoutButton />
-          </div>
-          <div>
-            <ToggleMode/>
-          </div>
+        </div>
+        <div className="home-action">
+          <ToggleMode/>
+          <LogoutButton />
         </div>
       </div>
     );

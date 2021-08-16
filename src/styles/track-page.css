@@ -101,7 +101,7 @@
 
 @media all and (max-width: 720px) {
     .track-page{
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
     .track-over {
         position:relative;
@@ -136,6 +136,7 @@
     }
     .track-page > .action {
         padding: 1.25rem;
+        margin-top: 0px;
     }
     
 }

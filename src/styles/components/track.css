@@ -98,6 +98,7 @@
 
 .track-highlight{
     background-color: var(--color-highlight);
+    /* border: 2px solid var(--color-highlight); */
 }
 
 .modal {
