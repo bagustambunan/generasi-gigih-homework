@@ -29,7 +29,7 @@ function PlaylistAll({set_view, set_playlist_id}:playlistAllType) {
           href="/playlists/new"
           title="Create new playlist"
         >
-          <i className="fa fa-plus"></i> Create new playlist
+          <i className="fa fa-plus"></i>
         </a>
       </div>
     );

@@ -4,7 +4,7 @@
 
 .header {
     display: grid;
-    grid-template-columns: 10% 35% 35% 20%;
+    grid-template-columns: 10% 40% 40% 10%;
     border-bottom: 1px solid var(--color-bg-main);
     margin-bottom: 1.25rem;
 }
@@ -43,7 +43,7 @@
 .track {
     cursor: pointer;
     display: grid;
-    grid-template-columns: 10% 35% 35% 20%;
+    grid-template-columns: 10% 40% 40% 10%;
     border-radius: 0.75rem;
 }
 
@@ -140,8 +140,7 @@
 
     .track {
         cursor: pointer;
-        display: grid;
-        grid-template-columns: 10% 90%;
+        display: flex;
         border-radius: 0.75rem;
     }
 

@@ -1,6 +1,6 @@
 .page-header {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: row;
     margin-bottom: 2.5rem;
 }
 
@@ -21,24 +21,20 @@
 }
 
 .add-button {
+    
 }
 
 .add-button > a {
     text-decoration: none;
     cursor: pointer;
-    color: var(--color-primary);
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    color: white;
+    padding: 10px 12px;
     border-radius: 9999px;
-    border: 2px solid var(--color-bg-main);
+    background-color: var(--color-primary);
 }
 
 .add-button > a:hover {
-    border: 2px solid var(--color-primary);
-    background-color: var(--color-primary);
-    color: white;
+    background-color: var(--color-text-secondary);
 }
 
 .add-button > a > i {
@@ -57,11 +53,14 @@
     --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     border-radius: 0.75rem;
-    /* width: 250px; */
-    margin-right: 1.25rem;
     margin-bottom: 1.25rem;
     cursor: pointer;
     border-bottom: 4px solid transparent;
+    margin-right: 1.25rem;
+}
+
+.playlist-card:nth-child(5n) {
+    margin-right: 0px;
 }
 
 .playlist-card:hover {
@@ -185,6 +184,12 @@
         grid-template-columns: 33% 33% 33%;
         padding: 1rem;
     }
+    .playlist-card:nth-child(5n) {
+        margin-right: 1.25rem;
+    }
+    .playlist-card:nth-child(3n) {
+        margin-right: 0px;
+    }
 }
 
 @media all and (max-width: 670px) {
@@ -192,5 +197,8 @@
         display: grid;
         grid-template-columns: 100%;
         padding: 1rem;
+    }
+    .playlist-card {
+        margin-right: 0px;
     }
 }
