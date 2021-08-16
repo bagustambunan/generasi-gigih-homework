@@ -143,8 +143,7 @@
 }
 
 .form-page > .form-header {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-page > .form-header > span {
@@ -164,7 +163,8 @@
     padding: 0.75rem;
     border-radius: 0.25rem;
     border: 0;
-    width: 44%;
+    box-sizing: border-box;
+    width: 50%;
 }
 
 .f-desc > textarea {
@@ -172,7 +172,8 @@
     color: var(--color-text-main);
     padding: 0.75rem;
     border-radius: 0.25rem;
-    width: 44%;
+    box-sizing: border-box;
+    width: 50%;
     height: 6rem;
     border: 0;
 }
@@ -205,10 +206,12 @@
         padding: 13px 17px;
     }
     .f-title > input {
-        width: 94%;
+        box-sizing: border-box;
+        width: 100%;
     }
     .f-desc > textarea {
-        width: 94%;
+        box-sizing: border-box;
+        width: 100%;
     }
     .detail-page {
         padding: 1.25rem;

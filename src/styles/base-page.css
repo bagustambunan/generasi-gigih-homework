@@ -82,7 +82,7 @@
 }
 
 .btn-login > a {
-    background-color: var(--color-primary);
+    background-color: #1ED760;
     width: 13rem;
     border-radius: 9999px;
     color: white;

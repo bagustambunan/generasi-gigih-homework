@@ -27,7 +27,7 @@ function PlaylistHeader({tracks,set_view}:trackListType) {
             </div>
           )}
           <div
-            className="track-select-on"
+            className="track-select"
             onClick={() => {
               set_select_mode(false);
               set_highlight_tracks([]);
@@ -44,7 +44,7 @@ function PlaylistHeader({tracks,set_view}:trackListType) {
       return(
         <div className="highlight-header">
           <div
-            className="track-select-off"
+            className="track-select"
             onClick={() => {
               set_select_mode(true);
             }}

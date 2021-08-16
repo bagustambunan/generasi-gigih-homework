@@ -147,25 +147,15 @@
     margin-top: 5px;
 }
 
-.track-select-off {
-    border: 2px solid var(--color-bg-main);
+.track-select {
+    border: 2px solid var(--color-text-secondary);
     padding: 5px 12px;
     border-radius: 9999px;
     cursor: pointer;
+    color: var(--color-text-main);
 }
 
-.track-select-off:hover {
-    border: 2px solid var(--color-primary);
-}
-
-.track-select-on {
-    border: 2px solid var(--color-bg-main);
-    padding: 5px 12px;
-    border-radius: 9999px;
-    cursor: pointer;
-}
-
-.track-select-on:hover {
+.track-select:hover {
     border: 2px solid var(--color-primary);
 }
 
