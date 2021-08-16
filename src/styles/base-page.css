@@ -101,6 +101,20 @@
     background-color: var(--color-text-main);
 }
 
+.btn-mode {
+    border: 2px solid var(--color-text-secondary);
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
 @media all and (max-width: 720px) {
     .home-page {	
         border-radius: 0;

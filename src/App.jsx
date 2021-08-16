@@ -15,7 +15,7 @@ function App() {
   return(
     <>
       <React.Suspense fallback={<></>}>
-        {(theme === true) && <DarkMode/>}
+        {(theme === true) && <LightMode/>}
         {(theme === false) && <DarkMode/>}
       </React.Suspense>
       <AppRouter/>

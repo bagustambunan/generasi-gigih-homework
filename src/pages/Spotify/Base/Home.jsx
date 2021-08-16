@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";
 import { setUser, selectUser } from "../../../redux/userSlice";
+import { setTheme, selectTheme } from "../../../redux/themeSlice";
 
 import "../../../styles/base-page.css";
 
@@ -12,6 +13,7 @@ function Home() {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
+  const theme = useSelector(selectTheme);
 
   async function getUserInfo() {
     try {
@@ -29,10 +31,6 @@ function Home() {
       console.error(err);
     }
   }
-
-  useEffect(() => {
-    getUserInfo();
-  }, []);
 
   function LogoutButton() {
     return (
@@ -63,12 +61,39 @@ function Home() {
           <div className="btn-logout">
             <LogoutButton />
           </div>
+          <div>
+            <ToggleMode/>
+          </div>
         </div>
       </div>
     );
   }
 
-  return <>{user && <UserCard />}</>;
+  function ToggleMode(){
+    return(
+      <div
+        class="btn-mode"
+        onClick={() => {
+          dispatch(setTheme(!theme));
+          console.log(theme);
+        }}
+      >
+        <span>
+          CHANGE THEME
+        </span>
+      </div>
+    )
+  }
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
+
+  return(
+    <>
+      {user && <UserCard />}
+    </>
+  );
 }
 
 export default Home;
