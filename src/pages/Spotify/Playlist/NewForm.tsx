@@ -85,7 +85,7 @@ function NewForm({set_view}:newFormType) {
           ></textarea>
         </div>
         <div className="f-submit">
-          <button className="btn btn-primary" type="submit">Submit</button>
+          <button className="btn btn-primary" type="submit">Create</button>
         </div>
       </form>
     </div>

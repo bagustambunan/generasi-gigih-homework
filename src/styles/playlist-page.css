@@ -163,8 +163,8 @@
     color: var(--color-text-main);
     padding: 0.75rem;
     border-radius: 0.25rem;
-    width: 41.666667%;
     border: 0;
+    width: 44%;
 }
 
 .f-desc > textarea {
@@ -172,7 +172,7 @@
     color: var(--color-text-main);
     padding: 0.75rem;
     border-radius: 0.25rem;
-    width: 41.666667%;
+    width: 44%;
     height: 6rem;
     border: 0;
 }
@@ -203,6 +203,13 @@
     }
     .add-button > a {
         padding: 13px 17px;
+    }
+    .f-title > input {
+        width: 94%;
+    }
+    
+    .f-desc > textarea {
+        width: 94%;
     }
     
 } 
