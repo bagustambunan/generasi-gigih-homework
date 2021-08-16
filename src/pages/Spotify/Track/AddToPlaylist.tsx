@@ -8,7 +8,7 @@ import { addToPlaylistType } from "../../../types";
 
 const axios = require("axios");
 
-function AddToPlaylist({set_show_add_modal}:addToPlaylistType) {
+function AddToPlaylist({set_show_add_modal, selected_uris}:addToPlaylistType) {
   const token = useSelector(selectToken);
   const selecedTrack = useSelector(selectSelectedTrack);
 
@@ -38,7 +38,7 @@ function AddToPlaylist({set_show_add_modal}:addToPlaylistType) {
           "https://api.spotify.com/v1/playlists/" +
           selected_playlist_id +
           "/tracks?uris=" +
-          selecedTrack.uri;
+          selected_uris;
         await axios.post(
           url,
           {},

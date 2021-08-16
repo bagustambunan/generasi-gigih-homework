@@ -7,9 +7,11 @@ import { selectSelectedTrack } from "../../../redux/selectedTrackSlice";
 import "../../../styles/track-page.css";
 
 function TrackDetail() {
-  const selecedTrack = useSelector(selectSelectedTrack);
 
+  const selecedTrack = useSelector(selectSelectedTrack);
   const [show_add_modal, set_show_add_modal] = useState(false);
+
+  const selected_uris= [selecedTrack.uri];
 
   function PlayButton() {
     return (
@@ -44,7 +46,7 @@ function TrackDetail() {
   return (
     <div className="track-page">
       {show_add_modal && (
-        <AddToPlaylist set_show_add_modal={set_show_add_modal} />
+        <AddToPlaylist set_show_add_modal={set_show_add_modal} selected_uris={selected_uris} />
       )}
 
       <div className="image">
@@ -70,7 +72,7 @@ function TrackDetail() {
 
       <div className="action">
         <PlayButton />
-        <AddToPlaylistButton />
+        <AddToPlaylistButton/>
       </div>
     </div>
   );
