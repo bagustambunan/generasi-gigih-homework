@@ -28,7 +28,7 @@
     text-decoration: none;
     cursor: pointer;
     color: white;
-    padding: 10px 12px;
+    padding: 10px 14px;
     border-radius: 9999px;
     background-color: var(--color-primary);
 }
@@ -38,7 +38,6 @@
 }
 
 .add-button > a > i {
-    margin-right: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
 }
@@ -191,6 +190,14 @@
         margin-right: 0px;
     }
 }
+
+@media all and (max-width: 720px) {
+    .add-button {
+        position: fixed;
+        bottom: 80px;
+        right: 10px;
+    }
+} 
 
 @media all and (max-width: 670px) {
     .page-main {
