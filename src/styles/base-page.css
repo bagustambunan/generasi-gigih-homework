@@ -124,8 +124,28 @@
     color: var(--color-primary);
 }
 
+.home-me {
+    margin-top: 10px;
+}
+
+.home-me > span {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.home-me > span > a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+}
+
 @media all and (max-width: 720px) {
     .home-page {	
         border-radius: 0;
+        box-shadow: none;
+    }
+    .home-me {
+        margin-top: 0px;
+        padding: 1.25rem;
     }
 } 
