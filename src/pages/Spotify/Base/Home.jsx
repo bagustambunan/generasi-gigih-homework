@@ -1,19 +1,20 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { selectToken } from "../../../redux/tokenSlice";
 import { setUser, selectUser } from "../../../redux/userSlice";
-import { setTheme, selectTheme } from "../../../redux/themeSlice";
 
 import "../../../styles/base-page.css";
+import "../../../styles/themes/theme.css";
 
 const axios = require("axios");
 
 function Home() {
+
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
-  const theme = useSelector(selectTheme);
+  const [theme, set_theme] = useState(localStorage.getItem('theme'));
 
   async function getUserInfo() {
     try {
@@ -59,23 +60,64 @@ function Home() {
         </div>
         <div className="home-action">
           <ToggleMode/>
+          {/* <ResetMode/> */}
           <LogoutButton />
         </div>
       </div>
     );
   }
 
+  function changeTheme(themeName) {
+    set_theme(themeName);
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+    // localStorage.removeItem('theme');
+  }
+
   function ToggleMode(){
+    if(theme === 'theme-light')
+    {
+      return(
+        <div
+          class="btn-mode"
+          onClick={() => {
+            changeTheme("theme-dark");
+          }}
+        >
+          <span>
+            CHANGE TO DARK
+          </span>
+        </div>
+      )
+    }
+    else
+    {
+      return(
+        <div
+          class="btn-mode"
+          onClick={() => {
+            changeTheme("theme-light");
+          }}
+        >
+          <span>
+            CHANGE TO LIGHT
+          </span>
+        </div>
+      )
+    }
+    
+  }
+
+  function ResetMode(){
     return(
       <div
         class="btn-mode"
         onClick={() => {
-          dispatch(setTheme(!theme));
-          console.log(theme);
+          localStorage.removeItem('theme');
         }}
       >
         <span>
-          CHANGE THEME
+          RESET
         </span>
       </div>
     )

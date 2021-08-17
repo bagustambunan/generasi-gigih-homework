@@ -8,13 +8,15 @@ import SearchPage from "../Search";
 import NewForm from "../Playlist/NewForm";
 import { root_url } from "../../../values";
 
+import "../../../styles/themes/theme.css";
+
 const axios = require("axios");
 
 function SpotifyPage(props) {
 
   const token = useSelector(selectToken);
   const [view, set_view] = useState(props.page);
-
+  const [theme, set_theme] = useState(localStorage.getItem('theme'));
 
   const route_list = [
     {
@@ -56,6 +58,20 @@ function SpotifyPage(props) {
 
   useEffect(() => {
     checkToken();
+    // document.documentElement.className = 'theme-light';
+    // if(localStorage.getItem('theme')){
+    //   localStorage.setItem('theme', 'theme-light');
+    //   document.documentElement.className = 'theme-light';
+    // }
+    // console.log(theme);
+    if(theme){
+      document.documentElement.className = theme;
+    }
+    else{
+      localStorage.setItem('theme', 'theme-light');
+      document.documentElement.className = 'theme-light';
+    }
+
   }, []);
 
   return (
