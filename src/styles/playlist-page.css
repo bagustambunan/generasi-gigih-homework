@@ -221,22 +221,26 @@
         box-shadow: none;
         border-radius: 0px;
     }
+    .detail-page > .playlist-header > .info {
+        margin-top: 12px;
+        margin-bottom: -8px;
+    }
     
 } 
 
 @media all and (max-width: 670px) {
     .page-main {
         display: grid;
-        grid-template-columns: 100%;
+        grid-template-columns: 50% 50%;
         padding: 1rem;
     }
-    .playlist-card {
-        margin-right: 0px;
-    }
     .playlist-card:nth-child(5n) {
-        margin-right: 0px;
+        margin-right: 1.25rem;
     }
     .playlist-card:nth-child(3n) {
+        margin-right: 1.25rem;
+    }
+    .playlist-card:nth-child(2n) {
         margin-right: 0px;
     }
 }
