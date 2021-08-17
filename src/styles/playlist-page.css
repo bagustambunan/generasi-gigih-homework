@@ -101,7 +101,6 @@
 .detail-page > .playlist-header{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
 }
@@ -118,7 +117,8 @@
 }
 
 .detail-page > .playlist-header > .info {
-    width: 75%;
+    display: flex;
+    flex-direction: column;
 }
 
 .detail-page > .playlist-header > .info > div > span {
@@ -196,6 +196,9 @@
     .page-header{
         padding: 1rem;
         margin-bottom: 0rem;
+    }
+    .page-header > .title{
+        width: 100%;
     }
     .add-button {
         position: fixed;
