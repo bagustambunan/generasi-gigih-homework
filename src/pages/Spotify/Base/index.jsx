@@ -8,8 +8,6 @@ import SearchPage from "../Search";
 import NewForm from "../Playlist/NewForm";
 import { root_url } from "../../../values";
 
-import "../../../styles/themes/theme.css";
-
 const axios = require("axios");
 
 function SpotifyPage(props) {
@@ -62,8 +60,8 @@ function SpotifyPage(props) {
       document.documentElement.className = theme;
     }
     else{
-      localStorage.setItem('theme', 'theme-light');
-      document.documentElement.className = 'theme-light';
+      localStorage.setItem('theme', 'theme-light-pink');
+      document.documentElement.className = 'theme-light-pink';
     }
   }, []);
 

@@ -22,8 +22,7 @@
 .home-page > .user-card > .image > img {
     object-fit: cover;
     border-radius: 9999px;
-    width: 4rem;
-    height: 4rem;
+    width: 70px;
 }
 
 .home-page > .user-card > .info {
@@ -38,11 +37,10 @@
 }
 
 .home-page > .btn-logout {
+
 }
 
 .btn-logout > a {
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
     border: 2px solid var(--color-red);
     border-radius: 9999px;
     color: var(--color-red);
@@ -55,7 +53,6 @@
     padding-bottom: 0.25rem;
     cursor: pointer;
     text-decoration: none;
-    margin-left: 10px;
 }
 
 .btn-logout > a:hover {
@@ -105,23 +102,15 @@
     background-color: var(--color-text-main);
 }
 
-.btn-mode > span {
-    border: 2px solid var(--color-text-secondary);
-    color: var(--color-text-secondary);
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    border-radius: 9999px;
-    cursor: pointer;
+.mode-wrapper{
+    
 }
 
-.btn-mode > span:hover{
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
+.btn-mode {
+    padding: 10px;
+    border-radius: 9999px;
+    margin: 2px;
+    cursor: pointer;
 }
 
 .home-me {

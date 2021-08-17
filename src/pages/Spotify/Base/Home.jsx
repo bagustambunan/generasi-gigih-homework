@@ -5,7 +5,6 @@ import { selectToken } from "../../../redux/tokenSlice";
 import { setUser, selectUser } from "../../../redux/userSlice";
 
 import "../../../styles/base-page.css";
-import "../../../styles/themes/theme.css";
 
 const axios = require("axios");
 
@@ -56,11 +55,8 @@ function Home() {
             <span>
               {user.display_name}
             </span>
+            <LogoutButton />
           </div>
-        </div>
-        <div className="home-action">
-          <ToggleMode/>
-          <LogoutButton />
         </div>
       </div>
     );
@@ -70,40 +66,23 @@ function Home() {
     set_theme(themeName);
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
-    // localStorage.removeItem('theme');
   }
 
-  function ToggleMode(){
-    if(theme === 'theme-light')
-    {
-      return(
+  function ToggleMode(props){
+    return(
+      <div className="mode-wrapper">
         <div
           class="btn-mode"
+          style={{backgroundColor: props.theme_color}}
           onClick={() => {
-            changeTheme("theme-dark");
+            changeTheme(props.theme_code);
           }}
         >
           <span>
-            CHANGE TO DARK
           </span>
         </div>
-      )
-    }
-    else
-    {
-      return(
-        <div
-          class="btn-mode"
-          onClick={() => {
-            changeTheme("theme-light");
-          }}
-        >
-          <span>
-            CHANGE TO LIGHT
-          </span>
-        </div>
-      )
-    }
+      </div>
+    )
   }
 
   function ResetMode(){
@@ -128,9 +107,16 @@ function Home() {
   return(
     <>
       {user && <UserCard />}
+      <div className="home-action">
+          <ToggleMode theme_code="theme-light-green" theme_color="#1ED760"/>
+          <ToggleMode theme_code="theme-dark-yellow" theme_color="#FFED4C"/>
+          <ToggleMode theme_code="theme-light-pink" theme_color="#FA6791"/>
+          <ToggleMode theme_code="theme-dark-blue" theme_color="#4AA8E6"/>
+      </div>
       <div className="home-me">
         <span>Made with ❤️ by <a href="https://www.linkedin.com/in/bagustambunan/">Bagus Tambunan</a></span>
       </div>
+      
     </>
   );
 }

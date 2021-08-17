@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { client_id, scope, redirect_uri, public_url } from "../../../values";
 
 import "../../../styles/base-page.css";
-import "../../../styles/themes/theme.css";
 
 function LoginPage() {
 
@@ -18,6 +17,7 @@ function LoginPage() {
     return (
       <div className="btn-login">
         <a href={spotify_url}>
+          <i className="fab fa-spotify"></i>
           LOG IN WITH SPOTIFY
         </a>
       </div>
