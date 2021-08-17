@@ -59,7 +59,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 9999px;
-    background-color: #FA6791;
+    background-color: var(--color-primary);
     text-decoration: none;
 }
 
@@ -92,8 +92,8 @@
 }
 
 .btn-play > a:hover {
-    color: #FA6791;
-    border: 2px solid #FA6791;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
 }
 
 .btn-play > a > i {
