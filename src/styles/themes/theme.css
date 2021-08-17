@@ -23,3 +23,11 @@
     --color-red: #E84141;
     --color-highlight: #574F5C;
 }
+
+.accent-pink{
+    --color-primary: #FA6791;
+}
+
+.accent-blue{
+    --color-primary: blue;
+}

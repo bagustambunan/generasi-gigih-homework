@@ -15,6 +15,7 @@ function Home() {
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
   const [theme, set_theme] = useState(localStorage.getItem('theme'));
+  const [accent, set_accent] = useState(localStorage.getItem('accent'));
 
   async function getUserInfo() {
     try {
@@ -60,9 +61,12 @@ function Home() {
         </div>
         <div className="home-action">
           <ToggleMode/>
-          {/* <ResetMode/> */}
           <LogoutButton />
         </div>
+        {/* <div className="home-action"> */}
+          
+          {/* <AccentBlue/> */}
+        {/* </div> */}
       </div>
     );
   }
@@ -72,6 +76,12 @@ function Home() {
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
     // localStorage.removeItem('theme');
+  }
+
+  function changeAccent(accentName) {
+    set_accent(accentName);
+    localStorage.setItem('accent', accentName);
+    document.documentElement.className = accentName;
   }
 
   function ToggleMode(){
@@ -106,6 +116,21 @@ function Home() {
       )
     }
     
+  }
+
+  function AccentBlue(){
+    return(
+      <div
+        class="btn-mode"
+        onClick={() => {
+          changeAccent('accent-blue')
+        }}
+      >
+        <span>
+          BLUE
+        </span>
+      </div>
+    )
   }
 
   function ResetMode(){
