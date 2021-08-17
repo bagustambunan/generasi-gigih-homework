@@ -58,12 +58,6 @@ function SpotifyPage(props) {
 
   useEffect(() => {
     checkToken();
-    // document.documentElement.className = 'theme-light';
-    // if(localStorage.getItem('theme')){
-    //   localStorage.setItem('theme', 'theme-light');
-    //   document.documentElement.className = 'theme-light';
-    // }
-    // console.log(theme);
     if(theme){
       document.documentElement.className = theme;
     }
@@ -71,7 +65,6 @@ function SpotifyPage(props) {
       localStorage.setItem('theme', 'theme-light');
       document.documentElement.className = 'theme-light';
     }
-
   }, []);
 
   return (

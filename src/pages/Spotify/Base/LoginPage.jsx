@@ -1,8 +1,13 @@
+import { useState, useEffect } from "react";
 import { client_id, scope, redirect_uri, public_url } from "../../../values";
 
 import "../../../styles/base-page.css";
+import "../../../styles/themes/theme.css";
 
 function LoginPage() {
+
+  const [theme, set_theme] = useState(localStorage.getItem('theme'));
+
   function LoginButton() {
     let spotify_url = "https://accounts.spotify.com/authorize";
     spotify_url += "?response_type=token";
@@ -18,6 +23,16 @@ function LoginPage() {
       </div>
     );
   }
+
+  useEffect(() => {
+    if(theme){
+      document.documentElement.className = theme;
+    }
+    else{
+      localStorage.setItem('theme', 'theme-light');
+      document.documentElement.className = 'theme-light';
+    }
+  }, []);
 
   return (
     <div className="login-page">
