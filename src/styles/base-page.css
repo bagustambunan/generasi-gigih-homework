@@ -88,14 +88,20 @@
     border-radius: 9999px;
     color: white;
     font-weight: 500;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
     display: flex;
     cursor: pointer;
     justify-content: center;
     text-decoration: none;
+}
+
+.btn-login > a > i {
+    margin-top: 2px;
+    margin-right: 8px;
+    font-size: 21px;
 }
 
 .btn-login > a:hover {
