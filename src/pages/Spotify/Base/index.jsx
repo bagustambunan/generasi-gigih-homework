@@ -71,12 +71,10 @@ function SpotifyPage(props) {
     <div className="main">
 
       <div className="menu-section">
-        <div className="menu-wrapper">
-          <Menu
-            view={view}
-            set_view={set_view}
-          />
-        </div>
+        <Menu
+          view={view}
+          set_view={set_view}
+        />
       </div>
 
       <div className="page-section">

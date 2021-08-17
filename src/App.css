@@ -12,10 +12,6 @@
   bottom: 10px;
 }
 
-.menu-wrapper {
-  
-}
-
 .menu {
   display: flex;
   flex-direction: row;
@@ -102,6 +98,12 @@
 
 @media all and (max-width: 720px) {
   .menu-section {
+    
+  }
+
+  .menu {
+    grid-template-columns: 33% 33% 33%;
+    border-radius: 0px;
     z-index: 100;
     width: 100%;
     display: grid;
@@ -114,14 +116,9 @@
     -moz-box-shadow: 2px 2px 12px -3px rgba(0,0,0,0.76);
   }
 
-  .menu {
-    display: flex;
-    flex-direction: row;
-    border-radius: 0px;
-    box-shadow: none;
-  }
-
   .menu > .menu-list {
+    display: grid;
+    justify-content: center;
     padding: 0.65rem;
   }
 
