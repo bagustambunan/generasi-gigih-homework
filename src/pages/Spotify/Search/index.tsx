@@ -3,11 +3,11 @@ import SearchForm from "./SearchForm";
 import TrackDetail from "../Track/TrackDetail";
 
 function SearchPage() {
-  const [view, set_view] = useState("searchform");
+  const [view, setView] = useState("searchform");
 
   return (
     <>
-      {view === "searchform" && <SearchForm set_view={set_view} />}
+      {view === "searchform" && <SearchForm setView={setView} />}
 
       {view === "trackdetail" && <TrackDetail />}
     </>

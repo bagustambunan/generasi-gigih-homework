@@ -4,7 +4,7 @@ import AddToPlaylist from "./modals/AddToPlaylist";
 import "../styles/components/track.css";
 import { trackListType } from "../types";
 
-function PlaylistHeader({tracks,set_view}:trackListType) {
+function PlaylistHeader({tracks,setView}:trackListType) {
 
   const [select_mode, set_select_mode] = useState(false);
   const [highlight_tracks, set_highlight_tracks] = useState([]);
@@ -99,7 +99,7 @@ function PlaylistHeader({tracks,set_view}:trackListType) {
             album_name={item.track.album.name}
             duration={item.track.duration_ms}
             data={item.track}
-            set_view={set_view}
+            setView={setView}
             select_mode={select_mode}
             highlight_tracks={highlight_tracks}
             set_highlight_tracks={set_highlight_tracks}

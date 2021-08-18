@@ -7,19 +7,19 @@ import TrackDetail from "../Track/TrackDetail";
 import '../../../styles/playlist-page.css';
 
 function PlaylistPage() {
-  const [view, set_view] = useState("playlistall");
+  const [view, setView] = useState("playlistall");
   const [playlist_id, set_playlist_id] = useState('');
 
   return (
     <>
       {view === "playlistall" && (
-        <PlaylistAll set_view={set_view} set_playlist_id={set_playlist_id} />
+        <PlaylistAll setView={setView} set_playlist_id={set_playlist_id} />
       )}
 
-      {view === "newplaylist" && <NewForm set_view={set_view} />}
+      {view === "newplaylist" && <NewForm setView={setView} />}
 
       {view === "playlistdetail" && (
-        <PlaylistDetail set_view={set_view} playlist_id={playlist_id} />
+        <PlaylistDetail setView={setView} playlist_id={playlist_id} />
       )}
 
       {view === "trackdetail" && <TrackDetail />}

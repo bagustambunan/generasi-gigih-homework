@@ -8,7 +8,7 @@ import { playlistAllType } from "../../../types";
 
 const axios = require("axios");
 
-function PlaylistAll({set_view, set_playlist_id}:playlistAllType) {
+function PlaylistAll({setView, set_playlist_id}:playlistAllType) {
   const token = useSelector(selectToken);
 
   const [playlists, set_playlists] = useState([]);
@@ -17,7 +17,7 @@ function PlaylistAll({set_view, set_playlist_id}:playlistAllType) {
 
     function goToForm(e:React.MouseEvent){
       e.preventDefault();
-      set_view("newplaylist");
+      setView("newplaylist");
     }
 
     return (
@@ -82,7 +82,7 @@ function PlaylistAll({set_view, set_playlist_id}:playlistAllType) {
               image={image}
               name={item.name}
               desc={item.description}
-              set_view={set_view}
+              setView={setView}
               set_playlist_id={set_playlist_id}
             />
           );

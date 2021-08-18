@@ -1,13 +1,13 @@
 import { playlistItemType } from "../types";
 
 function Playlist({
-  key, id, image, name, desc, set_view, set_playlist_id}
+  key, id, image, name, desc, setView, set_playlist_id}
   :playlistItemType) {
   return (
     <>
       <div
         onClick={() => {
-          set_view("playlistdetail");
+          setView("playlistdetail");
           set_playlist_id(id);
         }}
         className="playlist-card"

@@ -5,7 +5,7 @@ import { getDuration } from "../utils/helpers";
 import { trackItemType } from "../types";
 
 function Track({
-  key, image_url, track_title, artist_name, album_name, duration, data, set_view, select_mode, highlight_tracks, set_highlight_tracks}
+  key, image_url, track_title, artist_name, album_name, duration, data, setView, select_mode, highlight_tracks, set_highlight_tracks}
   : trackItemType) {
 
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ function Track({
           }
         }
         else {
-          set_view("trackdetail");
+          setView("trackdetail");
           dispatch(updateSelectedTrack(data));
         }
         console.log(isHighlight);

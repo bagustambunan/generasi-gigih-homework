@@ -70,7 +70,7 @@ function PlaylistDetail(props) {
           {selected_playlist.tracks.total !== 0 && (
             <PlaylistHeader
               tracks={selected_playlist.tracks.items}
-              set_view={props.set_view}
+              setView={props.setView}
             />
           )}
         </div>

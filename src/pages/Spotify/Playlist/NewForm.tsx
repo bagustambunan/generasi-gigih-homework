@@ -8,7 +8,7 @@ import { newFormType } from "../../../types";
 
 const axios = require("axios");
 
-function NewForm({set_view}:newFormType) {
+function NewForm({setView}:newFormType) {
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
 
@@ -38,7 +38,7 @@ function NewForm({set_view}:newFormType) {
       console.error(err);
     } finally {
       alert("A new playlist created succesfully");
-      set_view("playlistall");
+      setView("playlistall");
     }
   }
 

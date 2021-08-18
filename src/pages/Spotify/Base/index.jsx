@@ -13,7 +13,7 @@ const axios = require("axios");
 function SpotifyPage(props) {
 
   const token = useSelector(selectToken);
-  const [view, set_view] = useState(props.page);
+  const [view, setView] = useState(props.page);
   const [theme, set_theme] = useState(localStorage.getItem('theme'));
 
   const route_list = [
@@ -71,7 +71,7 @@ function SpotifyPage(props) {
       <div className="menu-section">
         <Menu
           view={view}
-          set_view={set_view}
+          setView={setView}
         />
       </div>
 

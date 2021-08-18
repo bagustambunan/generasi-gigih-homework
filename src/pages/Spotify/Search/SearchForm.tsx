@@ -10,7 +10,7 @@ import { searchFormType } from "../../../types";
 
 const axios = require("axios");
 
-function SearchForm({set_view}:searchFormType) {
+function SearchForm({setView}:searchFormType) {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const query = useSelector(selectQuery);
@@ -67,7 +67,7 @@ function SearchForm({set_view}:searchFormType) {
         ></input>
       </div>
 
-      <SearchHeader tracks={tracks} set_view={set_view} />
+      <SearchHeader tracks={tracks} setView={setView} />
     </div>
   );
 }
