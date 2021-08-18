@@ -76,10 +76,16 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
 <img src="shots/shot-1c.png" width="180px">
 
 ### Mencari lagu
-The
+1. Klik menu pencarian (icon kaca pembesar) di menu bawah.
+2. Ketik kata pencarian di kotak pencarian (contoh: "System"), kemudian tekan Enter di keyboard dan hasil pencarian akan ditampilkan.
+<br>
+<img src="shots/shot-2a.png" width="180px">
 
 ### Menampikan list playlist Anda
-The
+1. Klik menu playlist (icon headphone) di menu bawah.
+2. Halaman akan menampilkan semua playlist Anda di Spotify.
+<br>
+<img src="shots/shot-3a.png" width="180px">
 
 ### Membuat playlist baru
 The
