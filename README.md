@@ -147,11 +147,31 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
 </table>
 
 ### Menampilkan detail lagu
-The
-
-### Menambahkan suatu lagu ke suatu playlist
-The
+1. Cari lagu yang ingin Anda lihat detailnya
+<br>
+<img src="shots/shot-6a.png" width="180px">
+2. Klik pada lagu tersebut, dan halaman detail lagu akan tampil
+<br>
+<img src="shots/shot-6b.png" width="180px">
+3. Anda bisa menambahkan lagu tersebut ke suatu playlist dengan klik "Add to playlist"
+4. Anda juga bisa membuka lagu tersebut di Spotify dengan klik "Play on Spotify"
 
 ### Mengganti tema
-The
-
+Anda bisa mengganti tema di halaman home. Ada 4 pilihan tema yang bisa Anda pilih.
+<br>
+<table>
+  <tr>
+    <td>
+      <img src="shots/shot-7a.png" width="180px">
+    </td>
+    <td>
+      <img src="shots/shot-7b.png" width="180px">
+    </td>
+    <td>
+      <img src="shots/shot-7c.png" width="180px">
+    </td>
+    <td>
+      <img src="shots/shot-7d.png" width="180px">
+    </td>
+  </tr>
+</table>
