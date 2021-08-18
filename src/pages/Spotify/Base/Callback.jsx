@@ -1,9 +1,8 @@
-import { useEffect } from "react";
-import { getHashParams } from "../../../utils/helpers";
-import { root_url } from "../../../values";
-
-import { useSelector, useDispatch } from "react-redux";
-import { setToken, selectToken } from "../../../redux/tokenSlice";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setToken, selectToken } from '../../../redux/tokenSlice';
+import { getHashParams } from '../../../utils/helpers';
+import { rootUrl } from '../../../values';
 
 function Callback() {
   const dispatch = useDispatch();
@@ -11,15 +10,15 @@ function Callback() {
   useEffect(() => {
     if (!token) {
       if (getHashParams().access_token) {
-        let params = getHashParams();
-        let access_token = params.access_token;
-        dispatch(setToken(access_token));
+        const params = getHashParams();
+        const accessToken = params.access_token;
+        dispatch(setToken(accessToken));
       }
     }
-    window.location = root_url;
+    window.location = rootUrl;
   }, []);
 
-  return "Redirecting...";
+  return 'Redirecting...';
 }
 
 export default Callback;

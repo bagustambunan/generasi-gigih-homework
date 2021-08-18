@@ -6,7 +6,7 @@ import Home from "./Home";
 import PlaylistPage from "../Playlist";
 import SearchPage from "../Search";
 import NewForm from "../Playlist/NewForm";
-import { root_url } from "../../../values";
+import { rootUrl } from "../../../values";
 
 const axios = require("axios");
 
@@ -50,7 +50,7 @@ function SpotifyPage(props) {
           },
         });
     } catch (err) {
-      window.location = root_url+"/logout";
+      window.location = rootUrl+"/logout";
     }
   }
 
