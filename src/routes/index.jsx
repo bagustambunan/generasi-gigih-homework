@@ -10,7 +10,7 @@ import { selectToken } from "../redux/tokenSlice";
 function AppRouter() {
   const token = useSelector(selectToken);
 
-  const route_list = [
+  const routeList = [
     {
       id: 1,
       url: ["/", "/home"],
@@ -40,7 +40,7 @@ function AppRouter() {
         <Route path="/callback" exact={true} component={Callback} />
         <Route path="/logout" exact={true} component={Logout} />
 
-        {route_list.map((item) => {
+        {routeList.map((item) => {
           return (
             <Route path={item.url} exact={true} key={item.id}>
               {token ? item.page : <Redirect to="/login" />}

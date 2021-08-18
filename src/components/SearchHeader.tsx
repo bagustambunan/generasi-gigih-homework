@@ -42,7 +42,7 @@ function SearchHeader({ tracks, setView }:trackListType) {
       );
     }
     else{
-      return(
+      return (
         <div className="highlight-header">
           <div
             className="track-select"

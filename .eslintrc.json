@@ -25,7 +25,9 @@
         "import/extensions": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "no-console": "off",
-        "no-alert": "off"
+        "no-alert": "off",
+        "no-useless-concat": "off",
+        "prefer-template": "off"
     },
     "settings": {
         "import/resolver": {

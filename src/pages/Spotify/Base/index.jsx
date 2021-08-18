@@ -1,65 +1,64 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { selectToken } from "../../../redux/tokenSlice";
-import Menu from "../../../components/Menu";
-import Home from "./Home";
-import PlaylistPage from "../Playlist";
-import SearchPage from "../Search";
-import NewForm from "../Playlist/NewForm";
-import { rootUrl } from "../../../values";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectToken } from '../../../redux/tokenSlice';
+import Menu from '../../../components/Menu';
+import Home from './Home';
+import PlaylistPage from '../Playlist';
+import SearchPage from '../Search';
+import NewForm from '../Playlist/NewForm';
+import { rootUrl } from '../../../values';
 
-const axios = require("axios");
+const axios = require('axios');
 
 function SpotifyPage(props) {
-
   const token = useSelector(selectToken);
   const [view, setView] = useState(props.page);
-  const [theme, set_theme] = useState(localStorage.getItem('theme'));
+  const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
-  const route_list = [
+  const routeList = [
     {
-      url: "home",
+      url: 'home',
       page: <Home />,
     },
     {
-      url: "search",
+      url: 'search',
       page: <SearchPage />,
     },
     {
-      url: "playlists",
+      url: 'playlists',
       page: <PlaylistPage />,
     },
     {
-      url: "new_playlist",
+      url: 'new_playlist',
       page: <NewForm />,
     },
   ];
 
   function Page() {
-    const selected_page = route_list.filter((item) => item.url === view);
-    return selected_page[0].page;
+    const selectedPage = routeList.filter((item) => item.url === view);
+    return selectedPage[0].page;
   }
 
-  async function checkToken(){
+  async function checkToken() {
     try {
-      let url = "https://api.spotify.com/v1/me";
+      const url = 'https://api.spotify.com/v1/me';
       await axios
         .get(url, {
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization: 'Bearer ' + token,
           },
         });
     } catch (err) {
-      window.location = rootUrl+"/logout";
+      window.location = rootUrl + '/logout';
     }
   }
 
   useEffect(() => {
     checkToken();
-    if(theme){
+    if (theme) {
       document.documentElement.className = theme;
-    }
-    else{
+    } else {
+      setTheme('theme-light-pink');
       localStorage.setItem('theme', 'theme-light-pink');
       document.documentElement.className = 'theme-light-pink';
     }
@@ -80,7 +79,6 @@ function SpotifyPage(props) {
           <Page />
         </div>
       </div>
-      
     </div>
   );
 }
