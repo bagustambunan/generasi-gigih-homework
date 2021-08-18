@@ -121,7 +121,7 @@
   .menu > .menu-list {
     display: grid;
     justify-content: center;
-    padding: 0.65rem;
+    padding: 0.65rem 0px;
   }
 
   .page-wrapper {
