@@ -11,7 +11,7 @@ function TrackDetail() {
   const selecedTrack = useSelector(selectSelectedTrack);
   const [showAddModal, setShowAddModal] = useState(false);
 
-  const selected_uris= [selecedTrack.uri];
+  const selectedUris= [selecedTrack.uri];
 
   function PlayButton() {
     return (
@@ -47,7 +47,7 @@ function TrackDetail() {
   return (
     <div className="track-page">
       {showAddModal && (
-        <AddToPlaylist setShowAddModal={setShowAddModal} selected_uris={selected_uris} />
+        <AddToPlaylist setShowAddModal={setShowAddModal} selectedUris={selectedUris} />
       )}
 
       <div className="track-over">

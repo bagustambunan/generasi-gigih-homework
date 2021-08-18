@@ -11,7 +11,7 @@ const axios = require("axios");
 function PlaylistAll({setView, set_playlist_id}:playlistAllType) {
   const token = useSelector(selectToken);
 
-  const [playlists, set_playlists] = useState([]);
+  const [playlists, setPlaylists] = useState([]);
 
   function AddButton() {
 
@@ -44,7 +44,7 @@ function PlaylistAll({setView, set_playlist_id}:playlistAllType) {
           },
         })
         .then((res:any) => {
-          set_playlists(res.data.items);
+          setPlaylists(res.data.items);
         });
     } catch (err) {
       console.error(err);

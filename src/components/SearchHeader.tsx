@@ -83,7 +83,7 @@ function SearchHeader({ tracks, setView }:trackListType) {
     <div className="header-body">
 
       {showAddModal && (
-        <AddToPlaylist setShowAddModal={setShowAddModal} selected_uris={highlightTracks} />
+        <AddToPlaylist setShowAddModal={setShowAddModal} selectedUris={highlightTracks} />
       )}
 
       <TrackSelector/>

@@ -1,25 +1,26 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { selectToken } from "../../redux/tokenSlice";
-import { addToPlaylistType } from "../../types";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectToken } from '../../redux/tokenSlice';
+import { addToPlaylistType } from '../../types';
 
-const axios = require("axios");
+const axios = require('axios');
 
-function AddToPlaylist({setShowAddModal, selected_uris}:addToPlaylistType) {
+function AddToPlaylist({ setShowAddModal, selectedUris }: addToPlaylistType) {
+
   const token = useSelector(selectToken);
-  const [playlists, set_playlists] = useState([]);
-  const [selected_playlist_id, set_selected_playlist_id] = useState('');
+  const [playlists, setPlaylists] = useState([]);
+  const [selectedPlaylistID, setSelectedPlaylistID] = useState('');
 
   async function getPlaylists() {
     try {
       await axios
-        .get("https://api.spotify.com/v1/me/playlists", {
+        .get('https://api.spotify.com/v1/me/playlists', {
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization: 'Bearer ' + token,
           },
         })
-        .then((res:any) => {
-          set_playlists(res.data.items);
+        .then((res: any) => {
+          setPlaylists(res.data.items);
         });
     } catch (err) {
       console.error(err);
@@ -27,28 +28,27 @@ function AddToPlaylist({setShowAddModal, selected_uris}:addToPlaylistType) {
   }
 
   async function doAdd() {
-    if (selected_playlist_id) {
+    if (selectedPlaylistID) {
       try {
-        let url =
-          "https://api.spotify.com/v1/playlists/" +
-          selected_playlist_id +
-          "/tracks?uris=" +
-          selected_uris;
+        const url = 'https://api.spotify.com/v1/playlists/'
+          + selectedPlaylistID
+          + '/tracks?uris='
+          + selectedUris;
         await axios.post(
           url,
           {},
           {
             headers: {
-              Authorization: "Bearer " + token,
-              "Content-Type": "application/json",
-              Accept: "application/json",
+              Authorization: 'Bearer ' + token,
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
             },
           }
         );
       } catch (err) {
         console.error(err);
       } finally {
-        alert("Track added to playlist successfully");
+        alert('Track added to playlist successfully');
         setShowAddModal(false);
       }
     }
@@ -66,10 +66,9 @@ function AddToPlaylist({setShowAddModal, selected_uris}:addToPlaylistType) {
         </div>
         <div className="modal-body">
           <select
-            onChange={(e:React.FormEvent<HTMLSelectElement>) => {
-              set_selected_playlist_id(e.currentTarget.value);
+            onChange={(e: React.FormEvent<HTMLSelectElement>) => {
+              setSelectedPlaylistID(e.currentTarget.value);
             }}
-            className="bg-me_main text-me_dark_quarter py-3 px-3 rounded w-80"
           >
             <option value="" disabled selected>
               Select a playlist
@@ -80,11 +79,11 @@ function AddToPlaylist({setShowAddModal, selected_uris}:addToPlaylistType) {
           </select>
         </div>
         <div className="modal-action">
-          <button onClick={() => {doAdd()}} type="button" className="btn btn-primary">Add</button>
-          <button onClick={() => {setShowAddModal(false)}} type="button" className="btn btn-secondary">Cancel</button>
+          <button onClick={() => { doAdd() }} type="button" className="btn btn-primary">Add</button>
+          <button onClick={() => { setShowAddModal(false) }} type="button" className="btn btn-secondary">Cancel</button>
         </div>
       </div>
-      
+
     </div>
   );
 }

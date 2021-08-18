@@ -38,7 +38,7 @@ export type searchFormType = {
 
 export type addToPlaylistType = {
     setShowAddModal: React.Dispatch<React.SetStateAction<boolean>>,
-    selected_uris: Array<string>,
+    selectedUris: Array<string>,
 }
 
 export type newFormType = {
