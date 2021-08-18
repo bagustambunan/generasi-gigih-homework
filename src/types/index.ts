@@ -1,9 +1,9 @@
 export type trackItemType = {
     key: string,
-    image_url: string,
-    track_title: string,
-    artist_name: string,
-    album_name: string,
+    imageUrl: string,
+    trackTitle: string,
+    artistName: string,
+    albumName: string,
     duration: string,
     data: any,
     setView: React.Dispatch<React.SetStateAction<string>>,

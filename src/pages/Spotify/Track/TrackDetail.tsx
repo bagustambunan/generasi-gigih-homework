@@ -56,7 +56,7 @@ function TrackDetail() {
           <img
             src={selecedTrack.album.images[0].url}
             title={selecedTrack.name}
-            alt="{props.album_name}"
+            alt="{props.albumName}"
           />
         </div>
 

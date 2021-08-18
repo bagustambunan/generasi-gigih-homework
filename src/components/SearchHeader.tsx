@@ -94,10 +94,10 @@ function SearchHeader({ tracks, setView }:trackListType) {
         return (
           <Track
             key={item.id}
-            image_url={item.album.images[2].url}
-            track_title={item.name}
-            artist_name={item.album.artists[0].name}
-            album_name={item.album.name}
+            imageUrl={item.album.images[2].url}
+            trackTitle={item.name}
+            artistName={item.album.artists[0].name}
+            albumName={item.album.name}
             duration={item.duration_ms}
             data={item}
             setView={setView}

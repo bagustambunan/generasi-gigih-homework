@@ -16,7 +16,7 @@ function Playlist({
           <img
             src={image}
             title={name}
-            alt="{album_name}"
+            alt="{albumName}"
           />
         </div>
         <div className="detail">

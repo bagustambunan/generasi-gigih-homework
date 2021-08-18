@@ -94,10 +94,10 @@ function PlaylistHeader({ tracks, setView }:trackListType) {
         return (
           <Track
             key={item.track.id}
-            image_url={item.track.album.images[2].url}
-            track_title={item.track.name}
-            artist_name={item.track.album.artists[0].name}
-            album_name={item.track.album.name}
+            imageUrl={item.track.album.images[2].url}
+            trackTitle={item.track.name}
+            artistName={item.track.album.artists[0].name}
+            albumName={item.track.album.name}
             duration={item.track.duration_ms}
             data={item.track}
             setView={setView}
