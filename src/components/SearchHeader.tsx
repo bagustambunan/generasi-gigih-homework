@@ -1,36 +1,37 @@
-import { useState } from "react";
-import Track from "./TrackItem";
-import AddToPlaylist from "./modals/AddToPlaylist";
-import "../styles/components/track.css";
-import { trackListType } from "../types";
+import { useState } from 'react';
+import Track from './TrackItem';
+import AddToPlaylist from './modals/AddToPlaylist';
+import '../styles/components/track.css';
+import { trackListType } from '../types';
 
-function SearchHeader({tracks,setView}:trackListType) {
+function SearchHeader({ tracks, setView }:trackListType) {
 
-  const [select_mode, set_select_mode] = useState(false);
-  const [highlight_tracks, set_highlight_tracks] = useState([]);
-  const [show_add_modal, set_show_add_modal] = useState(false);
+  const [selectMode, setSelectMode] = useState(false);
+  const [highlightTracks, setHighlightTracks] = useState([]);
+  const [showAddModal, setShowAddModal] = useState(false);
 
-  function TrackSelector(){
-    if(select_mode){
-      return(
+  function TrackSelector() {
+    if (selectMode) {
+      return (
         <div className="highlight-header">
-          {(highlight_tracks.length !== 0) && (
+          {(highlightTracks.length !== 0) && (
             <div className="btn-add-to-playlist">
               <span
                 onClick={() => {
-                  set_show_add_modal(true);
+                  setShowAddModal(true);
                 }}
                 title="Add to playlist"
               >
-                <i className="fa fa-headphones-alt"></i> Add to playlist
+                <i className="fa fa-headphones-alt" />
+                Add to playlist
               </span>
             </div>
           )}
           <div
             className="track-select"
             onClick={() => {
-              set_select_mode(false);
-              set_highlight_tracks([]);
+              setSelectMode(false);
+              setHighlightTracks([]);
             }}
           >
             <span>
@@ -38,7 +39,7 @@ function SearchHeader({tracks,setView}:trackListType) {
             </span>
           </div>
         </div>
-      )
+      );
     }
     else{
       return(
@@ -46,7 +47,7 @@ function SearchHeader({tracks,setView}:trackListType) {
           <div
             className="track-select"
             onClick={() => {
-              set_select_mode(true);
+              setSelectMode(true);
             }}
           >
             <span>
@@ -81,8 +82,8 @@ function SearchHeader({tracks,setView}:trackListType) {
   return (
     <div className="header-body">
 
-      {show_add_modal && (
-        <AddToPlaylist set_show_add_modal={set_show_add_modal} selected_uris={highlight_tracks} />
+      {showAddModal && (
+        <AddToPlaylist setShowAddModal={setShowAddModal} selected_uris={highlightTracks} />
       )}
 
       <TrackSelector/>
@@ -100,9 +101,9 @@ function SearchHeader({tracks,setView}:trackListType) {
             duration={item.duration_ms}
             data={item}
             setView={setView}
-            select_mode={select_mode}
-            highlight_tracks={highlight_tracks}
-            set_highlight_tracks={set_highlight_tracks}
+            selectMode={selectMode}
+            highlightTracks={highlightTracks}
+            setHighlightTracks={setHighlightTracks}
           />
         );
       })}

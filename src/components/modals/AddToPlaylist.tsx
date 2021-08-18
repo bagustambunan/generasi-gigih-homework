@@ -5,7 +5,7 @@ import { addToPlaylistType } from "../../types";
 
 const axios = require("axios");
 
-function AddToPlaylist({set_show_add_modal, selected_uris}:addToPlaylistType) {
+function AddToPlaylist({setShowAddModal, selected_uris}:addToPlaylistType) {
   const token = useSelector(selectToken);
   const [playlists, set_playlists] = useState([]);
   const [selected_playlist_id, set_selected_playlist_id] = useState('');
@@ -49,7 +49,7 @@ function AddToPlaylist({set_show_add_modal, selected_uris}:addToPlaylistType) {
         console.error(err);
       } finally {
         alert("Track added to playlist successfully");
-        set_show_add_modal(false);
+        setShowAddModal(false);
       }
     }
   }
@@ -81,7 +81,7 @@ function AddToPlaylist({set_show_add_modal, selected_uris}:addToPlaylistType) {
         </div>
         <div className="modal-action">
           <button onClick={() => {doAdd()}} type="button" className="btn btn-primary">Add</button>
-          <button onClick={() => {set_show_add_modal(false)}} type="button" className="btn btn-secondary">Cancel</button>
+          <button onClick={() => {setShowAddModal(false)}} type="button" className="btn btn-secondary">Cancel</button>
         </div>
       </div>
       

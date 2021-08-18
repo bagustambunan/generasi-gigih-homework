@@ -9,7 +9,7 @@ import "../../../styles/track-page.css";
 function TrackDetail() {
 
   const selecedTrack = useSelector(selectSelectedTrack);
-  const [show_add_modal, set_show_add_modal] = useState(false);
+  const [showAddModal, setShowAddModal] = useState(false);
 
   const selected_uris= [selecedTrack.uri];
 
@@ -33,7 +33,7 @@ function TrackDetail() {
       <div className="btn-add-to-playlist">
         <span
           onClick={() => {
-            set_show_add_modal(true);
+            setShowAddModal(true);
             console.log(selecedTrack);
           }}
           title="Add to playlist"
@@ -46,8 +46,8 @@ function TrackDetail() {
 
   return (
     <div className="track-page">
-      {show_add_modal && (
-        <AddToPlaylist set_show_add_modal={set_show_add_modal} selected_uris={selected_uris} />
+      {showAddModal && (
+        <AddToPlaylist setShowAddModal={setShowAddModal} selected_uris={selected_uris} />
       )}
 
       <div className="track-over">

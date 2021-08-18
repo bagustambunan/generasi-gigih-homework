@@ -7,9 +7,9 @@ export type trackItemType = {
     duration: string,
     data: any,
     setView: React.Dispatch<React.SetStateAction<string>>,
-    select_mode: boolean,
-    highlight_tracks: Array<string>,
-    set_highlight_tracks: any,
+    selectMode: boolean,
+    highlightTracks: Array<string>,
+    setHighlightTracks: any,
 }
 
 export type playlistItemType = {
@@ -37,7 +37,7 @@ export type searchFormType = {
 }
 
 export type addToPlaylistType = {
-    set_show_add_modal: React.Dispatch<React.SetStateAction<boolean>>,
+    setShowAddModal: React.Dispatch<React.SetStateAction<boolean>>,
     selected_uris: Array<string>,
 }
 
