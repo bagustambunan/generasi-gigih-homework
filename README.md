@@ -25,6 +25,8 @@ WaveMusic App is a Spotify clone application that uses the Spotify Developers AP
 ### Production
 >https://wavemusic.vercel.app/
 
+<br>
+
 ## How to use this repo
 1. Clone the repo
 ```
@@ -45,31 +47,52 @@ yarn
 yarn start
 ```
 
+<br>
+
 ## Testing
-1. Run testing
+Run test
 ```
 yarn test
 ```
+
+<br>
 
 ## How to use this app
 WaveMusic App bisa berjalan di desktop maupun mobile browser. Aplikasi akan menyesuaikan ukuran layar yang digunakan. Untuk menggunakan WaveMusic App, Anda harus memiliki akun Spotify.
 <br>
 Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
+
 ### Masuk ke aplikasi
-The
+1. Klik "LOG IN WITH SPOTIFY"
+<br>
+<img src="shots/shot-1a.png" width="180px">
+
+2. Halaman autentikasi akan tampil. Silahkan baca halaman tersebut, kemudian klik "AGREE"
+<br>
+<img src="shots/shot-1b.png" width="180px">
+
+3. Setelah autentikasi sukses, akan tampil halaman utama WaveMusic App. Anda bisa melihat profil Anda di halaman tersebut.
+<br>
+<img src="shots/shot-1c.png" width="180px">
+
 ### Mencari lagu
 The
+
 ### Menampikan list playlist Anda
 The
-### Menambahkan beberapa lagu ke suatu playlist
-The
+
 ### Membuat playlist baru
 The
-### Menampikan detail suatu playlist dan lagu-lagu di dalamnya
+
+### Menambahkan beberapa lagu ke suatu playlist
 The
+
 ### Menampilkan detail lagu
 The
+
 ### Menambahkan suatu lagu ke suatu playlist
 The
+
 ### Mengganti tema
 The
+
