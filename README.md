@@ -28,7 +28,7 @@ WaveMusic App is a Spotify clone application that uses the Spotify Developers AP
 ## How to use this repo
 1. Clone the repo
 ```
->git clone https://github.com/bagustambunan/generasi-gigih-homework.git
+git clone https://github.com/bagustambunan/generasi-gigih-homework.git
 ```
 2. Open the dir on your terminal
 ```
