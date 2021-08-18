@@ -141,6 +141,9 @@
     }
     .home-me {
         margin-top: 0px;
-        padding: 1.25rem;
+        margin-left: 1.25rem;
+    }
+    .home-action{
+        margin-left: 1.25rem;
     }
 } 
