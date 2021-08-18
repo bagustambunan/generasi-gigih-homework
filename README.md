@@ -93,8 +93,17 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
 <img src="shots/shot-4a.png" width="180px">
 2. Halaman untuk membuat playlist baru akan tampil. Isi judul (minimal 10 karakter) dan deskripsi (minimal 20 karakter). Kemudian klik "CREATE"
 <br>
-<img src="shots/shot-4b.png" width="180px">
-<img src="shots/shot-4c.png" width="180px">
+<table>
+  <tr>
+    <td>
+      <img src="shots/shot-4b.png" width="180px">
+    </td>
+    <td>
+      <img src="shots/shot-4c.png" width="180px">
+    </td>
+  </tr>
+</table>
+
 3. Buka halaman playlist, dan akan tampil playlist yang baru dibuat
 <br>
 <img src="shots/shot-4d.png" width="180px">
@@ -103,7 +112,39 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
 <img src="shots/shot-4e.png" width="180px">
 
 ### Menambahkan beberapa lagu ke suatu playlist
-The
+1. Cari lagu yang kamu inginkan di halaman pencarian
+<br>
+<img src="shots/shot-5a.png" width="180px">
+2. Klik "Select tracks" dan 
+<br>
+<img src="shots/shot-5b.png" width="180px">
+3. Klik lagu-lagu yang ingin Anda pilih
+<br>
+<img src="shots/shot-5c.png" width="180px">
+4. Klik "Add to playlist" kemudian pilih playlist. Klik "Add" untuk menambahkan lagu-lagu yang telah Anda pilih ke dalam playlist
+<br>
+<table>
+  <tr>
+    <td>
+      <img src="shots/shot-5d.png" width="180px">
+    </td>
+    <td>
+      <img src="shots/shot-5e.png" width="180px">
+    </td>
+  </tr>
+</table>
+5. Buka halaman playlist dan lihat bahwa lagu-lagu berhasil ditambahkan ke dalam playlist
+<br>
+<table>
+  <tr>
+    <td>
+      <img src="shots/shot-5f.png" width="180px">
+    </td>
+    <td>
+      <img src="shots/shot-5g.png" width="180px">
+    </td>
+  </tr>
+</table>
 
 ### Menampilkan detail lagu
 The
