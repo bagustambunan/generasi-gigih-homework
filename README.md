@@ -88,7 +88,19 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
 <img src="shots/shot-3a.png" width="180px">
 
 ### Membuat playlist baru
-The
+1. Di halaman playlist, klik tombol + (berada di pojok kanan bawah)
+<br>
+<img src="shots/shot-4a.png" width="180px">
+2. Halaman untuk membuat playlist baru akan tampil. Isi judul (minimal 10 karakter) dan deskripsi (minimal 20 karakter). Kemudian klik "CREATE"
+<br>
+<img src="shots/shot-4b.png" width="180px">
+<img src="shots/shot-4c.png" width="180px">
+3. Buka halaman playlist, dan akan tampil playlist yang baru dibuat
+<br>
+<img src="shots/shot-4d.png" width="180px">
+4. Klik playlist tersebut, dan terlihat isinya masih kosong. Kita akan menambahkan beberapa lagu di langkah berikutnya
+<br>
+<img src="shots/shot-4e.png" width="180px">
 
 ### Menambahkan beberapa lagu ke suatu playlist
 The
