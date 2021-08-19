@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from "react";
-import Playlist from "../../../components/PlaylistItem";
+import { MouseEvent, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectToken } from '../../../redux/tokenSlice';
+import Playlist from '../../../components/PlaylistItem';
+import { playlistAllType } from '../../../types';
 
-import { useSelector } from "react-redux";
-import { selectToken } from "../../../redux/tokenSlice";
+const axios = require('axios');
 
-import { playlistAllType } from "../../../types";
-
-const axios = require("axios");
-
-function PlaylistAll({setView, setPlaylistID}:playlistAllType) {
+function PlaylistAll({ setView, setPlaylistID }:playlistAllType) {
   const token = useSelector(selectToken);
-
   const [playlists, setPlaylists] = useState([]);
 
   function AddButton() {
-
-    function goToForm(e:React.MouseEvent){
+    function goToForm(e:MouseEvent) {
       e.preventDefault();
-      setView("newplaylist");
+      setView('newplaylist');
     }
 
     return (
@@ -29,7 +25,7 @@ function PlaylistAll({setView, setPlaylistID}:playlistAllType) {
           href="/playlists/new"
           title="Create new playlist"
         >
-          <i className="fa fa-plus"></i>
+          <i className="fa fa-plus" />
         </a>
       </div>
     );
@@ -38,9 +34,9 @@ function PlaylistAll({setView, setPlaylistID}:playlistAllType) {
   async function getPlaylists() {
     try {
       await axios
-        .get("https://api.spotify.com/v1/me/playlists?limit=50", {
+        .get('https://api.spotify.com/v1/me/playlists?limit=50', {
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization: 'Bearer ' + token,
           },
         })
         .then((res:any) => {
@@ -70,11 +66,8 @@ function PlaylistAll({setView, setPlaylistID}:playlistAllType) {
 
       <div className="page-main">
         {playlists.map((item:any) => {
-          let image =
-            "https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216";
-          if (item.images[0]) {
-            image = item.images[0].url;
-          }
+          let image = 'https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216';
+          if (item.images[0]) image = item.images[0].url;
           return (
             <Playlist
               key={item.id}
