@@ -16,7 +16,7 @@ WaveMusic App is a Spotify clone application that uses the Spotify Developers AP
 
 ### Stacks
   - Create-react-app, React, Typescript
-  - Styling: CSS
+  - Styling: CSS, FontAwesome Icons
   - State management: Redux
   - Testing: Jest, Testing-Library, MSW
   - Linter: ESLint
@@ -58,12 +58,12 @@ yarn test
 <br>
 
 ## How to use this app
-WaveMusic App bisa berjalan di desktop maupun mobile browser. Aplikasi akan menyesuaikan ukuran layar yang digunakan. Untuk menggunakan WaveMusic App, Anda harus memiliki akun Spotify.
+WaveMusic App can run both on desktop and mobile browsers. The application will adjust the screen size used. To use the WaveMusic App, you must have a Spotify account.
 <br>
-Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
+You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 
-### Masuk ke aplikasi
-1. Klik "LOG IN WITH SPOTIFY"
+### Log in to the app
+1. Click "LOG IN WITH SPOTIFY"
 <br>
 <table>
   <tr>
@@ -73,7 +73,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-2. Halaman autentikasi akan tampil. Silahkan baca halaman tersebut, kemudian klik "AGREE"
+2. The authentication page will appear. Please read the page, then click "AGREE"
 <br>
 <table>
   <tr>
@@ -83,7 +83,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-3. Setelah autentikasi sukses, akan tampil halaman utama WaveMusic App. Anda bisa melihat profil Anda di halaman tersebut.
+3. After successful authentication, the main page of the Wave Music App will appear. You can see your profile on that page.
 <br>
 <table>
   <tr>
@@ -93,9 +93,9 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-### Mencari lagu
-1. Klik menu pencarian (icon kaca pembesar) di menu bawah.
-2. Ketik kata pencarian di kotak pencarian (contoh: "System"), kemudian tekan Enter di keyboard dan hasil pencarian akan ditampilkan.
+### Search tracks
+1. Click the search menu (magnifying glass icon) in the bottom menu.
+2. Type the keyword in the search box (example: "System"), then press Enter on the keyboard and the search results will be displayed.
 <br>
 <table>
   <tr>
@@ -105,9 +105,9 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-### Menampikan list playlist Anda
-1. Klik menu playlist (icon headphone) di menu bawah.
-2. Halaman akan menampilkan semua playlist Anda di Spotify.
+### Show all your playlists
+1. Click the playlist menu (headphone icon) in the bottom menu.
+2. The page will show all your playlists on Spotify.
 <br>
 <table>
   <tr>
@@ -117,8 +117,8 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-### Membuat playlist baru
-1. Di halaman playlist, klik tombol + (berada di pojok kanan bawah)
+### Create a new playlist
+1. On the playlist page, click the + button (located in the lower right corner)
 <br>
 <table>
   <tr>
@@ -128,7 +128,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-2. Halaman untuk membuat playlist baru akan tampil. Isi judul (minimal 10 karakter) dan deskripsi (minimal 20 karakter). Kemudian klik "CREATE"
+2. A page for creating a new playlist will appear. Fill in the title (minimum 10 characters) and description (minimum 20 characters). Then click "CREATE"
 <br>
 <table>
   <tr>
@@ -141,7 +141,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-3. Buka halaman playlist, dan akan tampil playlist yang baru dibuat
+3. Open the playlist page, and the newly created playlist will appear
 <br>
 <table>
   <tr>
@@ -151,12 +151,12 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-4. Klik playlist tersebut, dan terlihat isinya masih kosong. Kita akan menambahkan beberapa lagu di langkah berikutnya
+4. Click the playlist, and it looks like the contents are still empty. We will add some tracks in the next step
 <br>
 <img src="shots/shot-4e.png" width="180px">
 
-### Menambahkan beberapa lagu ke suatu playlist
-1. Cari lagu yang kamu inginkan di halaman pencarian
+### Adding tracks to a playlist
+1. Find the tracks you want on the search page
 <br>
 <table>
   <tr>
@@ -166,7 +166,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-2. Klik "Select tracks" dan 
+2. Click "Select tracks"
 <br>
 <table>
   <tr>
@@ -176,7 +176,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-3. Klik lagu-lagu yang ingin Anda pilih
+1. Click the tracks you want to choose
 <br>
 <table>
   <tr>
@@ -186,7 +186,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-4. Klik "Add to playlist" kemudian pilih playlist. Klik "Add" untuk menambahkan lagu-lagu yang telah Anda pilih ke dalam playlist
+4. Click "Add to playlist" then select a playlist. Click "Add" to add the tracks you have selected to the playlist
 <br>
 <table>
   <tr>
@@ -198,7 +198,8 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
     </td>
   </tr>
 </table>
-5. Buka halaman playlist dan lihat bahwa lagu-lagu berhasil ditambahkan ke dalam playlist
+
+5. Go to the playlist page and see that the songs have been successfully added to the playlist
 <br>
 <table>
   <tr>
@@ -211,8 +212,8 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-### Menampilkan detail lagu
-1. Cari lagu yang ingin Anda lihat detailnya
+### Show a track details
+1. Search for the track you want to see details
 <br>
 <table>
   <tr>
@@ -222,7 +223,7 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-2. Klik pada lagu tersebut, dan halaman detail lagu akan tampil
+2. Click on the track, and the track details page will appear
 <br>
 <table>
   <tr>
@@ -232,12 +233,12 @@ Anda bisa mengakses WaveMusic App di link https://wavemusic.vercel.app/
   </tr>
 </table>
 
-3. Anda bisa menambahkan lagu tersebut ke suatu playlist dengan klik "Add to playlist"
+3. You can add the track to a playlist by clicking "Add to playlist"
 
-4. Anda juga bisa membuka lagu tersebut di Spotify dengan klik "Play on Spotify"
+4. You can also open the track on Spotify by clicking "Play on Spotify"
 
-### Mengganti tema
-Anda bisa mengganti tema di halaman home. Ada 4 pilihan tema yang bisa Anda pilih.
+### Change color theme
+You can change the color theme on the home page. There are 4 choices of themes that you can choose
 <br>
 <table>
   <tr>
