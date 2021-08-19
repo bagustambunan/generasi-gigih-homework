@@ -1,17 +1,13 @@
-import { useState } from "react";
-import AddToPlaylist from "../../../components/modals/AddToPlaylist";
-
-import { useSelector } from "react-redux";
-import { selectSelectedTrack } from "../../../redux/selectedTrackSlice";
-
-import "../../../styles/track-page.css";
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectSelectedTrack } from '../../../redux/selectedTrackSlice';
+import AddToPlaylist from '../../../components/modals/AddToPlaylist';
+import '../../../styles/track-page.css';
 
 function TrackDetail() {
-
   const selecedTrack = useSelector(selectSelectedTrack);
   const [showAddModal, setShowAddModal] = useState(false);
-
-  const selectedUris= [selecedTrack.uri];
+  const selectedUris = [selecedTrack.uri];
 
   function PlayButton() {
     return (
@@ -22,7 +18,8 @@ function TrackDetail() {
           title="Play on Spotify"
           className=""
         >
-          <i className="fa fa-play"></i> Play on Spotify
+          <i className="fa fa-play" />
+          Play on Spotify
         </a>
       </div>
     );
@@ -38,7 +35,8 @@ function TrackDetail() {
           }}
           title="Add to playlist"
         >
-          <i className="fa fa-headphones-alt"></i> Add to playlist
+          <i className="fa fa-headphones-alt" />
+          Add to playlist
         </span>
       </div>
     );
@@ -56,7 +54,7 @@ function TrackDetail() {
           <img
             src={selecedTrack.album.images[0].url}
             title={selecedTrack.name}
-            alt="{props.albumName}"
+            alt="Album"
           />
         </div>
 
@@ -76,7 +74,7 @@ function TrackDetail() {
       </div>
 
       <div className="action">
-        <AddToPlaylistButton/>
+        <AddToPlaylistButton />
         <PlayButton />
       </div>
     </div>
