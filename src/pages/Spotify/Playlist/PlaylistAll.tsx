@@ -1,4 +1,4 @@
-import { MouseEvent, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../../redux/tokenSlice';
 import Playlist from '../../../components/PlaylistItem';
@@ -11,17 +11,17 @@ function PlaylistAll({ setView, setPlaylistID }:playlistAllType) {
   const [playlists, setPlaylists] = useState([]);
 
   function AddButton() {
-    function goToForm(e:MouseEvent) {
-      e.preventDefault();
-      setView('newplaylist');
-    }
+    // function goToForm(e:MouseEvent) {
+    //   e.preventDefault();
+    //   setView('newplaylist');
+    // }
 
     return (
       <div className="add-button">
         <a
-          onClick={(e) => {
-            goToForm(e);
-          }}
+          // onClick={(e) => {
+          //   goToForm(e);
+          // }}
           href="/playlists/new"
           title="Create new playlist"
         >
