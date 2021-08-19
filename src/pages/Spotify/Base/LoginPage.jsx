@@ -6,9 +6,10 @@ import {
   publicUrl,
 } from '../../../values';
 import '../../../styles/base-page.css';
+import '../../../styles/themes/theme.css';
 
 function LoginPage() {
-  const theme = useState(localStorage.getItem('theme'));
+  const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
   function LoginButton() {
     const spotifyUrl = 'https://accounts.spotify.com/authorize'
@@ -31,8 +32,9 @@ function LoginPage() {
     if (theme) {
       document.documentElement.className = theme;
     } else {
-      localStorage.setItem('theme', 'theme-light');
-      document.documentElement.className = 'theme-light';
+      setTheme('theme-light-pink');
+      localStorage.setItem('theme', 'theme-light-pink');
+      document.documentElement.className = 'theme-light-pink';
     }
   }, []);
 

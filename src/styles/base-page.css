@@ -105,7 +105,7 @@
 }
 
 .btn-login > a:hover {
-    background-color: var(--color-text-main);
+    background-color: var(--color-text-secondary);
 }
 
 .mode-wrapper{

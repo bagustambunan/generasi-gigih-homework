@@ -85,7 +85,7 @@
 }
 
 .btn-primary:hover {
-  background-color: var(--color-text-main);
+  background-color: var(--color-text-secondary);
 }
 
 .btn-secondary {
