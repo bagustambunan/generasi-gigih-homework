@@ -4,8 +4,7 @@ import AddToPlaylist from './modals/AddToPlaylist';
 import '../styles/components/track.css';
 import { trackListType } from '../types';
 
-function PlaylistHeader({ tracks, setView }:trackListType) {
-
+function PlaylistHeader({ tracks, setView }: trackListType) {
   const [selectMode, setSelectMode] = useState(false);
   const [highlightTracks, setHighlightTracks] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -41,28 +40,26 @@ function PlaylistHeader({ tracks, setView }:trackListType) {
         </div>
       );
     }
-    else{
-      return (
-        <div className="highlight-header">
-          <div
-            className="track-select"
-            onClick={() => {
-              setSelectMode(true);
-            }}
-          >
-            <span>
-              Select tracks
-            </span>
-          </div>
+    return (
+      <div className="highlight-header">
+        <div
+          className="track-select"
+          onClick={() => {
+            setSelectMode(true);
+          }}
+        >
+          <span>
+            Select tracks
+          </span>
         </div>
-      )
-    }
+      </div>
+    );
   }
 
   function Header() {
     return (
       <div className="header">
-        <div className="image"></div>
+        <div className="image" />
 
         <div className="title">
           <span>TITLE</span>
@@ -73,7 +70,7 @@ function PlaylistHeader({ tracks, setView }:trackListType) {
         </div>
 
         <div className="duration">
-          <span><i className="far fa-clock"></i></span>
+          <span><i className="far fa-clock" /></span>
         </div>
       </div>
     );
@@ -86,27 +83,25 @@ function PlaylistHeader({ tracks, setView }:trackListType) {
         <AddToPlaylist setShowAddModal={setShowAddModal} selectedUris={highlightTracks} />
       )}
 
-      <TrackSelector/>
+      <TrackSelector />
 
       {tracks.length !== 0 && <Header />}
 
-      {tracks.map((item:any) => {
-        return (
-          <Track
-            key={item.track.id}
-            imageUrl={item.track.album.images[2].url}
-            trackTitle={item.track.name}
-            artistName={item.track.album.artists[0].name}
-            albumName={item.track.album.name}
-            duration={item.track.duration_ms}
-            data={item.track}
-            setView={setView}
-            selectMode={selectMode}
-            highlightTracks={highlightTracks}
-            setHighlightTracks={setHighlightTracks}
-          />
-        );
-      })}
+      {tracks.map((item: any) => (
+        <Track
+          key={item.track.id}
+          imageUrl={item.track.album.images[2].url}
+          trackTitle={item.track.name}
+          artistName={item.track.album.artists[0].name}
+          albumName={item.track.album.name}
+          duration={item.track.duration_ms}
+          data={item.track}
+          setView={setView}
+          selectMode={selectMode}
+          highlightTracks={highlightTracks}
+          setHighlightTracks={setHighlightTracks}
+        />
+      ))}
     </div>
   );
 }
