@@ -63,19 +63,18 @@ function Home() {
     document.documentElement.className = themeName;
   }
 
-  function ToggleMode(props){
+  function ToggleMode(themeCode, themeColor) {
     return (
       <div className="mode-wrapper">
         <div
           className="btn-mode"
-          style={ { backgroundColor: props.theme_color } }
+          style={{ backgroundColor: themeColor }}
           onClick={() => {
-            changeTheme(props.theme_code);
+            changeTheme(themeCode);
           }}
-        >
-        </div>
+        />
       </div>
-    )
+    );
   }
 
   useEffect(() => {
@@ -86,10 +85,10 @@ function Home() {
     <>
       {user && <UserCard />}
       <div className="home-action">
-        <ToggleMode theme_code="theme-light-green" theme_color="#1ED760" />
-        <ToggleMode theme_code="theme-dark-yellow" theme_color="#FFED4C" />
-        <ToggleMode theme_code="theme-light-pink" theme_color="#FA6791" />
-        <ToggleMode theme_code="theme-dark-blue" theme_color="#4AA8E6" />
+        <ToggleMode themeCode="theme-light-green" themeColor="#1ED760" />
+        <ToggleMode themeCode="theme-dark-yellow" themeColor="#FFED4C" />
+        <ToggleMode themeCode="theme-light-pink" themeColor="#FA6791" />
+        <ToggleMode themeCode="theme-dark-blue" themeColor="#4AA8E6" />
       </div>
       <div className="home-me">
         <span>
