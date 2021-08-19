@@ -1,13 +1,17 @@
-import { playlistItemType } from "../types";
+import { playlistItemType } from '../types';
 
 function Playlist({
-  key, id, image, name, desc, setView, setPlaylistID}
-  :playlistItemType) {
+  id,
+  image,
+  name,
+  setView,
+  setPlaylistID,
+} : playlistItemType) {
   return (
     <>
       <div
         onClick={() => {
-          setView("playlistdetail");
+          setView('playlistdetail');
           setPlaylistID(id);
         }}
         className="playlist-card"
@@ -16,7 +20,7 @@ function Playlist({
           <img
             src={image}
             title={name}
-            alt="{albumName}"
+            alt="Album"
           />
         </div>
         <div className="detail">
