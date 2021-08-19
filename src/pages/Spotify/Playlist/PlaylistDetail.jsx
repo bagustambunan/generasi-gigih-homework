@@ -5,7 +5,7 @@ import PlaylistHeader from '../../../components/PlaylistHeader';
 
 const axios = require('axios');
 
-function PlaylistDetail(setView, playlistID) {
+function PlaylistDetail({ setView, playlistID }) {
   const token = useSelector(selectToken);
   const [selectedPlaylist, setSelectedPlaylist] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
