@@ -31,7 +31,7 @@ function AppRouter() {
     },
     {
       id: 4,
-      url: '/playlists/new',
+      url: '/new',
       page: <SpotifyPage page="new_playlist" />,
     },
   ];
