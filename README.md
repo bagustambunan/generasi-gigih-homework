@@ -1,7 +1,10 @@
 # WaveMusic App
 
 ## About
-WaveMusic App is a Spotify clone application that uses the Spotify Developers API. This application was built during the Generasi GIGIH 2021 program held by Gojek's non-profit organization, Yayasan Anak Bangsa Bisa.
+<br>
+<p align="center"><img src="public/img/logo.png" width="130px"></p>
+<br>
+WaveMusic App is a Spotify clone application that uses the Spotify Developers API. This application was built during the Generasi GIGIH 2021 program held by Gojek's non-profit organization, [Yayasan Anak Bangsa Bisa](https://www.anakbangsabisa.org/).
 
 ### Features
   - Login with Spotify account
