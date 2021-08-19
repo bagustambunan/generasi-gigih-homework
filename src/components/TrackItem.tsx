@@ -46,7 +46,7 @@ function Track({
         <img
           src={imageUrl}
           title={albumName}
-          alt="Album"
+          alt={albumName}
         />
       </div>
 
