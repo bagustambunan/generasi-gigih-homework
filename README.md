@@ -61,6 +61,13 @@ Run test
 ```
 yarn test
 ```
+<table>
+  <tr>
+    <td>
+      <img src="docs/test-pass.png">
+    </td>
+  </tr>
+</table>
 
 <br>
 
@@ -75,7 +82,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-1a.png" width="180px">
+      <img src="docs/shot-1a.png" width="180px">
     </td>
   </tr>
 </table>
@@ -85,7 +92,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-1b.png" width="180px">
+      <img src="docs/shot-1b.png" width="180px">
     </td>
   </tr>
 </table>
@@ -95,7 +102,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-1c.png" width="180px">
+      <img src="docs/shot-1c.png" width="180px">
     </td>
   </tr>
 </table>
@@ -108,7 +115,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-2a.png" width="180px">
+      <img src="docs/shot-2a.png" width="180px">
     </td>
   </tr>
 </table>
@@ -121,7 +128,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-3a.png" width="180px">
+      <img src="docs/shot-3a.png" width="180px">
     </td>
   </tr>
 </table>
@@ -132,7 +139,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-4a.png" width="180px">
+      <img src="docs/shot-4a.png" width="180px">
     </td>
   </tr>
 </table>
@@ -142,10 +149,10 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-4b.png" width="180px">
+      <img src="docs/shot-4b.png" width="180px">
     </td>
     <td>
-      <img src="shots/shot-4c.png" width="180px">
+      <img src="docs/shot-4c.png" width="180px">
     </td>
   </tr>
 </table>
@@ -155,7 +162,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-4d.png" width="180px">
+      <img src="docs/shot-4d.png" width="180px">
     </td>
   </tr>
 </table>
@@ -165,7 +172,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-4e.png" width="180px">
+      <img src="docs/shot-4e.png" width="180px">
     </td>
   </tr>
 </table>
@@ -176,7 +183,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-5a.png" width="180px">
+      <img src="docs/shot-5a.png" width="180px">
     </td>
   </tr>
 </table>
@@ -186,7 +193,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-5b.png" width="180px">
+      <img src="docs/shot-5b.png" width="180px">
     </td>
   </tr>
 </table>
@@ -196,7 +203,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-5c.png" width="180px">
+      <img src="docs/shot-5c.png" width="180px">
     </td>
   </tr>
 </table>
@@ -206,10 +213,10 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-5d.png" width="180px">
+      <img src="docs/shot-5d.png" width="180px">
     </td>
     <td>
-      <img src="shots/shot-5e.png" width="180px">
+      <img src="docs/shot-5e.png" width="180px">
     </td>
   </tr>
 </table>
@@ -219,10 +226,10 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-5f.png" width="180px">
+      <img src="docs/shot-5f.png" width="180px">
     </td>
     <td>
-      <img src="shots/shot-5g.png" width="180px">
+      <img src="docs/shot-5g.png" width="180px">
     </td>
   </tr>
 </table>
@@ -233,7 +240,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-6a.png" width="180px">
+      <img src="docs/shot-6a.png" width="180px">
     </td>
   </tr>
 </table>
@@ -243,7 +250,7 @@ You can access the WaveMusic App at the link https://wavemusic.vercel.app/
 <table>
   <tr>
     <td>
-      <img src="shots/shot-6b.png" width="180px">
+      <img src="docs/shot-6b.png" width="180px">
     </td>
   </tr>
 </table>
@@ -258,16 +265,16 @@ You can change the color theme on the home page. There are 4 choices of themes t
 <table>
   <tr>
     <td>
-      <img src="shots/shot-7a.png" width="180px">
+      <img src="docs/shot-7a.png" width="180px">
     </td>
     <td>
-      <img src="shots/shot-7b.png" width="180px">
+      <img src="docs/shot-7b.png" width="180px">
     </td>
     <td>
-      <img src="shots/shot-7c.png" width="180px">
+      <img src="docs/shot-7c.png" width="180px">
     </td>
     <td>
-      <img src="shots/shot-7d.png" width="180px">
+      <img src="docs/shot-7d.png" width="180px">
     </td>
   </tr>
 </table>

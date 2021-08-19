@@ -93,7 +93,7 @@ function Home() {
       </div>
       <div className="home-me">
         <span>
-          Made with ❤️ by
+          Made with ❤️ by&nbsp;
           <a href="https://www.linkedin.com/in/bagustambunan/">
             Bagus Tambunan
           </a>
