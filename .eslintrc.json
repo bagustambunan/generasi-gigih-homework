@@ -27,7 +27,8 @@
         "no-console": "off",
         "no-alert": "off",
         "no-useless-concat": "off",
-        "prefer-template": "off"
+        "prefer-template": "off",
+        "prefer-destructuring": "off"
     },
     "settings": {
         "import/resolver": {
