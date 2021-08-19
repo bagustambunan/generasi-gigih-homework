@@ -31,11 +31,11 @@ beforeEach(() => {
             />
         </Provider>
     )
-})
-
-test('show what is rendered', () => {
-    screen.debug();
 });
+
+// test('show what is rendered', () => {
+//     screen.debug();
+// });
 
 test('check if album image rendered', () => {
     const imgElement = screen.getByAltText(albumName);
