@@ -60,3 +60,8 @@ export type playlistDetailType = {
 export type spotifyPageType = {
     page: string
 }
+
+export type toggleModeType = {
+    themeCode: string,
+    themeColor: string
+}

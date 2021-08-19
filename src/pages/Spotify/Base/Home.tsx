@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectToken } from '../../../redux/tokenSlice';
 import { setUser, selectUser } from '../../../redux/userSlice';
+import { toggleModeType } from '../../../types';
 import '../../../styles/base-page.css';
 
 const axios = require('axios');
@@ -20,7 +21,7 @@ function Home() {
             Authorization: 'Bearer ' + token,
           },
         })
-        .then((res) => {
+        .then((res:any) => {
           dispatch(setUser(res.data));
         });
     } catch (err) {
@@ -58,12 +59,12 @@ function Home() {
     );
   }
 
-  function changeTheme(themeName) {
+  function changeTheme(themeName:string) {
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
   }
 
-  function ToggleMode(themeCode, themeColor) {
+  function ToggleMode({ themeCode, themeColor } : toggleModeType) {
     return (
       <div className="mode-wrapper">
         <div
