@@ -15,7 +15,7 @@ function PlaylistDetail(props) {
   async function getTracks() {
     try {
       await axios
-        .get("https://api.spotify.com/v1/playlists/" + props.playlist_id, {
+        .get("https://api.spotify.com/v1/playlists/" + props.playlistID, {
           headers: {
             Authorization: "Bearer " + token,
           },

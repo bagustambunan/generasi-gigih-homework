@@ -8,7 +8,7 @@ import { playlistAllType } from "../../../types";
 
 const axios = require("axios");
 
-function PlaylistAll({setView, set_playlist_id}:playlistAllType) {
+function PlaylistAll({setView, setPlaylistID}:playlistAllType) {
   const token = useSelector(selectToken);
 
   const [playlists, setPlaylists] = useState([]);
@@ -83,7 +83,7 @@ function PlaylistAll({setView, set_playlist_id}:playlistAllType) {
               name={item.name}
               desc={item.description}
               setView={setView}
-              set_playlist_id={set_playlist_id}
+              setPlaylistID={setPlaylistID}
             />
           );
         })}

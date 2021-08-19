@@ -19,7 +19,7 @@ export type playlistItemType = {
     name: string,
     desc: string,
     setView: React.Dispatch<React.SetStateAction<string>>,
-    set_playlist_id: React.Dispatch<React.SetStateAction<string>>,
+    setPlaylistID: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export type menuType = {
@@ -47,10 +47,10 @@ export type newFormType = {
 
 export type playlistAllType = {
     setView: React.Dispatch<React.SetStateAction<string>>,
-    set_playlist_id: React.Dispatch<React.SetStateAction<string>>,
+    setPlaylistID: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export type playlistDetailType = {
     setView: React.Dispatch<React.SetStateAction<string>>,
-    playlist_id: string,
+    playlistID: string,
 }
