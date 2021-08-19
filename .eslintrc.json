@@ -28,7 +28,8 @@
         "no-alert": "off",
         "no-useless-concat": "off",
         "prefer-template": "off",
-        "prefer-destructuring": "off"
+        "prefer-destructuring": "off",
+        "react/prop-types": "off"
     },
     "settings": {
         "import/resolver": {
