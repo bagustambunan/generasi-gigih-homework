@@ -30,7 +30,7 @@ function SpotifyPage({ page } : spotifyPageType) {
       page: <PlaylistPage />,
     },
     {
-      url: 'playlistsall',
+      url: 'playlistall',
       page: <PlaylistPage />,
     },
     {

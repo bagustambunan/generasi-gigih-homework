@@ -95,7 +95,7 @@ function Home() {
         <span>
           Made with ❤️ by&nbsp;
           <a href="https://www.linkedin.com/in/bagustambunan/">
-            Bagus Tambunan
+            Muhammad Bagus Syahputra Tambunan
           </a>
         </span>
       </div>
