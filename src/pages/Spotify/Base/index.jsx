@@ -10,9 +10,9 @@ import { rootUrl } from '../../../values';
 
 const axios = require('axios');
 
-function SpotifyPage(props) {
+function SpotifyPage(page) {
   const token = useSelector(selectToken);
-  const [view, setView] = useState(props.page);
+  const [view, setView] = useState(page);
   const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
   const routeList = [
