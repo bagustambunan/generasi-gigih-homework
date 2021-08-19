@@ -6,13 +6,14 @@ import Home from './Home';
 import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
 import NewForm from '../Playlist/NewForm';
+import { spotifyPageType } from '../../../types';
 import { rootUrl } from '../../../values';
 
 const axios = require('axios');
 
-function SpotifyPage(props) {
+function SpotifyPage({ page } : spotifyPageType) {
   const token = useSelector(selectToken);
-  const [view, setView] = useState(props.page);
+  const [view, setView] = useState(page);
   const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
   const routeList = [
@@ -29,8 +30,12 @@ function SpotifyPage(props) {
       page: <PlaylistPage />,
     },
     {
+      url: 'playlistsall',
+      page: <PlaylistPage />,
+    },
+    {
       url: 'new_playlist',
-      page: <NewForm />,
+      page: <NewForm setView={setView} />,
     },
   ];
 
@@ -49,7 +54,7 @@ function SpotifyPage(props) {
           },
         });
     } catch (err) {
-      window.location = rootUrl + '/logout';
+      window.location.href = rootUrl + '/logout';
     }
   }
 

@@ -1,23 +1,26 @@
-import { useState, useEffect } from "react";
-import { client_id, scope, redirect_uri, public_url } from "../../../values";
-
-import "../../../styles/base-page.css";
+import { useState, useEffect } from 'react';
+import {
+  clientID,
+  scope,
+  redirectUri,
+  publicUrl,
+} from '../../../values';
+import '../../../styles/base-page.css';
 
 function LoginPage() {
-
-  const [theme, set_theme] = useState(localStorage.getItem('theme'));
+  const theme = useState(localStorage.getItem('theme'));
 
   function LoginButton() {
-    let spotify_url = "https://accounts.spotify.com/authorize";
-    spotify_url += "?response_type=token";
-    spotify_url += "&client_id=" + encodeURIComponent(client_id);
-    spotify_url += "&scope=" + encodeURIComponent(scope);
-    spotify_url += "&redirect_uri=" + encodeURIComponent(redirect_uri);
+    const spotifyUrl = 'https://accounts.spotify.com/authorize'
+    + '?response_type=token'
+    + '&client_id=' + encodeURIComponent(clientID)
+    + '&scope=' + encodeURIComponent(scope)
+    + '&redirect_uri=' + encodeURIComponent(redirectUri);
 
     return (
       <div className="btn-login">
-        <a href={spotify_url}>
-          <i className="fab fa-spotify"></i>
+        <a href={spotifyUrl}>
+          <i className="fab fa-spotify" />
           LOG IN WITH SPOTIFY
         </a>
       </div>
@@ -25,10 +28,9 @@ function LoginPage() {
   }
 
   useEffect(() => {
-    if(theme){
+    if (theme) {
       document.documentElement.className = theme;
-    }
-    else{
+    } else {
       localStorage.setItem('theme', 'theme-light');
       document.documentElement.className = 'theme-light';
     }
@@ -39,13 +41,11 @@ function LoginPage() {
       <div className="login-card">
         <div className="image">
           <img
-            src={public_url + "/img/logo.png"}
+            src={publicUrl + '/img/logo.png'}
             alt="Icon"
           />
         </div>
-        
         <LoginButton />
-        
       </div>
     </div>
   );

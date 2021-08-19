@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const slice = createSlice({
-  name: "query",
+  name: 'query',
   initialState: {
-    value: "Safe",
+    value: 'Safe',
   },
   reducers: {
     updateQuery: (state, action) => {

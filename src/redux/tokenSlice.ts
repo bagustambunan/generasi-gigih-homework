@@ -1,17 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const slice = createSlice({
-  name: "token",
+  name: 'token',
   initialState: {
-    value: localStorage.getItem("token") ? localStorage.getItem("token") : null,
+    value: localStorage.getItem('token') ? localStorage.getItem('token') : null,
   },
   reducers: {
     setToken: (state, action) => {
       state.value = action.payload;
-      localStorage.setItem("token", action.payload);
+      localStorage.setItem('token', action.payload);
     },
-    removeToken: (state, action) => {
-      localStorage.removeItem("token");
+    removeToken: () => {
+      localStorage.removeItem('token');
     },
   },
 });

@@ -1,32 +1,30 @@
-import { useState, useEffect } from "react";
-import PlaylistHeader from "../../../components/PlaylistHeader";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectToken } from '../../../redux/tokenSlice';
+import PlaylistHeader from '../../../components/PlaylistHeader';
 
-import { useSelector } from "react-redux";
-import { selectToken } from "../../../redux/tokenSlice";
+const axios = require('axios');
 
-const axios = require("axios");
-
-function PlaylistDetail(props) {
+function PlaylistDetail({ setView, playlistID }) {
   const token = useSelector(selectToken);
-
-  const [selected_playlist, set_selected_playlist] = useState([]);
-  const [is_loading, set_is_loading] = useState(true);
+  const [selectedPlaylist, setSelectedPlaylist] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function getTracks() {
     try {
       await axios
-        .get("https://api.spotify.com/v1/playlists/" + props.playlist_id, {
+        .get('https://api.spotify.com/v1/playlists/' + playlistID, {
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization: 'Bearer ' + token,
           },
         })
         .then((res) => {
-          set_selected_playlist(res.data);
+          setSelectedPlaylist(res.data);
         });
     } catch (err) {
       console.error(err);
     } finally {
-      set_is_loading(false);
+      setIsLoading(false);
     }
   }
 
@@ -35,54 +33,44 @@ function PlaylistDetail(props) {
   }, []);
 
   function Page() {
-    if (is_loading) {
-      return <span>Loading...</span>;
-    } else {
-      let image =
-        "https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216";
-      if (selected_playlist.images[0]) {
-        image = selected_playlist.images[0].url;
-      }
-      return (
-        <div className="detail-page">
-          <div className="playlist-header">
-            <div className="image">
-              <img
-                src={image}
-                title={selected_playlist.name}
-                alt="Album"
-              />
+    if (isLoading) return <span>Loading...</span>;
+    let image = 'https://media.istockphoto.com/photos/white-headphones-with-red-heart-sign-in-the-middle-on-blue-surface-picture-id696537216';
+    if (selectedPlaylist.images[0]) image = selectedPlaylist.images[0].url;
+
+    return (
+      <div className="detail-page">
+        <div className="playlist-header">
+          <div className="image">
+            <img
+              src={image}
+              title={selectedPlaylist.name}
+              alt="Album"
+            />
+          </div>
+          <div className="info">
+            <div>
+              <span>
+                {selectedPlaylist.name}
+              </span>
             </div>
-            <div className="info">
-              <div>
-                <span>
-                  {selected_playlist.name}
-                </span>
-              </div>
-              <div>
-                <p>
-                  {selected_playlist.description}
-                </p>
-              </div>
+            <div>
+              <p>
+                {selectedPlaylist.description}
+              </p>
             </div>
           </div>
-
-          {selected_playlist.tracks.total !== 0 && (
-            <PlaylistHeader
-              tracks={selected_playlist.tracks.items}
-              setView={props.setView}
-            />
-          )}
         </div>
-      );
-    }
+        {selectedPlaylist.tracks.total !== 0 && (
+          <PlaylistHeader
+            tracks={selectedPlaylist.tracks.items}
+            setView={setView}
+          />
+        )}
+      </div>
+    );
   }
 
-  return (
-    <>
-      <Page />
-    </>
-  );
+  return <Page />;
 }
 
 export default PlaylistDetail;

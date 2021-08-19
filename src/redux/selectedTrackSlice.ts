@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const slice = createSlice({
-  name: "selectedTrack",
+  name: 'selectedTrack',
   initialState: {
     value: null,
   },

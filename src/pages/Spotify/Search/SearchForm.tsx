@@ -1,45 +1,47 @@
-import { useState, useEffect } from "react";
-import SearchHeader from "../../../components/SearchHeader";
+import {
+  FormEvent,
+  KeyboardEvent,
+  useState,
+  useEffect,
+} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectToken } from '../../../redux/tokenSlice';
+import { updateQuery, selectQuery } from '../../../redux/querySlice';
+import SearchHeader from '../../../components/SearchHeader';
+import { searchFormType } from '../../../types';
+import '../../../styles/search-page.css';
 
-import { useSelector, useDispatch } from "react-redux";
-import { selectToken } from "../../../redux/tokenSlice";
-import { updateQuery, selectQuery } from "../../../redux/querySlice";
+const axios = require('axios');
 
-import "../../../styles/search-page.css";
-import { searchFormType } from "../../../types";
-
-const axios = require("axios");
-
-function SearchForm({setView}:searchFormType) {
+function SearchForm({ setView } : searchFormType) {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const query = useSelector(selectQuery);
 
-  const [val_q, set_val_q] = useState(query);
-  const [tracks, set_tracks] = useState([]);
+  const [searchVal, setSearchVal] = useState(query);
+  const [tracks, setTracks] = useState([]);
 
-  function handleChange(e: React.FormEvent<HTMLInputElement>) {
-    set_val_q(e.currentTarget.value);
+  function handleChange(e: FormEvent<HTMLInputElement>) {
+    setSearchVal(e.currentTarget.value);
   }
 
-  function handleKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === "Enter") {
-      dispatch(updateQuery(val_q));
+  function handleKeyPress(e: KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') {
+      dispatch(updateQuery(searchVal));
     }
   }
 
   async function doSearch() {
     try {
-      let url =
-        "https://api.spotify.com/v1/search?q=" + query + "&type=track,artist";
+      const url = 'https://api.spotify.com/v1/search?q=' + query + '&type=track,artist';
       await axios
         .get(url, {
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization: 'Bearer ' + token,
           },
         })
         .then((res:any) => {
-          set_tracks(res.data.tracks.items);
+          setTracks(res.data.tracks.items);
         });
     } catch (err) {
       console.error(err);
@@ -53,7 +55,7 @@ function SearchForm({setView}:searchFormType) {
   return (
     <div className="search-page">
       <div className="search-header">
-        <i className="fa fa-search"></i>
+        <i className="fa fa-search" />
         <input
           onChange={(e) => {
             handleChange(e);
@@ -61,12 +63,11 @@ function SearchForm({setView}:searchFormType) {
           onKeyPress={(e) => {
             handleKeyPress(e);
           }}
-          value={val_q}
+          value={searchVal}
           type="text"
           placeholder="Type anything..."
-        ></input>
+        />
       </div>
-
       <SearchHeader tracks={tracks} setView={setView} />
     </div>
   );
