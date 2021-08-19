@@ -16,12 +16,11 @@ function Track({
   highlightTracks,
   setHighlightTracks,
 }: trackItemType) {
-
   const dispatch = useDispatch();
-  const [isHighlight, setIsHighlight] = useState(highlightTracks.some(item => item === data.uri));
+  const [isHighlight, setIsHighlight] = useState(highlightTracks.some((item) => item === data.uri));
 
   useEffect(() => {
-    setIsHighlight(highlightTracks.some(item => item === data.uri));
+    setIsHighlight(highlightTracks.some((item) => item === data.uri));
   }, [highlightTracks]);
 
   return (
@@ -32,18 +31,16 @@ function Track({
             const index = highlightTracks.indexOf(data.uri);
             if (index !== -1) highlightTracks.splice(index, 1);
             setIsHighlight(false);
-          }
-          else {
+          } else {
             setHighlightTracks([...highlightTracks, data.uri]);
             setIsHighlight(true);
           }
-        }
-        else {
+        } else {
           setView('trackdetail');
           dispatch(updateSelectedTrack(data));
         }
       }}
-      className={"track" + (isHighlight ? " track-highlight" : "")}
+      className={'track' + (isHighlight ? ' track-highlight' : '')}
     >
       <div className="image">
         <img
