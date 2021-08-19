@@ -1,7 +1,7 @@
-import { rootUrl } from "../../../values";
-import { useDispatch } from "react-redux";
-import { removeToken } from "../../../redux/tokenSlice";
-import { removeUser } from "../../../redux/userSlice";
+import { useDispatch } from 'react-redux';
+import { removeToken } from '../../../redux/tokenSlice';
+import { removeUser } from '../../../redux/userSlice';
+import { rootUrl } from '../../../values';
 
 function Logout() {
   const dispatch = useDispatch();
