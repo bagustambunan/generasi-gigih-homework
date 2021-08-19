@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export type trackItemType = {
     key: string,
     imageUrl: string,
@@ -6,7 +8,7 @@ export type trackItemType = {
     albumName: string,
     duration: string,
     data: any,
-    setView: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
     selectMode: boolean,
     highlightTracks: Array<string>,
     setHighlightTracks: any,
@@ -18,39 +20,39 @@ export type playlistItemType = {
     image: string,
     name: string,
     desc: string,
-    setView: React.Dispatch<React.SetStateAction<string>>,
-    setPlaylistID: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
+    setPlaylistID: Dispatch<SetStateAction<string>>,
 }
 
 export type menuType = {
     view: any,
-    setView: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
 }
 
 export type trackListType = {
     tracks: any,
-    setView: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
 }
 
 export type searchFormType = {
-    setView: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
 }
 
 export type addToPlaylistType = {
-    setShowAddModal: React.Dispatch<React.SetStateAction<boolean>>,
+    setShowAddModal: Dispatch<SetStateAction<boolean>>,
     selectedUris: Array<string>,
 }
 
 export type newFormType = {
-    setView: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
 }
 
 export type playlistAllType = {
-    setView: React.Dispatch<React.SetStateAction<string>>,
-    setPlaylistID: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
+    setPlaylistID: Dispatch<SetStateAction<string>>,
 }
 
 export type playlistDetailType = {
-    setView: React.Dispatch<React.SetStateAction<string>>,
+    setView: Dispatch<SetStateAction<string>>,
     playlistID: string,
 }
