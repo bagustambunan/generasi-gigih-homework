@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../redux/tokenSlice';
 import { addToPlaylistType } from '../../types';
@@ -6,7 +6,6 @@ import { addToPlaylistType } from '../../types';
 const axios = require('axios');
 
 function AddToPlaylist({ setShowAddModal, selectedUris }: addToPlaylistType) {
-
   const token = useSelector(selectToken);
   const [playlists, setPlaylists] = useState([]);
   const [selectedPlaylistID, setSelectedPlaylistID] = useState('');
@@ -43,7 +42,7 @@ function AddToPlaylist({ setShowAddModal, selectedUris }: addToPlaylistType) {
               'Content-Type': 'application/json',
               Accept: 'application/json',
             },
-          }
+          },
         );
       } catch (err) {
         console.error(err);
@@ -66,21 +65,21 @@ function AddToPlaylist({ setShowAddModal, selectedUris }: addToPlaylistType) {
         </div>
         <div className="modal-body">
           <select
-            onChange={(e: React.FormEvent<HTMLSelectElement>) => {
+            onChange={(e: FormEvent<HTMLSelectElement>) => {
               setSelectedPlaylistID(e.currentTarget.value);
             }}
           >
             <option value="" disabled selected>
               Select a playlist
             </option>
-            {playlists.map((item: any) => {
-              return <option value={item.id}>{item.name}</option>;
-            })}
+            {playlists.map((item: any) => (
+              <option value={item.id}>{item.name}</option>
+            ))}
           </select>
         </div>
         <div className="modal-action">
-          <button onClick={() => { doAdd() }} type="button" className="btn btn-primary">Add</button>
-          <button onClick={() => { setShowAddModal(false) }} type="button" className="btn btn-secondary">Cancel</button>
+          <button onClick={() => { doAdd(); }} type="button" className="btn btn-primary">Add</button>
+          <button onClick={() => { setShowAddModal(false); }} type="button" className="btn btn-secondary">Cancel</button>
         </div>
       </div>
 
