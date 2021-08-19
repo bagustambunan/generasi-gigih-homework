@@ -56,3 +56,7 @@ export type playlistDetailType = {
     setView: Dispatch<SetStateAction<string>>,
     playlistID: string,
 }
+
+export type spotifyPageType = {
+    page: string
+}

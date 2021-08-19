@@ -39,12 +39,12 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/login" exact="true" component={LoginPage} />
-        <Route path="/callback" exact="true" component={Callback} />
-        <Route path="/logout" exact="true" component={Logout} />
+        <Route path="/login" exact={true} component={LoginPage} />
+        <Route path="/callback" exact={true} component={Callback} />
+        <Route path="/logout" exact={true} component={Logout} />
 
         {routeList.map((item) => (
-          <Route path={item.url} exact="true" key={item.id}>
+          <Route path={item.url} exact={true} key={item.id}>
             {token ? item.page : <Redirect to="/login" />}
           </Route>
         ))}
