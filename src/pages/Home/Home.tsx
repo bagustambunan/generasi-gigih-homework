@@ -14,24 +14,24 @@ function Home() {
 
   const themeList = [
     {
-      themeName: "theme-light-green",
-      themeColor: "#1ED760",
+      themeName: 'theme-light-green',
+      themeColor: '#1ED760',
     },
     {
-      themeName: "theme-dark-yellow",
-      themeColor: "#FFED4C",
+      themeName: 'theme-dark-yellow',
+      themeColor: '#FFED4C',
     },
     {
-      themeName: "theme-light-pink",
-      themeColor: "#FA6791",
+      themeName: 'theme-light-pink',
+      themeColor: '#FA6791',
     },
     {
-      themeName: "theme-dark-blue",
-      themeColor: "#4AA8E6",
+      themeName: 'theme-dark-blue',
+      themeColor: '#4AA8E6',
     },
     {
-      themeName: "theme-dark-purple",
-      themeColor: "#C46EF5",
+      themeName: 'theme-dark-purple',
+      themeColor: '#C46EF5',
     },
   ];
 
