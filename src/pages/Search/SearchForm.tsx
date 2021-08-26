@@ -5,11 +5,11 @@ import {
   useEffect,
 } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectToken } from '../../../redux/tokenSlice';
-import { updateQuery, selectQuery } from '../../../redux/querySlice';
-import SearchHeader from '../../../components/SearchHeader';
-import { searchFormType } from '../../../types';
-import '../../../styles/search-page.css';
+import { selectToken } from '../../redux/tokenSlice';
+import { updateQuery, selectQuery } from '../../redux/querySlice';
+import SearchHeader from '../../components/SearchHeader';
+import { searchFormType } from '../../types';
+import '../../styles/search-page.css';
 
 const axios = require('axios');
 
