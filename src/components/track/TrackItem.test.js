@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import store from '../redux/store';
-import Track from '../components/Track/TrackItem';
+import store from '../../redux/store';
+import Track from './TrackItem';
 
 const imageUrl = 'https://play-lh.googleusercontent.com/v4sg6Itovu1ccaCaiHW2HwUy0vuzuy02sWXXkjxhPd-hQzVe7_FpIow48JwNMViC8Q';
 const trackTitle = 'Cute Duduu';
