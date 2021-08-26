@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../redux/tokenSlice';
-import Layout from '../pages/Main/Layout';
+import Layout from '../pages/Layout';
 import LoginPage from '../pages/Main/LoginPage';
 import Callback from '../pages/Main/Callback';
 import Logout from '../pages/Main/Logout';
