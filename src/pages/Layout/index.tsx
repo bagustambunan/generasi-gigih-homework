@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../redux/tokenSlice';
-import Menu from '../../components/main/Menu';
+import Menu from '../../components/Home/Menu';
 import Home from '../Home/Home';
 import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';

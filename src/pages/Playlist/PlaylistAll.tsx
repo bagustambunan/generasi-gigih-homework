@@ -1,7 +1,7 @@
 import { MouseEvent, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../redux/tokenSlice';
-import Playlist from '../../components/playlist/PlaylistItem';
+import Playlist from '../../components/Playlist/PlaylistItem';
 import { playlistAllType } from '../../types';
 
 const axios = require('axios');
