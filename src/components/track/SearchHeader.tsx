@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Track from './TrackItem';
+import Track from './track/TrackItem';
 import AddToPlaylist from './modals/AddToPlaylist';
 import '../styles/components/track.css';
 import { trackListType } from '../types';
 
-function PlaylistHeader({ tracks, setView }: trackListType) {
+function SearchHeader({ tracks, setView }: trackListType) {
   const [selectMode, setSelectMode] = useState(false);
   const [highlightTracks, setHighlightTracks] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -89,13 +89,13 @@ function PlaylistHeader({ tracks, setView }: trackListType) {
 
       {tracks.map((item: any) => (
         <Track
-          key={item.track.id}
-          imageUrl={item.track.album.images[2].url}
-          trackTitle={item.track.name}
-          artistName={item.track.album.artists[0].name}
-          albumName={item.track.album.name}
-          duration={item.track.duration_ms}
-          data={item.track}
+          key={item.id}
+          imageUrl={item.album.images[2].url}
+          trackTitle={item.name}
+          artistName={item.album.artists[0].name}
+          albumName={item.album.name}
+          duration={item.duration_ms}
+          data={item}
           setView={setView}
           selectMode={selectMode}
           highlightTracks={highlightTracks}
@@ -106,4 +106,4 @@ function PlaylistHeader({ tracks, setView }: trackListType) {
   );
 }
 
-export default PlaylistHeader;
+export default SearchHeader;

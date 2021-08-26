@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../redux/tokenSlice';
-import PlaylistHeader from '../../components/PlaylistHeader';
+import PlaylistHeader from '../../components/track/PlaylistHeader';
 
 const axios = require('axios');
 
