@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectSelectedTrack } from '../../redux/selectedTrackSlice';
 import AddToPlaylist from '../../components/Modals/AddToPlaylist';
-import '../../styles/track-page.css';
+import './style.css';
 
 function TrackDetail() {
   const selecedTrack = useSelector(selectSelectedTrack);

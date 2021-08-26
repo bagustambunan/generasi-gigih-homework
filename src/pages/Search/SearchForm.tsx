@@ -9,7 +9,7 @@ import { selectToken } from '../../redux/tokenSlice';
 import { updateQuery, selectQuery } from '../../redux/querySlice';
 import SearchHeader from '../../components/Track/SearchHeader';
 import { searchFormType } from '../../libs/types';
-import '../../styles/search-page.css';
+import './style.css';
 
 const axios = require('axios');
 
