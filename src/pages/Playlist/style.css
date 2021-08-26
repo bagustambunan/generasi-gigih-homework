@@ -27,7 +27,7 @@
 .add-button > a {
     text-decoration: none;
     cursor: pointer;
-    color: white;
+    color: var(--color-bg-main);
     padding: 10px 14px;
     border-radius: 9999px;
     background-color: var(--color-primary);

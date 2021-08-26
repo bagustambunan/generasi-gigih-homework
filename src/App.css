@@ -81,7 +81,7 @@
 .btn-primary {
   margin-top: 1rem;
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-bg-main);
 }
 
 .btn-primary:hover {
