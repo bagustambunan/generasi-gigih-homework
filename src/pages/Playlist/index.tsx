@@ -3,7 +3,7 @@ import PlaylistAll from './PlaylistAll';
 import NewForm from './NewForm';
 import PlaylistDetail from './PlaylistDetail';
 import TrackDetail from '../Track/TrackDetail';
-import '../../../styles/playlist-page.css';
+import '../../styles/playlist-page.css';
 
 function PlaylistPage() {
   const [view, setView] = useState('playlistall');

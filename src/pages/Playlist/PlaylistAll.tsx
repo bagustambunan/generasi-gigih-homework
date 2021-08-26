@@ -1,8 +1,8 @@
 import { MouseEvent, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectToken } from '../../../redux/tokenSlice';
-import Playlist from '../../../components/PlaylistItem';
-import { playlistAllType } from '../../../types';
+import { selectToken } from '../../redux/tokenSlice';
+import Playlist from '../../components/PlaylistItem';
+import { playlistAllType } from '../../types';
 
 const axios = require('axios');
 
