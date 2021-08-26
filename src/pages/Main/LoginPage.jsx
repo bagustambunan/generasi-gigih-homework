@@ -4,9 +4,9 @@ import {
   scope,
   redirectUri,
   publicUrl,
-} from '../../../values';
-import '../../../styles/base-page.css';
-import '../../../styles/themes/theme.css';
+} from '../../values';
+import '../../styles/base-page.css';
+import '../../styles/themes/theme.css';
 
 function LoginPage() {
   const [theme, setTheme] = useState(localStorage.getItem('theme'));

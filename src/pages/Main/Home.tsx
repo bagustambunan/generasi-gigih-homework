@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectToken } from '../../../redux/tokenSlice';
-import { setUser, selectUser } from '../../../redux/userSlice';
-import { toggleModeType } from '../../../types';
-import '../../../styles/base-page.css';
+import { selectToken } from '../../redux/tokenSlice';
+import { setUser, selectUser } from '../../redux/userSlice';
+import { toggleModeType } from '../../types';
+import '../../styles/base-page.css';
 
 const axios = require('axios');
 

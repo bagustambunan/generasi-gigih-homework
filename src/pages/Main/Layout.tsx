@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectToken } from '../../../redux/tokenSlice';
-import Menu from '../../../components/Menu';
+import { selectToken } from '../../redux/tokenSlice';
+import Menu from '../../components/Menu';
 import Home from './Home';
 import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
 import NewForm from '../Playlist/NewForm';
-import { spotifyPageType } from '../../../types';
-import { rootUrl } from '../../../values';
+import { spotifyPageType } from '../../types';
+import { rootUrl } from '../../values';
 
 const axios = require('axios');
 
-function SpotifyPage({ page } : spotifyPageType) {
+function Layout({ page } : spotifyPageType) {
   const token = useSelector(selectToken);
   const [view, setView] = useState(page);
   const [theme, setTheme] = useState(localStorage.getItem('theme'));
@@ -88,4 +88,4 @@ function SpotifyPage({ page } : spotifyPageType) {
   );
 }
 
-export default SpotifyPage;
+export default Layout;

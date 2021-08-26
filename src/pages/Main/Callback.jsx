@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setToken, selectToken } from '../../../redux/tokenSlice';
-import { getHashParams } from '../../../utils/helpers';
-import { rootUrl } from '../../../values';
+import { setToken, selectToken } from '../../redux/tokenSlice';
+import { getHashParams } from '../../utils/helpers';
+import { rootUrl } from '../../values';
 
 function Callback() {
   const dispatch = useDispatch();
