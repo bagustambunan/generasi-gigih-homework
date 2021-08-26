@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { removeToken } from '../../redux/tokenSlice';
-import { rootUrl } from '../../values';
+import { rootUrl } from '../../libs/values';
 
 function Logout() {
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import {
   scope,
   redirectUri,
   publicUrl,
-} from '../../values';
+} from '../../libs/values';
 import '../../styles/base-page.css';
 import '../../styles/themes/theme.css';
 

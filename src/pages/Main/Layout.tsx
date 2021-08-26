@@ -7,7 +7,7 @@ import PlaylistPage from '../Playlist';
 import SearchPage from '../Search';
 import NewForm from '../Playlist/NewForm';
 import { spotifyPageType } from '../../types';
-import { rootUrl } from '../../values';
+import { rootUrl } from '../../libs/values';
 
 const axios = require('axios');
 
