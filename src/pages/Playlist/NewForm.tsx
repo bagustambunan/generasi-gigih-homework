@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../../redux/tokenSlice';
 import { selectUser } from '../../redux/userSlice';
-import { newFormType } from '../../types/types';
+import { newFormType } from '../../libs/types';
 
 const axios = require('axios');
 
