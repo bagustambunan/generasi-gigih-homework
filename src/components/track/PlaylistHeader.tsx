@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Track from './TrackItem';
-import AddToPlaylist from '../modals/AddToPlaylist';
-import '../styles/components/track.css';
-import { trackListType } from '../../types';
+import AddToPlaylist from '../Modals/AddToPlaylist';
+import { trackListType } from '../../libs/types';
+import './style.css';
 
 function PlaylistHeader({ tracks, setView }: trackListType) {
   const [selectMode, setSelectMode] = useState(false);

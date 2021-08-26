@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateSelectedTrack } from '../../redux/selectedTrackSlice';
 import { getDuration } from '../../libs/helpers';
-import { trackItemType } from '../../types';
+import { trackItemType } from '../../libs/types';
 
 function Track({
   imageUrl,

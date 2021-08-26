@@ -1,4 +1,4 @@
-import { playlistItemType } from '../../types';
+import { playlistItemType } from '../../libs/types';
 
 function Playlist({
   id,
