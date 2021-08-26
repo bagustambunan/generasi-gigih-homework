@@ -5,8 +5,7 @@ import {
   redirectUri,
   publicUrl,
 } from '../../libs/values';
-import '../../styles/base-page.css';
-import '../../styles/themes/theme.css';
+import './style.css';
 
 function LoginPage() {
   const [theme, setTheme] = useState(localStorage.getItem('theme'));

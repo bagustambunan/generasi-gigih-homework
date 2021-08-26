@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectToken } from '../../redux/tokenSlice';
 import { setUser, selectUser } from '../../redux/userSlice';
 import { toggleModeType } from '../../libs/types';
-import '../../styles/base-page.css';
+import './style.css';
 
 const axios = require('axios');
 

@@ -29,9 +29,9 @@
     font-weight: 700;
 }
 
-.track-page > .track-over > .info > .artist {
+/* .track-page > .track-over > .info > .artist {
     
-}
+} */
 
 .track-page > .track-over > .info > .artist > span {
     font-size: 1rem;
@@ -73,9 +73,9 @@
     margin-right: 0.25rem;
 }
 
-.btn-play {
+/* .btn-play {
     
-}
+} */
 
 .btn-play > a {
     cursor: pointer;
@@ -111,9 +111,9 @@
         display: flex;
         flex-direction: column-reverse;
     }
-    .track-page > .track-over > .image {
+    /* .track-page > .track-over > .image {
         
-    }
+    } */
     .track-page > .track-over > .image > img {
         width: 100%;
         box-shadow: none;
