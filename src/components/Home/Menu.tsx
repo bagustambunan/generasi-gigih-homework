@@ -1,7 +1,7 @@
 import { MouseEvent } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setActiveMenu, selectActiveMenu } from '../../redux/activeMenuSlice';
-import { menuType } from '../../types/types';
+import { menuType } from '../../libs/types';
 
 function Menu({ view, setView }: menuType) {
   const dispatch = useDispatch();
