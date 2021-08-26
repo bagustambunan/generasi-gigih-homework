@@ -1,0 +1,47 @@
+.login-page {
+    background-color: var(--color-bg-main);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page > .login-card {
+    
+}
+
+.login-page > .login-card > .image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.login-page > .login-card > .image > img {
+    width: 9rem;
+}
+
+.btn-login > a {
+    background-color: #1ED760;
+    width: 13rem;
+    border-radius: 9999px;
+    color: white;
+    font-weight: 500;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-login > a > i {
+    margin-top: 2px;
+    margin-right: 8px;
+    font-size: 21px;
+}
+
+.btn-login > a:hover {
+    background-color: var(--color-text-secondary);
+}

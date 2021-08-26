@@ -1,0 +1,101 @@
+.home-page {
+    padding: 1.25rem;
+    background-color: var(--color-bg-card);
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);	
+    border-radius: 0.75rem;
+}
+
+.user-card {
+    display: flex;
+}
+
+.home-action {
+    display: flex;
+    margin: 20px 0px 10px 0px;
+}
+
+.home-page > .user-card > .image {
+    margin-right: 1.25rem;
+}
+
+.home-page > .user-card > .image > img {
+    object-fit: cover;
+    border-radius: 9999px;
+    width: 70px;
+}
+
+.home-page > .user-card > .info {
+    margin-right: 1.25rem;
+}
+
+.home-page > .user-card > .info > span {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.home-page > .btn-logout {
+
+}
+
+.btn-logout > a {
+    border: 2px solid var(--color-red);
+    border-radius: 9999px;
+    color: var(--color-red);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-logout > a:hover {
+    background-color: var(--color-red);
+    color: white;
+}
+
+.mode-wrapper{
+    
+}
+
+.btn-mode {
+    padding: 10px;
+    border-radius: 9999px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.home-me {
+    margin-top: 10px;
+}
+
+.home-me > span {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.home-me > span > a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+}
+
+@media all and (max-width: 720px) {
+    .home-page {	
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .home-me {
+        margin-top: 0px;
+        margin-left: 1.25rem;
+    }
+    .home-action{
+        margin-left: 1.25rem;
+    }
+} 
