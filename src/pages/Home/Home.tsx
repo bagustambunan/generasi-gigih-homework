@@ -12,6 +12,29 @@ function Home() {
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
 
+  const themeList = [
+    {
+      themeName: "theme-light-green",
+      themeColor: "#1ED760",
+    },
+    {
+      themeName: "theme-dark-yellow",
+      themeColor: "#FFED4C",
+    },
+    {
+      themeName: "theme-light-pink",
+      themeColor: "#FA6791",
+    },
+    {
+      themeName: "theme-dark-blue",
+      themeColor: "#4AA8E6",
+    },
+    {
+      themeName: "theme-dark-purple",
+      themeColor: "#C46EF5",
+    },
+  ];
+
   async function getUserInfo() {
     try {
       const url = 'https://api.spotify.com/v1/me';
@@ -64,14 +87,14 @@ function Home() {
     document.documentElement.className = themeName;
   }
 
-  function ToggleMode({ themeCode, themeColor } : toggleModeType) {
+  function ToggleMode({ themeName, themeColor } : toggleModeType) {
     return (
       <div className="mode-wrapper">
         <div
           className="btn-mode"
           style={{ backgroundColor: themeColor }}
           onClick={() => {
-            changeTheme(themeCode);
+            changeTheme(themeName);
           }}
         />
       </div>
@@ -86,10 +109,9 @@ function Home() {
     <>
       {user && <UserCard />}
       <div className="home-action">
-        <ToggleMode themeCode="theme-light-green" themeColor="#1ED760" />
-        <ToggleMode themeCode="theme-dark-yellow" themeColor="#FFED4C" />
-        <ToggleMode themeCode="theme-light-pink" themeColor="#FA6791" />
-        <ToggleMode themeCode="theme-dark-blue" themeColor="#4AA8E6" />
+        { themeList.map((item) => (
+          <ToggleMode themeName={item.themeName} themeColor={item.themeColor} />
+        ))}
       </div>
       <div className="home-me">
         <span>

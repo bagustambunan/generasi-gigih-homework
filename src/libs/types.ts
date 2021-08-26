@@ -62,6 +62,6 @@ export type spotifyPageType = {
 }
 
 export type toggleModeType = {
-    themeCode: string,
+    themeName: string,
     themeColor: string
 }
