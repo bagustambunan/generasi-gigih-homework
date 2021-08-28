@@ -99,9 +99,9 @@
 }
 
 @media all and (max-width: 720px) {
-  .menu-section {
+  /* .menu-section {
     
-  }
+  } */
 
   .menu {
     grid-template-columns: 33% 33% 33%;
