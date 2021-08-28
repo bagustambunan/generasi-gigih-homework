@@ -26,26 +26,26 @@
 }
 
 .home-page > .user-card > .info {
-    margin-right: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .home-page > .user-card > .info > span {
     font-size: 1.125rem;
-    line-height: 1.75rem;
     font-weight: 700;
     color: var(--color-text-main);
 }
 
-.home-page > .btn-logout {
+/* .home-page > .btn-logout {
 
-}
+} */
 
 .btn-logout > a {
     border: 2px solid var(--color-red);
     border-radius: 9999px;
     color: var(--color-red);
     font-size: 0.875rem;
-    line-height: 1.25rem;
     font-weight: 500;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -60,9 +60,9 @@
     color: white;
 }
 
-.mode-wrapper{
+/* .mode-wrapper{
     
-}
+} */
 
 .btn-mode {
     padding: 10px;
