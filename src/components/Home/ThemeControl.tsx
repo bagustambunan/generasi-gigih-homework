@@ -18,10 +18,10 @@ function ThemeControl() {
       themeName: 'theme-dark-blue',
       themeColor: '#4AA8E6',
     },
-    {
-      themeName: 'theme-dark-purple',
-      themeColor: '#C46EF5',
-    },
+    // {
+    //   themeName: 'theme-dark-purple',
+    //   themeColor: '#C46EF5',
+    // },
   ];
 
   function changeTheme(themeName: string) {
